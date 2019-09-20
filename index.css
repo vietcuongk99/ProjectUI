@@ -1,0 +1,22 @@
+body {
+  padding-top: 6rem;
+  color: #5a5a5a;
+}
+
+#logo{
+  font-family: Abril Fatface;
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+#search{
+  border-radius: 15px;
+  width: 300px;
+}
+.carousel{
+  border-radius: 10px;
+}
+#anhnen{
+    font-size: 35px;
+}
