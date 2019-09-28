@@ -1,6 +1,6 @@
 body {
   padding-top: 6rem;
-  color: #5a5a5a;
+  color: black;
   background-color: #DDDDDD;
 }
 
@@ -33,4 +33,10 @@ body {
 }
 .featurette-divider {
   margin: 0.5rem 0;
+}
+#bv{
+  margin: 1rem 0;
+}
+.card{
+  border-radius: 10px;
 }
