@@ -49,7 +49,10 @@
 
         <div class="box-container box-middle box-space-around box-row-wrap">
           <div class="box-md-40 box-sm-80 box-xs-100">
-            <div class="text-center">
+            <div class="d-md-none d-xl-none d-lg-none text-center">
+            <img src="images/cooky.png" style="width: auto; height: 100px;">
+          </div>
+            <div class="text-center d-none d-sm-none d-md-block">
               <h1 class="title orange">
                 Đăng nhập
               </h1>
@@ -94,9 +97,12 @@
                         <div class="button">
                           <div class="form-group">
                             <button type="button" class="btn btn-success btn-block round-button">Đăng nhập</button>
-
+                            <button type="button" class="btn btn-success btn-block round-button d-md-none d-xl-none d-lg-none" onclick="window.location.href='register.html'">Đăng ký ngay</button>
+                            <button type="button" class="btn btn-success btn-block round-button d-md-none d-xl-none d-lg-none" onclick="window.location.href='index.html'">Xem với tư cách khách</button>
                           </div>
                         </div>
+
+                        
                         <hr>
                         <div class="text-center margin-bottom-15px">Hoặc đăng nhập bằng</div><br>
 
