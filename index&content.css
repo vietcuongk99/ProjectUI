@@ -40,3 +40,23 @@ body {
 .card{
   border-radius: 10px;
 }
+.step-derc .step-photo{
+  display: block;
+  width: 100%;
+}
+p {
+  text-align: left;
+}
+.step-images {
+  text-align: center;
+  width: 48%;
+  margin: 4px;
+  background-color: #fafafafa;
+  display: inline-block;
+  float: left;
+  border-radius: 16px;
+  overflow: hidden;
+}
+img {
+  max-width: 100%; 
+}
