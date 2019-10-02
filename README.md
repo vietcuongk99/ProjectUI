@@ -4,7 +4,7 @@ project nhỏ về UI design
 >Thành viên:
   * Việt Cường
   * Đức Dũng
-  * Nguyễn Long
+  * Nguyễn Pong
   * Nguyễn Thắng
   * Đỗ Nhị
 
