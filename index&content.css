@@ -58,3 +58,21 @@ body {
 img {
   max-width: 100%; 
 }
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+#sp{
+  max-width: 250px;
+  border-top: solid 5px;
+  text-align: center;
+  font-size: 300px;
+  margin: 25px auto 30px;
+}
