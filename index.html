@@ -39,10 +39,10 @@
             </li>
           </ul>
           <form id="search" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="search" placeholder="Bạn muốn tìm gì ?" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Tìm</button>
           </form>
-          <!-- <button type="button" class="btn btn-light" onclick="window.location.href='signin.html'">Đăng nhập</button> -->
+          
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-light" data-toggle="modal" data-target="#LoginModal">
             Đăng nhập
@@ -243,21 +243,19 @@
                   <input type="text" class="form-control" id="LoginName" aria-describedby="UserNameHelp" placeholder="Nhập....">
                   <small id="UserNameHelp" class="form-text text-muted">Bạn có thể nhập email đã đăng ký thay cho tên đăng nhập.
                   </small>
-                </div>
-                
-                <div class="form-group">
                   <label for="Password">Mật khẩu:</label>
                   <input type="password" class="form-control" id="Password" placeholder="Nhập...">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="Check">
+                    <label class="form-check-label" for="Check">Ghi nhớ tôi!</label>
+                  </div><br>
+                  <div class="form">
+                  <button type="button" class="btn btn-outline-success btn-block round-button"><h5>Đăng nhập</h5></button><br>
+                  <div class="text-center border-top"><small>Hoặc đăng nhập bằng</small></div><br>
+                  <button type="button" class="btn btn-outline-primary btn-block round-button"><h5>Facebook</h5></button>
+                  <button type="button" class="btn btn-outline-danger btn-block round-button"><h5>Google</h5></button>
+                  </div>
                 </div>
-                
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="Check">
-                  <label class="form-check-label" for="Check">Ghi nhớ tôi!</label>
-                </div>
-                <br>
-                <div class="text-center">
-                <input type="button" class="btn btn-success px-5 round-button" value="Đăng nhập"/>
-              </div>
               </form>
               </div>
               
@@ -271,6 +269,11 @@
                 <div class="form-group">
                   <label for="InputDate" class="col-form-label">Ngày sinh:</label>
                   <input type="date" class="form-control" id="InputDate" placeholder="Nhập ngày sinh...">
+                </div>
+
+                <div class="form-group">
+                  <label for="InputPlace" class="col-form-label">Địa chỉ:</label>
+                  <input type="text" class="form-control" id="InputPlace" placeholder="Nhập địa chỉ...">
                 </div>
                 
                 <div class="form-group">
@@ -300,9 +303,7 @@
                   </label>
                 </div>
                 <br>
-                <div class="text-center">
-                <input type="button" class="btn btn-success px-5 round-button" value="Đăng ký"/>
-              </div>
+                <button type="button" class="btn btn-outline-success btn-block round-button"><h5>Đăng ký</h5></button><br>
               </form>
               </div>
   

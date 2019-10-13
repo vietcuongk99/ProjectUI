@@ -27,32 +27,30 @@
     <div class="row py-4">
     
       <!-- Cột 1 -->
-      <div class="col-md-6 col-xl-6 col-lg-6 d-none d-sm-none d-md-block border-right">
+      <div class="col-xl-6 col-lg-6 d-none d-sm-none d-md-none d-lg-block border-right">
         <div class="text-center pt-5">
-          <img src="images/cooky.png" style="width: auto; height: 100px;">
-          <br>
-          <br>
-          <h3 class="orange">Cùng nấu ăn và chia sẻ</h3>
-          <br><br>
-          <input type="button" class="btn btn-success px-5 round-button" value="Đăng ký ngay" onclick="window.location.href='register.html'"/>
-          <br><br>
-          <input type="button" class="btn btn-success px-5 round-button" value="Xem với tư cách khách" onclick="window.location.href='index.html'"/>
+          <img src="images/cooky.png" style="width: auto; height: 100px;"><br><br>
+          <h3 class="orange">Cùng nấu ăn và chia sẻ</h3><br>
+          <div class="form-group mt-1">
+          <input type="button" class="btn btn-success round-button mb-1 px-5" value="Đăng ký ngay" onclick="window.location.href='register.html'"/><br>
+          <input type="button" class="btn btn-success round-button px-3" value="Xem với tư cách khách" onclick="window.location.href='index.html'"/>
+          </div>
         </div>
       </div>
 
      
       <!-- Cột 2-->
-      <div class="col-md-6 col-xl-6 col-lg-6">
+      <div class="col-xl-6 col-lg-6">
         <div class="row py-4">
         <div class="col-1 col-sm-1 col-md-3"></div>
         <div class="col-10 col-sm-10 col-md-6">
 
         <div class="box-container box-middle box-space-around box-row-wrap">
           <div class="box-md-40 box-sm-80 box-xs-100">
-            <div class="d-md-none d-xl-none d-lg-none text-center">
+            <div class="d-xl-none d-lg-none text-center">
             <img src="images/cooky.png" style="width: auto; height: 100px;">
           </div>
-            <div class="text-center d-none d-sm-none d-md-block">
+            <div class="text-center d-none d-sm-none d-md-none d-xl-block">
               <h1 class="title orange">
                 Đăng nhập
               </h1>
@@ -69,7 +67,7 @@
                   <div class="panel-body panel-body-custom">
                     <div>
 
-                      <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/gpz+p9FcwYP8fBJ2VgSlWFgkQsehFfzFQsgcc50FRYx2fFCb9XP5Tjux4riYQEakeslGHnO75upC6T7hfMOgQ==" />
+                      <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token"/>
 
                         <div class="form-group margin-bottom-15px">
                           <label for="user_email">Tên đăng nhập</label>:
@@ -94,13 +92,11 @@
                           </div>
                         </div>
                       </div>
-                        <div class="button">
                           <div class="form-group">
-                            <button type="button" class="btn btn-success btn-block round-button">Đăng nhập</button>
-                            <button type="button" class="btn btn-success btn-block round-button d-md-none d-xl-none d-lg-none" onclick="window.location.href='register.html'">Đăng ký ngay</button>
-                            <button type="button" class="btn btn-success btn-block round-button d-md-none d-xl-none d-lg-none" onclick="window.location.href='index.html'">Xem với tư cách khách</button>
+                            <button type="button" class="btn btn-success btn-block round-button" onclick="window.location.href='index.html'">Đăng nhập</button>
+                            <button type="button" class="btn btn-success btn-block round-button d-xl-none d-lg-none" onclick="window.location.href='register.html'">Đăng ký ngay</button>
+                            <button type="button" class="btn btn-success btn-block round-button d-xl-none d-lg-none" onclick="window.location.href='index.html'">Xem với tư cách khách</button>
                           </div>
-                        </div>
 
                         
                         <hr>
@@ -109,13 +105,13 @@
                         <div class="box-container box-space-around margin-bottom-20px">
                           
                             <div class="row">
-                              <div class="col-6 col-sm-6 col-md-12 col-lg-6 col-xl-6">
+                              <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-6">
                             <a id="facebook"class="btn btn-block btn-social btn-facebook round-button" >
                               <span class="fa fa-facebook"></span>
                               <font color="white">Facebook</font>
                             </a>  
                               </div>
-                              <div class="col-6 col-sm-6 col-md-12 col-lg-6 col-xl-6">
+                              <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-6">
                               <a id="google" class="btn btn-block btn-social btn-google round-button">
                                 <span class="fa fa-google"></span>
                                 <font color="white">Google</font>
