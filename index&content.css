@@ -71,3 +71,8 @@ img {
   font-size: 300px;
   margin: 25px auto 30px;
 }
+
+.icon-add{
+  position: relative;
+  top:2.5px;
+}
