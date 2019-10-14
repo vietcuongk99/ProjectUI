@@ -16,15 +16,10 @@ body {
   width: 300px;
 }
 #search2{
-  border-radius: 12px;
+  border-radius: 9px;
   width: 200%;
 }
-.carousel{
-  border-radius: 10px;
-}
-#anhnen{
-    font-size: 35px;
-}
+
 #footer{
   text-align: center;
   color: #ffffff;
@@ -75,4 +70,12 @@ img {
   text-align: center;
   font-size: 300px;
   margin: 25px auto 30px;
+}
+
+.icon-add{
+  position: relative;
+  top:2.5px;
+}
+.round-button{
+  border-radius: 15px;
 }

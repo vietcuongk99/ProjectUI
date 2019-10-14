@@ -28,27 +28,14 @@
   <main>
     <div class="container my-3">  
     <div id="white" class="border" style="border-radius: 10px;">
-    <div id="orange" class="panel-heading p-4 white-text text-center" style="color: "><h3>Đăng ký tài khoản</h3></div>
-  
-    <!-- test
-    <div class="row">
-    <div class="col-md-6 col-xl-6 col-lg-6">
-      
-    </div>
-    <div class="col-md-6 col-xl-6 col-lg-6 d-none d-sm-none d-md-block">
-      
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-md-6 col-xl-6 col-lg-6">12345</div>
-    <div class="col-md-6 col-xl-6 col-lg-6">12445</div>
-    </div>
-    -->
+    <div id="orange" class="panel-heading p-4 white-text text-center" style="color: "><h3>Đăng ký tài khoản</h3></div><br><br>
+
     
     <form>
       <div class="form-group">
         <div class="form-group now">  
         
+
         <!-- Hàng 1 -->
         <div class="row pt-3">
           <div class="col-2 col-sm-2 col-md-2 col-xl-2 col-lg-2 text-right">
@@ -56,12 +43,26 @@
           <div class="col-6 col-sm-6 col-md-4 col-xl-4 col-lg-4">
           <input type="text" class="form-control" id="InputName" placeholder="Nhập tên..." onblur="JavaScript:chuanHoa(this);" >
           	<span id = "loi_hoten" style="position: relative; color: red; display: none; top: 5px; ">Bạn chưa nhập họ tên!</span>
+
+        <div class="row" >
+          <div class="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
+          <div class="row">
+          <div class="col-5 col-sm-4 col-md-4 col-xl-4 col-lg-4 text-right">
+          <label for="InputName" class="col-form-label">Họ tên:</label></div>
+          <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-lg-6">
+          <input type="text" name="username" class="form-control" id="InputName" placeholder="Nhập họ tên..." onblur="this.value= titleCase(this.value);" required>
+
           </div>
-          <div class="col-1 col-sm-1 col-md-1 col-xl-1 col-lg-1 text-right">
-          <label for="InputAge" class="col-form-label">Tuổi:</label></div>
-          <div class="col-3 col-sm-3 col-md-2 col-xl-2 col-lg-2">
-          <input type="number" class="form-control" id="InputAge" placeholder="">
+          </div><br>
+
+          <div class="row">
+          <div class="col-5 col-sm-4 col-md-4 col-xl-4 col-lg-4 text-right">
+
+          <label for="InputDate" class="col-form-label d-inline">Ngày sinh:</label></div>
+          <div class="col-6 col-sm-6 col-md-6 col-xl- col-lg-6">
+          <input type="date" name="date"  class="form-control" id="InputDate" placeholder="Nhập ngày sinh...." onblur="javascript: checkDate(this);" required>
           </div>
+
         </div>
         <!-- Hàng 2 -->  
         <div class="row pt-3">
@@ -95,9 +96,44 @@
           <input type="password" class="form-control" id="InputPassword1" placeholder="" onblur="JavaScript:checkPass(this)">
           	<span id="loi_pass1" style="position: relative; color: red; display: none; top: 5px;">Bạn chưa nhập lại mật khẩu!</span>
           	<span id="loi_pass2" style="position: relative; color: red; display: none; top: 5px;">Mật khẩu bạn nhập không đúng!</span>
+
+          </div><br>
+
+          <div class="row">
+          <div class="col-5 col-sm-4 col-md-4 col-xl-4 col-lg-4 text-right">
+          <label for="InputEmail" class="col-form-label">Địa chỉ email:</label></div>
+          <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-lg-6">
+          <input type="email" name="useremail" class="form-control" id="InputEmail" placeholder="Nhập email..." onblur="javascript: Email_()" required>
           </div>
-        </div>
-        <!-- Hàng 5 -->  
+          </div><br>
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
+          <div class="row">
+          <div class="col-5 col-sm-4 col-md-4 col-xl-4 col-lg-4 text-right">
+          <label for="InputName" class="col-form-label">Tên đăng nhập:</label></div>
+          <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-lg-6">
+          <input type="text" name="usernickname" class="form-control" id="InputNName" placeholder="Nhập tên đăng nhập..." onblur="this.value=titleCase2(this.value);" required>
+          </div>
+          </div><br>
+
+          <div class="row">
+          <div class="col-5 col-sm-4 col-md-4 col-xl-4 col-lg-4 text-right">
+          <label for="InputPassword" class="col-form-label d-inline">Mật khẩu:</label></div>
+          <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-lg-6">
+          <input type="password" name="userpassword" class="form-control" id="InputPassword" placeholder="Nhập mật khẩu..." required>
+          </div>
+          </div><br>
+
+          <div class="row">
+          <div class="col-5 col-sm-4 col-md-4 col-xl-4 col-lg-4 text-right">
+          <label for="InputRePassW" class="col-form-label d-inline">Nhập lại mật khẩu:</label></div>
+          <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-lg-6">
+          <input type="password" class="form-control" id="InputRePassW" placeholder="Nhập lại mật khẩu...." onblur="javascript: checkpass()" required>
+          </div>
+          </div>
+          </div>
+        </div> 
         <div class="row pt-3">
           <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
           <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
