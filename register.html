@@ -54,7 +54,8 @@
           <div class="col-2 col-sm-2 col-md-2 col-xl-2 col-lg-2 text-right">
           <label for="InputName" class="col-form-label">Tên:</label></div>
           <div class="col-6 col-sm-6 col-md-4 col-xl-4 col-lg-4">
-          <input type="text" class="form-control" id="InputName" placeholder="Nhập tên...">
+          <input type="text" class="form-control" id="InputName" placeholder="Nhập tên..." onblur="JavaScript:chuanHoa(this);" >
+          	<span id = "loi_hoten" style="position: relative; color: red; display: none; top: 5px; ">Bạn chưa nhập họ tên!</span>
           </div>
           <div class="col-1 col-sm-1 col-md-1 col-xl-1 col-lg-1 text-right">
           <label for="InputAge" class="col-form-label">Tuổi:</label></div>
@@ -67,7 +68,8 @@
           <div class="col-2 col-md-2 col-md-2 col-xl-2 col-lg-2 text-right">
           <label for="InputName" class="col-form-label">Email:</label></div>
           <div class="col-6 col-md-4 col-xl-4 col-lg-4">
-          <input type="text" class="form-control" id="InputName" placeholder="Nhập email...">
+          <input type="text" class="form-control" id="InputEmail" placeholder="Nhập email...">
+          	<span id="loi_email" style="position: relative; color: red; display: none; top: 5px;">Bạn chưa nhập E-mail!</span>
           </div>
         </div>
         <!-- Hàng 3 -->  
@@ -76,6 +78,7 @@
           <label for="InputPhoneNum" class="col-form-label d-inline">Điện thoại:</label></div>
           <div class="col-6 col-sm-6 col-md-3 col-xl-3 col-lg-3">
           <input type="text" class="form-control" id="InputPhoneNum" placeholder="">
+          	<span id="loi_phone" style="position: relative; color: red; display: none; top: 5px;">Bạn chưa nhập số điện thoại</span>
           </div>
         </div>
         <!-- Hàng 4 -->  
@@ -83,21 +86,24 @@
           <div class="col-2 col-sm-2 col-md-2 col-xl-2 col-lg-2 text-right">
           <label for="InputPhoneNum" class="col-form-label d-inline">Mật khẩu:</label></div>
           <div class="col-4 col-sm-4 col-md-3 col-xl-3 col-lg-3">
-          <input type="text" class="form-control" id="InputPhoneNum" placeholder="">
+          <input type="password" class="form-control" id="InputPassword" placeholder="">
+          	<span id="loi_pass" style="position: relative; color: red; display: none; top: 5px;">Bạn chưa nhập mật khẩu!</span>
           </div>
           <div class="col-2 col-sm-2 col-md-2 col-xl-2 col-lg-2 text-right">
           <label for="InputPhoneNum" class="col-form-label d-inline">Nhập lại mật khẩu:</label></div>
           <div class="col-4 col-sm-4 col-md-3 col-xl-3 col-lg-3">
-          <input type="text" class="form-control" id="InputPhoneNum" placeholder="">
+          <input type="password" class="form-control" id="InputPassword1" placeholder="" onblur="JavaScript:checkPass(this)">
+          	<span id="loi_pass1" style="position: relative; color: red; display: none; top: 5px;">Bạn chưa nhập lại mật khẩu!</span>
+          	<span id="loi_pass2" style="position: relative; color: red; display: none; top: 5px;">Mật khẩu bạn nhập không đúng!</span>
           </div>
         </div>
         <!-- Hàng 5 -->  
         <div class="row pt-3">
           <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
           <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-          <div class="form-check">
+          <div class="form-check" >
             
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
             <label class="form-check-label d-inline" for="exampleRadios1">
               Tôi đồng ý với <a class="orange" href="rules.html">các điều khoản</a> của Cooky.
             </label>
@@ -110,7 +116,7 @@
       </div>
       <!-- Hàng 6 -->  
       <div class="row py-3  justify-content-center">
-        <input type="button" class="btn btn-success px-5 round-button" value="Đăng ký" onclick="window.location.href='index.html'"/>
+        <input type="button" class="btn btn-success px-5 round-button" value="Đăng ký" onclick="JavaScript:chapNhan();" >
       </div>
     </form>
       
@@ -125,5 +131,107 @@
     </ul>
   </footer>
 
+
+
+  <script type="text/javascript">
+  	document.getElementById('InputName').focus();
+
+  	document.getElementById('InputName').onkeyup = function(e) {
+		doKeyUp(e,'InputAge');
+	};
+
+	 document.getElementById('InputAge').onkeyup = function(e) {
+		doKeyUp(e,'InputEmail');
+	};
+
+	 document.getElementById('InputEmail').onkeyup = function(e) {
+		doKeyUp(e,'InputPhoneNum');
+	};
+
+	 document.getElementById('InputPhoneNum').onkeyup = function(e) {
+		doKeyUp(e,'InputPassword');
+	};
+
+	 document.getElementById('InputPassword').onkeyup = function(e) {
+		doKeyUp(e,'InputPassword1');
+	};	
+
+	 document.getElementById('InputPassword1').onkeyup = function(e) {
+		doKeyUp(e,'exampleRadios1');
+	};
+
+  	function chuanHoa(e){
+		temp = e.value.split(' ');
+		var value = "";
+		for (var i = 0; i < temp.length; i++) {
+			if (temp[i].length > 0) {
+				if(value.length > 0) value += " ";
+				value += temp[i].substring(0,1).toUpperCase();
+				value += temp[i].substring(1).toLowerCase();
+			}
+		}
+		e.value = value;
+	};
+
+
+	function doKeyUp(e,nextId){
+		if (e.keyCode == 13) {
+			document.getElementById(nextId).focus();
+		}
+	};
+
+	var temp = true;
+	function chapNhan(){
+		if(document.getElementById('InputName').value === ""){
+			document.getElementById('loi_hoten').style.display = 'inline';
+			temp = false;
+		}
+		else{
+			document.getElementById('loi_hoten').style.display = 'none';
+			temp = true;
+		}
+		if(document.getElementById('InputEmail').value === ""){
+			document.getElementById('loi_email').style.display = 'inline';
+			temp = false;
+		}
+		else{
+			document.getElementById('loi_email').style.display = 'none';
+			temp = true;
+		}
+		if(document.getElementById('InputPhoneNum').value === "")
+			document.getElementById('loi_phone').style.display = 'inline';
+		else
+			document.getElementById('loi_phone').style.display = 'none';
+		if(document.getElementById('InputPassword').value === "")
+			document.getElementById('loi_pass').style.display = 'inline';
+		else
+			document.getElementById('loi_pass').style.display = 'none';
+		if(document.getElementById('InputPassword1').value === "")
+			document.getElementById('loi_pass1').style.display = 'inline';
+		else
+			document.getElementById('loi_pass1').style.display = 'none';
+		if(!document.getElementById('exampleRadios1').checked){
+			alert('Bạn chưa đồng ý với điều khoản sử dụng!');
+			temp = false;
+		}
+
+		if(temp == true) {
+			alert('Bạn đã đăng ký thành công!')
+			window.location.href='index.html';
+		}
+
+	};
+
+	function checkPass(e){
+		if(document.getElementById('InputPassword').value !== e.value){
+			document.getElementById('loi_pass2').style.display = 'inline';
+			document.getElementById('loi_pass1').style.display = 'none';
+		}
+
+		else
+			document.getElementById('loi_pass2').style.display = 'none';
+		}
+
+  </script>
 </body>
 </html>
