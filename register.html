@@ -59,7 +59,7 @@
           <div class="col-5 col-sm-4 col-md-4 col-xl-4 col-lg-4 text-right">
           <label for="InputEmail" class="col-form-label">Địa chỉ email:</label></div>
           <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-lg-6">
-          <input type="email" name="useremail" class="form-control" id="InputEmail" placeholder="Nhập email..." required>
+          <input type="email" name="useremail" class="form-control" id="InputEmail" onblur="checkEmail()" placeholder="Nhập email..." required>
           <span id="loi_email" style="position: relative; color: red; display: none; top: 5px;">Bạn chưa nhập E-mail!</span>
           </div>
           </div><br>
@@ -252,6 +252,15 @@
     }
 
 	};
+  function checkEmail() { 
+    var email = document.getElementById('InputEmail'); 
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+    if (!filter.test(email.value)) { 
+             email.value="";
+             email.focus; 
+             return false; 
+    }
+}
 
 	function checkPass(e){
 		if(document.getElementById('InputPassword').value !== e.value){
