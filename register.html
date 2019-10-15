@@ -113,6 +113,7 @@
       </div>
       <!-- Hàng 6 -->  
       <div class="row py-3  justify-content-center">
+        <!-- <a href="" class="btn btn-success px-5 round-button" onclick="chapNhan()">Đăng ký</a> -->
         <input type="button" class="btn btn-success px-5 round-button" value="Đăng ký" onclick="chapNhan()"/>
       </div>
     </form>
@@ -155,6 +156,23 @@
 		doKeyUp(e,'InputRePassW');
 	};
 
+    document.getElementById('InputName').onfocus = function(){
+      document.getElementById('loi_hoten').style.display = 'none';
+    };
+    document.getElementById('InputEmail').onfocus = function(){
+      document.getElementById('loi_email').style.display = 'none';
+    };
+    document.getElementById('InputNName').onfocus = function(){
+      document.getElementById('loi_NName').style.display = 'none';
+    };
+    document.getElementById('InputPassword').onfocus = function(){
+      document.getElementById('loi_pass').style.display = 'none';
+    };
+    document.getElementById('InputRePassW').onfocus = function(){
+      document.getElementById('loi_pass1').style.display = 'none';
+    };
+
+
   	function chuanHoa(e){
 		temp = e.value.split(' ');
 		var value = "";
@@ -175,16 +193,16 @@
 		}
 	};
 
-	var temp = true;
+	
 	function chapNhan(){
-
-
+    var temp = true;
 		if(document.getElementById('InputName').value === ""){
 			document.getElementById('loi_hoten').style.display = 'inline';
 			temp = false;
 		}
 		else{
 			document.getElementById('loi_hoten').style.display = 'none';
+
 		}
 		if(document.getElementById('InputEmail').value === ""){
 			document.getElementById('loi_email').style.display = 'inline';
@@ -192,6 +210,7 @@
 		}
 		else{
 			document.getElementById('loi_email').style.display = 'none';
+
 		}
 		if(document.getElementById('InputNName').value === ""){
 			document.getElementById('loi_NName').style.display = 'inline';
@@ -200,6 +219,7 @@
 		else{
 			document.getElementById('loi_NName').style.display = 'none';
 		}
+
 		if(document.getElementById('InputPassword').value === ""){
 			document.getElementById('loi_pass').style.display = 'inline';
 			temp = false;
@@ -207,6 +227,7 @@
 		else{
 			document.getElementById('loi_pass').style.display = 'none';
 		}
+
 		if(document.getElementById('InputRePassW').value === ""){
 			document.getElementById('loi_pass1').style.display = 'inline';
 			temp = false;
@@ -214,17 +235,21 @@
 		else{
 			document.getElementById('loi_pass1').style.display = 'none';
 		}
+    
 		if(document.getElementById('InputPassword').value !== document.getElementById('InputRePassW').value)
 			temp = false;
+
 		if(!document.getElementById('exampleRadios1').checked){
-			alert('Bạn chưa đồng ý với điều khoản sử dụng!');
 			temp = false;
 		}
 
 		if(temp == true) {
 			alert('Bạn đã đăng ký thành công!')
-			window.location.href='index.html';
+			window.location.href='signin.html';
 		}
+    else{
+      alert('Đăng ký không thành công!');
+    }
 
 	};
 

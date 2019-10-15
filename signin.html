@@ -33,7 +33,7 @@
           <h3 class="orange">Cùng nấu ăn và chia sẻ</h3><br>
           <div class="form-group mt-1">
           <input type="button" class="btn btn-success round-button mb-1 px-5" value="Đăng ký ngay" onclick="window.location.href='register.html'"/><br>
-          <input type="button" class="btn btn-success round-button px-3" value="Xem với tư cách khách" onclick="window.location.href='index.html'"/>
+          <input type="button" class="btn btn-success round-button px-3" value="Xem với tư cách khách" style="margin-top: 10px;" onclick="window.location.href='index.html'"/>
           </div>
         </div>
       </div>
@@ -72,12 +72,13 @@
                         <div class="form-group margin-bottom-15px">
                           <label for="user_email">Tên đăng nhập</label>:
                           <input class="form-control" placeholder="Username" autofocus="autofocus" required="required" type="email" value="" name="user[email]" id="user_email" />
+                            <span id="loi_NName" style="position: relative; color: red; display: none; top: 5px;">Bạn chưa nhập tên đăng nhập!</span>
                         </div>
 
                         <div class="form-group margin-bottom-15px">
                           <label for="user_password">Mật khẩu</label>:
-
                           <input class="form-control" placeholder="Password" required="required" type="password" name="user[password]" id="user_password" />
+                          <span id="loi_pass" style="position: relative; color: red; display: none; top: 5px;">Bạn chưa nhập mật khẩu!</span>
                         </div>
 
                       <div class="margin-bottom-15px">
@@ -93,7 +94,7 @@
                         </div>
                       </div>
                           <div class="form-group">
-                            <button type="button" class="btn btn-success btn-block round-button" onclick="window.location.href='index.html'">Đăng nhập</button>
+                            <button type="button" class="btn btn-success btn-block round-button" onclick="chapNhan()">Đăng nhập</button>
                             <button type="button" class="btn btn-success btn-block round-button d-xl-none d-lg-none" onclick="window.location.href='register.html'">Đăng ký ngay</button>
                             <button type="button" class="btn btn-success btn-block round-button d-xl-none d-lg-none" onclick="window.location.href='index.html'">Xem với tư cách khách</button>
                           </div>
@@ -141,5 +142,59 @@
   </div>
 </main>
 
+  <script type="text/javascript">
+    document.getElementById('user_email').focus();
+
+    document.getElementById('user_email').onkeyup = function(e) {
+    doKeyUp(e,'user_password');
+  };
+      document.getElementById('user_email').onfocus = function(){
+        document.getElementById('loi_NName').style.display = 'none';
+    };
+      document.getElementById('user_password').onfocus = function(){
+        document.getElementById('loi_pass').style.display = 'none';
+    };
+      function chuanHoa(e){
+    temp = e.value.split(' ');
+    var value = "";
+    for (var i = 0; i < temp.length; i++) {
+      if (temp[i].length > 0) {
+        if(value.length > 0) value += " ";
+        value += temp[i].substring(0,1).toUpperCase();
+        value += temp[i].substring(1).toLowerCase();
+      }
+    }
+    e.value = value;
+  };
+    function doKeyUp(e,nextId){
+    if (e.keyCode == 13) {
+      document.getElementById(nextId).focus();
+    }
+  };
+  function chapNhan(){
+     var temp = true;
+        if(document.getElementById('user_email').value === ""){
+      document.getElementById('loi_NName').style.display = 'inline';
+      temp = false;
+    }
+    else{
+      document.getElementById('loi_NName').style.display = 'none';
+    }
+        if(document.getElementById('user_password').value === ""){
+      document.getElementById('loi_pass').style.display = 'inline';
+      temp = false;
+    }
+    else{
+      document.getElementById('loi_pass').style.display = 'none';
+    }
+    if(temp == true) {
+      alert('Bạn đã đăng nhập thành công!')
+      window.location.href='index.html';
+    }
+    else{
+      alert('Đăng nhập không thành công!');
+    }
+  }
+  </script>
 </body>
 </html>
