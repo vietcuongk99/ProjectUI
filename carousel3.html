@@ -43,7 +43,10 @@
 						<input class="form-control mr-sm-2" type="search" placeholder="Bạn muốn tìm gì ?" aria-label="Search">
             			<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Tìm</button>
 					</form>
-					<button type="button" class="btn btn-light" onclick="window.location.href='signin.html'">Đăng nhập</button>
+					<!-- Button trigger modal -->
+			          <button type="button" class="btn btn-light" data-toggle="modal" data-target="#LoginModal"> 
+			            Đăng nhập
+			          </button>
 				</div>
 			</div>
 		</nav>
@@ -359,6 +362,50 @@
 									</div>
 									<p style="padding-top: 50px; float: right;"><a href="#">Back to top</a></p>
 								</div>
+								<!-- Modal Đăng nhập -->
+  <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="images/cooky.png" style="width: 100px; height:auto;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <!-- Đăng nhập -->
+              <div id="login">
+              <form>
+                <div class="form-group">
+                  <label for="LoginName">Tên đăng nhập:</label>
+                  <input type="text" class="form-control" id="LoginName" aria-describedby="UserNameHelp" placeholder="Nhập....">
+                  <small id="UserNameHelp" class="form-text text-muted">Bạn có thể nhập email đã đăng ký thay cho tên đăng nhập.
+                  </small>
+                  <label for="Password">Mật khẩu:</label>
+                  <input type="password" class="form-control" id="Password" placeholder="Nhập...">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="Check">
+                    <label class="form-check-label" for="Check">Ghi nhớ tôi!</label>
+                  </div><br>
+                  
+                  <button type="button" class="btn btn-outline-success btn-block round-button"><h5>Đăng nhập</h5></button><br>
+                  <div class="border-top pt-3">
+                  <!-- <div class="text-center"><h5>Hoặc đăng nhập bằng</h5></div>
+                  <button type="button" class="btn btn-outline-primary btn-block round-button"><h5>Facebook</h5></button>
+                  <button type="button" class="btn btn-outline-danger btn-block round-button"><h5>Google</h5></button>
+                  </div> -->
+                  <div class="text-center"><h5>Bạn chưa có tài khoản ?</h5></div>
+                  <button type="button" class="btn btn-outline-success btn-block round-button" onclick="window.location.href='register.html'"><h5>Đăng ký ngay</h5></button>
+                  </div>
+                </div>
+              </form>
+              </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
 							</main>
 							<footer id="footer">
 								<ul style="padding: 15px; margin-bottom: 0px;">
