@@ -18,8 +18,20 @@
 	<script src="./bootstrap-4.3.1/jquery-3.2.1.min.js"></script>
 	<script src="./bootstrap-4.3.1/bootstrap-4.0.0.min.js"></script>
 	<script src = "https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script src="https://kit.fontawesome.com/a9ea3721b5.js" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("a[href*='#backtotop']:not([href='#backtotop])").click(function() {
+        let target = $(this).attr("href");
+        $('html,body').stop().animate({
+          scrollTop: $(target).offset().top
+        }, 1000);
+        event.preventDefault();
+      });
+    });
+  </script>
 </head>
-<body style="background-color: #eeeeee">
+<body style="background-color: #eeeeee" id="backtotop">
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
 			<div class="container">
@@ -391,7 +403,12 @@
 													</div>
 												</div>
 											</div>
-											<p style="padding-top: 50px; float: right;"><a href="#">Back to top</a></p>
+<br>
+
+<div>
+  <a href="#backtotop"><i class="fas fa-angle-double-up" style="font-size: 35px;color: #555;margin-left: 90%; "></i></a>
+</div>
+<hr id = "phienhoidap" class="featurette-divider">
 										</div>
 										<!-- Modal Đăng nhập -->
   <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
