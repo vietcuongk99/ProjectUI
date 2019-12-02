@@ -91,6 +91,13 @@
       <div class="col-10 col-sm-8 col-md-8">
         <div class="card">
           <div class="card-header"><h4 style="text-align: center;">Tạo hướng dẫn món</h4></div>
+          <%if(success){%>
+            <div id="success-alert" class="alert alert-success alert-dismissible">
+             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+             <%=success%>
+           </div>
+           <%}%>
+           <form action="/createfood" method="POST">
           <div class="card-body">
            <div class="form-group">
             <label for="mon">Tên món:</label>
@@ -151,15 +158,17 @@
              </div>
               <div id="nlieu"></div>
               <label for="nguyenlieu">Số bước thực hiện:</label>
-             <input  type="number" class='form-control' name="sobuoc"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số bước" onblur="checknumber(this);sobuoc(this.value);" value="1" min="1" max="20" >
+             <input  type="number" class='form-control' name="sobuoc"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số bước" onblur="checknumber(this);sobuocc(this.value);" value="1" min="1" max="20" >
             <label for="mota">Bước 1:</label>
            <textarea type="text" rows="3" name="buoc1_1"  class="form-control" id="step" placeholder="Nội dung"></textarea>  
             <input type="text" style="margin-top: 10px;" name="buoc2_1" placeholder="Link ảnh minh họa" class="form-control" id="level"/>
           
-            <div id="buoc"></div>  
-            <button type="button" class="btn btn-outline-success btn-block" style="border-radius: 8px;margin-top: 25px;"><h5>Xác nhận</h5></button><br>
+            <div id="buocg"></div> 
+
+            <input  type="submit" class="btn btn-outline-success btn-block" style="border-radius: 8px;margin-top: 25px;" value="Xác nhận"><br>
           </div>  
         </div>
+      </form>
       </div><br>
       <div>
         <a href="#backtotop"><i class="fas fa-angle-double-up" style="font-size: 35px;color: #555;margin-left: 90%; "></i></a>
@@ -187,7 +196,7 @@
     }
   }
   function songuyenlieu(sonl){
-    var i=0;
+    var i;
     var num=sonl;
     var code="";
     var nl1='<div class="row" style="margin-top:15px;"><div class="col-sm-6"><input type="text" class="form-control" name="nl1_';
@@ -198,18 +207,18 @@
     }
     document.getElementById("nlieu").innerHTML=code;
   }
-  function sobuoc(num){
-    var i=0;
+  function sobuocc(numb){
+    var i;
     var p1= '<label for="mota">Bước ';
     var p2=':</label><textarea type="text" rows="3" name="buoc1_';
     var p3='" class="form-control" id="step" placeholder="Nội dung"></textarea>  <input type="text" style="margin-top: 10px;" name="buoc2_';
     var p4='" placeholder="Link ảnh minh họa" class="form-control" id="level"/>';
     var code="";
-    for(i=1;i<num;i++){
+    for(i=1;i<numb;i++){
       var t=i+1;
       code+= p1+t+p2+t+p3+t+p4;
     }
-    document.getElementById("buoc").innerHTML=code;
+    document.getElementById("buocg").innerHTML=code;
   }
 
 </script>
