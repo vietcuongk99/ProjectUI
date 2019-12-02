@@ -1,0 +1,31 @@
+{
+  "name": "projectui",
+  "version": "1.0.0",
+  "description": "project nhỏ về UI design",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mysql": "^2.17.1",
+    "nodemon": "^2.0.1",
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "q": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vietcuongk99/ProjectUI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vietcuongk99/ProjectUI/issues"
+  },
+  "homepage": "https://github.com/vietcuongk99/ProjectUI#readme"
+}

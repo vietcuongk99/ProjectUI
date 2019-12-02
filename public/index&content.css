@@ -1,0 +1,84 @@
+body {
+  padding-top: 6rem;
+  color: black;
+  /*background-color: #DDDDDD;*/
+}
+
+#logo{
+  font-family: Abril Fatface;
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+#search{
+  border-radius: 15px;
+  width: 300px;
+}
+#search2{
+  border-radius: 9px;
+  width: 200%;
+}
+
+#footer{
+  text-align: center;
+  color: #ffffff;
+  background-color: #736f6f;
+  margin-top: 60px;
+}
+.featurette-divider {
+  margin: 0.5rem 0;
+}
+#bv{
+  margin: 1rem 0;
+}
+.card{
+  border-radius: 10px;
+}
+.card-img-top{
+  border-top-left-radius: 10px;border-top-right-radius: 10px;
+}
+.step-derc .step-photo{
+  display: block;
+  width: 100%;
+}
+
+.step-images {
+  text-align: center;
+  width: 48%;
+  margin: 4px;
+  background-color: #fafafafa;
+  display: inline-block;
+  float: left;
+  border-radius: 16px;
+  overflow: hidden;
+}
+img {
+  max-width: 100%; 
+}
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+#sp{
+  max-width: 250px;
+  border-top: solid 5px;
+  text-align: center;
+  font-size: 300px;
+  margin: 25px auto 30px;
+}
+
+.icon-add{
+  position: relative;
+  top:2.5px;
+}
+.round-button{
+  border-radius: 10px;
+}

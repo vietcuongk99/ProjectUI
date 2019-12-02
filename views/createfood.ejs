@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./bootstrap-4.3.1/bootstrap.min.css">
+  <link rel="stylesheet" href="index&content.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Tạo hướng dẫn</title>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="./bootstrap-4.3.1/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/a9ea3721b5.js" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("a[href*='#backtotop']:not([href='#backtotop])").click(function() {
+        let target = $(this).attr("href");
+        $('html,body').stop().animate({
+          scrollTop: $(target).offset().top
+        }, 1000);
+        event.preventDefault();
+      });
+    });
+  </script>
+  <style type="text/css">
+    label{
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body style="background-color: #eeeeee" id = "backtotop">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+      <div class="container">
+        <a href="/home">
+          <img src="images/cooky-black.png" style="width: 150px; height:auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" style="margin: 0px 30px" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="recommend.html">Giới thiệu<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="support.html">Trợ giúp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="rules.html">Điều khoản</a>
+            </li>
+          </ul>
+          <form id="search" class="form-inline my-2 my-lg-0 ">
+            <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm món ăn..." aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit">Tìm</button>
+          </form>
+          <!-- <button type="button" class="btn btn-light" onclick="window.location.href='signin.html'">Đăng nhập</button> -->
+          
+          <!-- Button trigger modal -->
+         <%if(session.username){%>
+        </ul>
+
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style="color:black" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=session.name%> </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/logout">Đăng xuất</a>
+            </div>
+          </div>
+        
+        <%} else {%>
+      </ul>
+            <a class=" btn btn-light" href="/login">Đăng nhập</a>
+        <%}%>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container marketing">
+    <div class="row">
+      <div class="col-1 col-sm-2 col-md-2"></div>
+      <div class="col-10 col-sm-8 col-md-8">
+        <div class="card">
+          <div class="card-header"><h4 style="text-align: center;">Tạo hướng dẫn món</h4></div>
+          <div class="card-body">
+           <div class="form-group">
+            <label for="mon">Tên món:</label>
+            <input type="text"  name="name" class="form-control" id="mon"/>   
+             <label for="mota">Mô tả:</label>
+            <input type="text" name="mota" class="form-control" id="mota"/>  
+            <div class="row">
+              <div class="col-sm-3">  
+                <div class="row">
+                  <div class="col-sm-8" >
+                  <label for="time">Thời gian:</label>
+                  <input type="number" name="time" class="form-control" id="time"/>
+                  </div>
+                  <div class="col-sm-4" style="margin-left:0;"><br/><br/>m</div>
+                  </div>
+              </div>
+              <div class="col-sm-4"> 
+                <div class="row">
+                  <div class="col-sm-8" > 
+                  <label for="kp">Khẩu phần:</label>
+                  <input type="number" name="kp" class="form-control" id="kp"/>
+                  </div>
+                  <div class="col-sm-4"><br/><br/>người</div>
+            
+              </div>
+
+            </div>
+
+               <div class="col-sm-2">  
+                <label for="level">Độ khó:</label>
+            <input type="text" name="level" class="form-control" id="level"/> 
+              </div>
+              <div class="col-sm-3">  
+                <label for="kp">Loại món:</label>
+            <select name="type" style="height: 40px;border-radius: 3px;">
+              <option value="1">Ăn sáng</option>
+              <option value="2">Ăn vặt</option>
+              <option value="3">Khai vị</option>
+              <option value="4">Món chay</option>
+              <option value="5">Món chính</option>
+              <option value="6">Đồ uống</option>
+              <option value="7">Lẩu</option>
+
+            </select>
+              </div>
+
+            </div>
+              
+            <label for="nguyenlieu">Số nguyên liệu:</label>
+             <input  type="number" class='form-control' name="sonl"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số nguyên liệu" onblur="checknumber(this);songuyenlieu(this.value);" value="1" min="1" max="20" >
+            <div class="row">
+                <div class="col-sm-6">
+                <input type="text" class="form-control" name="nl1_1" placeholder="Tên nguyên liệu" id="level"/> 
+                </div>
+                <div class="col-sm-6">
+                <input type="text"  placeholder="Số lượng" name="nl2_1" class="form-control" id="level"/>
+                </div>
+             </div>
+              <div id="nlieu"></div>
+              <label for="nguyenlieu">Số bước thực hiện:</label>
+             <input  type="number" class='form-control' name="sobuoc"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số bước" onblur="checknumber(this);sobuoc(this.value);" value="1" min="1" max="20" >
+            <label for="mota">Bước 1:</label>
+           <textarea type="text" rows="3" name="buoc1_1"  class="form-control" id="step" placeholder="Nội dung"></textarea>  
+            <input type="text" style="margin-top: 10px;" name="buoc2_1" placeholder="Link ảnh minh họa" class="form-control" id="level"/>
+          
+            <div id="buoc"></div>  
+            <button type="button" class="btn btn-outline-success btn-block" style="border-radius: 8px;margin-top: 25px;"><h5>Xác nhận</h5></button><br>
+          </div>  
+        </div>
+      </div><br>
+      <div>
+        <a href="#backtotop"><i class="fas fa-angle-double-up" style="font-size: 35px;color: #555;margin-left: 90%; "></i></a>
+      </div>
+      <hr id = "phienhoidap" class="featurette-divider">
+    </div>
+  </div>
+</div>
+<footer id="footer">
+  <ul style="padding: 15px; margin-bottom: 0px;">
+    <h3 style="padding-bottom: 0px;text-decoration: none;">Ăn ngon cùng Cooky</h3>
+
+    <p style="font-size: 14px"> @2019 design by Team 5</p>
+  </ul>
+</footer>
+</body>
+<script type="text/javascript">
+  function checknumber(inp){
+    if(inp.value=="")
+      inp.value=1;
+    if(inp.value>20)
+    {
+      alert("Tối đa 20 thôi bạn!!");
+      inp.value=20;
+    }
+  }
+  function songuyenlieu(sonl){
+    var i=0;
+    var num=sonl;
+    var code="";
+    var nl1='<div class="row" style="margin-top:15px;"><div class="col-sm-6"><input type="text" class="form-control" name="nl1_';
+    var nl2='" placeholder="Tên nguyên liệu" id="level"/> </div><div class="col-sm-6"><input type="text"  placeholder="Số lượng" name="nl2_'
+    var nl3='" class="form-control" id="level"/></div></div>';
+    for(i=1;i<num;i++){
+      code+= nl1+(i+1)+nl2+(i+1)+nl3;
+    }
+    document.getElementById("nlieu").innerHTML=code;
+  }
+  function sobuoc(num){
+    var i=0;
+    var p1= '<label for="mota">Bước ';
+    var p2=':</label><textarea type="text" rows="3" name="buoc1_';
+    var p3='" class="form-control" id="step" placeholder="Nội dung"></textarea>  <input type="text" style="margin-top: 10px;" name="buoc2_';
+    var p4='" placeholder="Link ảnh minh họa" class="form-control" id="level"/>';
+    var code="";
+    for(i=1;i<num;i++){
+      var t=i+1;
+      code+= p1+t+p2+t+p3+t+p4;
+    }
+    document.getElementById("buoc").innerHTML=code;
+  }
+
+</script>
+</html>
