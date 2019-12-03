@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 02, 2019 lúc 03:52 PM
+-- Thời gian đã tạo: Th12 03, 2019 lúc 02:04 PM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -49,8 +49,20 @@ CREATE TABLE `food` (
   `ration` varchar(5000) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `level` varchar(11) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `user_view` int(11) NOT NULL,
-  `user_review` varchar(5000) COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `user_review` varchar(5000) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `mota` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `food`
+--
+
+INSERT INTO `food` (`id`, `name`, `type_id`, `finished_time`, `ration`, `level`, `user_view`, `user_review`, `mota`, `image`) VALUES
+(1, 'chè', 2, 15, '2', 'dễ', 0, '0', 'chè thập cẩm', ''),
+(2, 'chè', 2, 12, '12', 'dễ', 0, '0', 'chè thập cẩm', ''),
+(3, 'chè', 2, 13, '1', 'dễ', 0, '0', 'chè thập cẩm', ''),
+(4, 'thịt', 1, 12, '2', 'dễ', 0, '0', 'thịt xiên khói', '');
 
 -- --------------------------------------------------------
 
@@ -64,6 +76,23 @@ CREATE TABLE `food_recipes` (
   `food_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `food_recipes`
+--
+
+INSERT INTO `food_recipes` (`id`, `name`, `food_id`, `quantity`) VALUES
+(1, 'nước', 1, 100),
+(2, 'bột', 1, 300),
+(3, 'đường', 1, 10),
+(4, 'chè', 2, 100),
+(5, 'bột', 2, 300),
+(6, 'đường', 2, 10),
+(7, 'nước', 3, 100),
+(8, 'bột', 3, 300),
+(9, 'đường', 3, 10),
+(10, 'nước', 4, 100),
+(11, 'thịt', 4, 300);
 
 -- --------------------------------------------------------
 
@@ -79,6 +108,14 @@ CREATE TABLE `food_steps` (
   `image_link` varchar(1000) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `food_steps`
+--
+
+INSERT INTO `food_steps` (`id`, `food_id`, `ordinal_number`, `content`, `image_link`) VALUES
+(1, 4, 1, 'đổ vào nhau', 'ảnh'),
+(2, 4, 2, 'đun', 'ảnh');
+
 -- --------------------------------------------------------
 
 --
@@ -87,14 +124,14 @@ CREATE TABLE `food_steps` (
 
 CREATE TABLE `food_types` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `nametype` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `food_types`
 --
 
-INSERT INTO `food_types` (`id`, `name`) VALUES
+INSERT INTO `food_types` (`id`, `nametype`) VALUES
 (1, 'Ăn sáng'),
 (2, 'Ăn vặt'),
 (3, 'Khai vị'),
@@ -177,8 +214,17 @@ CREATE TABLE `users` (
   `username` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `mail` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `role` varchar(11) COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `role` varchar(11) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `mail`, `role`, `name`, `date`) VALUES
+(1, 'o0ovano0o', '12345', 'van005618@gmail.com', '1', 'Nguyen Van Anh', '2000-11-11');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -280,25 +326,25 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT cho bảng `food`
 --
 ALTER TABLE `food`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `food_recipes`
 --
 ALTER TABLE `food_recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `food_steps`
 --
 ALTER TABLE `food_steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
