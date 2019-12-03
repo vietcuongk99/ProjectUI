@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="index&content.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <title>Tạo công thức</title>
+  <title>Sửa công thức</title>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -90,28 +90,23 @@
       <div class="col-1 col-sm-2 col-md-2"></div>
       <div class="col-10 col-sm-8 col-md-8">
         <div class="card">
-          <div class="card-header"><h4 style="text-align: center;">Tạo công thức nấu ăn</h4></div>
-          <%if(success){%>
-            <div id="success-alert" class="alert alert-success alert-dismissible">
-             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-             <%=success%>
-           </div>
-           <%}%>
-           <form action="/createfood" method="POST">
+          <div class="card-header"><h4 style="text-align: center;">Sửa công thức nấu ăn</h4></div>
+         
+           <form action="/updatefood?id=<%=food.id%>" method="POST">
           <div class="card-body">
            <div class="form-group">
             <label for="mon">Tên món:</label>
-            <input type="text"  name="name" class="form-control" id="mon"/>  
+            <input type="text" value="<%=food.name%>"  name="name" class="form-control" id="mon"/>  
              <label for="img">Ảnh món:</label>
-            <input type="text" name="image" class="form-control" id="img"/>  
+            <input type="text" name="image" value="<%=food.image%>" class="form-control" id="img"/>  
              <label for="mota">Mô tả:</label>
-            <input type="text" name="mota" class="form-control" id="mota"/>  
+            <input type="text" name="mota" value="<%=food.mota%>" class="form-control" id="mota"/>  
             <div class="row">
               <div class="col-sm-3">  
                 <div class="row">
                   <div class="col-sm-8" >
                   <label for="time">Thời gian:</label>
-                  <input type="number" name="time" class="form-control" id="time"/>
+                  <input type="number" name="time" value="<%=food.finished_time%>" class="form-control" id="time"/>
                   </div>
                   <div class="col-sm-4" style="margin-left:0;"><br/><br/>m</div>
                   </div>
@@ -120,7 +115,7 @@
                 <div class="row">
                   <div class="col-sm-8" > 
                   <label for="kp">Khẩu phần:</label>
-                  <input type="number" name="kp" class="form-control" id="kp"/>
+                  <input type="number" name="kp" value="<%=food.ration%>"  class="form-control" id="kp"/>
                   </div>
                   <div class="col-sm-4"><br/><br/>người</div>
             
@@ -130,18 +125,18 @@
 
                <div class="col-sm-2">  
                 <label for="level">Độ khó:</label>
-            <input type="text" name="level" class="form-control" id="level"/> 
+            <input type="text" name="level" value="<%=food.level%>" class="form-control" id="level"/> 
               </div>
               <div class="col-sm-3">  
                 <label for="kp">Loại món:</label>
-            <select name="type" style="height: 40px;border-radius: 3px;">
-              <option value="1">Ăn sáng</option>
-              <option value="2">Ăn vặt</option>
-              <option value="3">Khai vị</option>
-              <option value="4">Món chay</option>
-              <option value="5">Món chính</option>
-              <option value="6">Đồ uống</option>
-              <option value="7">Lẩu</option>
+            <select name="type" id="type" style="height: 40px;border-radius: 3px;">
+              <option id="type1" value="1">Ăn sáng</option>
+              <option id="type2" value="2">Ăn vặt</option>
+              <option id="type3" value="3">Khai vị</option>
+              <option id="type4" value="4">Món chay</option>
+              <option id="type5" value="5">Món chính</option>
+              <option id="type6" value="6">Đồ uống</option>
+              <option id="type7" value="7">Lẩu</option>
 
             </select>
               </div>
@@ -149,22 +144,25 @@
             </div>
               
             <label for="nguyenlieu">Số nguyên liệu:</label>
-             <input  type="number" class='form-control' name="sonl"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số nguyên liệu" onblur="checknumber(this);songuyenlieu(this.value);" value="1" min="1" max="20" >
-            <div class="row">
+             <input  type="number" class='form-control' value="<%=nl.length%>" name="sonl"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số nguyên liệu" onblur="checknumber(this);songuyenlieu(this.value);" value="1" min="1" max="20" >
+             <%for(var i=0;i< nl.length ;i++){%>
+            <div class="row" style="margin-bottom: 15px;">
                 <div class="col-sm-6">
-                <input type="text" class="form-control" name="nl1_1" placeholder="Tên nguyên liệu" id="level"/> 
+                <input type="text" value="<%=nl[i].name%>" class="form-control" name="nl1_<%=i+1%>" placeholder="Tên nguyên liệu" id="level"/> 
                 </div>
                 <div class="col-sm-6">
-                <input type="text"  placeholder="Số lượng" name="nl2_1" class="form-control" id="level"/>
+                <input type="text" value="<%=nl[i].quantity%>"  placeholder="Số lượng" name="nl2_<%=i+1%>" class="form-control" id="level"/>
                 </div>
              </div>
+             <%}%>
               <div id="nlieu"></div>
               <label for="nguyenlieu">Số bước thực hiện:</label>
-             <input  type="number" class='form-control' name="sobuoc"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số bước" onblur="checknumber(this);sobuocc(this.value);" value="1" min="1" max="20" >
-            <label for="mota">Bước 1:</label>
-           <textarea type="text" rows="3" name="buoc1_1"  class="form-control" id="step" placeholder="Nội dung"></textarea>  
-            <input type="text" style="margin-top: 10px;" name="buoc2_1" placeholder="Link ảnh minh họa" class="form-control" id="level"/>
-          
+             <input  type="number" class='form-control' value="<%=buoc.length%>" name="sobuoc"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số bước" onblur="checknumber(this);sobuocc(this.value);" value="1" min="1" max="20" >
+              <%for(var i=0;i< buoc.length ;i++){%>
+            <label for="mota">Bước <%=i+1%>:</label>
+           <textarea type="text" rows="3" name="buoc1_<%=i+1%>"  class="form-control" id="step" placeholder="Nội dung"><%=buoc[i].content%></textarea>  
+            <input type="text" style="margin-top: 10px;" value="<%=buoc[i].image_link%>" name="buoc2_<%=i+1%>" placeholder="Link ảnh minh họa" class="form-control" id="level"/>
+          <%}%>
             <div id="buocg"></div> 
 
             <input  type="submit" class="btn btn-outline-success btn-block" style="border-radius: 8px;margin-top: 25px;" value="Xác nhận"><br>
@@ -188,6 +186,11 @@
 </footer>
 </body>
 <script type="text/javascript">
+  window.onload = function()
+{
+    var it="type"+<%=food.type_id%>;
+    document.getElementById(it).selected=true;  
+};
   function checknumber(inp){
     if(inp.value=="")
       inp.value=1;
@@ -204,7 +207,7 @@
     var nl1='<div class="row" style="margin-top:15px;"><div class="col-sm-6"><input type="text" class="form-control" name="nl1_';
     var nl2='" placeholder="Tên nguyên liệu" id="level"/> </div><div class="col-sm-6"><input type="text"  placeholder="Số lượng" name="nl2_'
     var nl3='" class="form-control" id="level"/></div></div>';
-    for(i=1;i<num;i++){
+    for(i=<%=nl.length%>;i<num;i++){
       code+= nl1+(i+1)+nl2+(i+1)+nl3;
     }
     document.getElementById("nlieu").innerHTML=code;
@@ -216,7 +219,7 @@
     var p3='" class="form-control" id="step" placeholder="Nội dung"></textarea>  <input type="text" style="margin-top: 10px;" name="buoc2_';
     var p4='" placeholder="Link ảnh minh họa" class="form-control" id="level"/>';
     var code="";
-    for(i=1;i<numb;i++){
+    for(i=<%=buoc.length%>;i<numb;i++){
       var t=i+1;
       code+= p1+t+p2+t+p3+t+p4;
     }
