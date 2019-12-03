@@ -8,5 +8,6 @@ router.use('/signin', require(__dirname + '/signin.js'));
 router.use('/login', require(__dirname + '/login.js'));
 router.use('/home', require(__dirname + '/home.js'));
 router.use('/createfood', require(__dirname + '/createfood.js'));
+router.use('/foodtype', require(__dirname + '/foodtype.js'));
 router.use('/logout', require(__dirname + '/logout.js'));
 module.exports = router;

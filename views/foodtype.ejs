@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./bootstrap-4.3.1/bootstrap.min.css">
+  <link rel="stylesheet" href="index&content.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Công thức các món <%=type[0].nametype%></title>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="./bootstrap-4.3.1/bootstrap.min.js"></script>
+  <script src="./bootstrap-4.3.1/jquery-3.2.1.min.js"></script>
+  <script src="./bootstrap-4.3.1/bootstrap-4.0.0.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+   <script src="/dirPagination.js"> </script> <!-- nguồn code tham khảo https://www.youtube.com/watch?v=wee_si2U3M4-->
+  <script src="/angular.ng-modules.js"></script> <!--nguồn code tham khảo https://github.com/luisperezphd/ngModule-->
+
+</head>
+<body style="background-color: #eeeeee">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+      <div class="container">
+        <a href="/home">
+        <img src="images/cooky-black.png" style="width: 150px; height:auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" style="margin: 0px 30px" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="recommend.html">Giới thiệu<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="support.html">Trợ giúp</a>
+            </li>
+          </ul>
+          <form id="search" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm món ăn..." aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Tìm</button>
+          </form>
+          
+          <!-- Button trigger modal -->
+            <%if(session.username){%>
+        </ul>
+
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style="color:black" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=session.name%> </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/logout">Đăng xuất</a>
+            </div>
+          </div>
+        
+        <%} else {%>
+      </ul><button type="button" class="btn btn-light" data-toggle="modal" data-target="#LoginModal">
+            Đăng nhập
+          </button>
+            
+        <%}%>
+          
+
+          
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main role="main">
+    <div class="container marketing">
+      <p><h4><span style="color: #ff3333"></span> <span style="color: #444;">Các cách làm đồ <%=type[0].nametype%> ngon</span></h4></p>
+      <hr class="featurette-divider">
+      <br>
+
+      <%if(foods.length>0){%>
+      <div ng-module="paginationApp" ng-controller="listdata" >
+              <form id="search1" style="margin-bottom:25px;" class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" ng-model="search" placeholder="Tìm công thức" style="width: 50%" aria-label="Search" required>
+              </form><br>
+          <div class="row padding">
+          <div class="col-md-4" dir-paginate="val in data|orderBy:sortKey:reverse|filter:search|itemsPerPage:12">
+       
+          <div class="card">
+    
+            <img class="card-img-top" src="{{val.img}}" alt="Ảnh minh họa món ăn">
+           
+            <div class="card-body">
+              <h4 class="card-title">{{val.name}}</h4>
+              <p class="card-text">{{val.mota}}</p>
+                 <a href="/{{val.link}}" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>                   
+           </div>
+         </div></div><dir-pagination-controls
+                    max-size="1"
+                    direction-links="true"
+                    boundary-links="true"  >
+                  </dir-pagination-controls>
+                </div>
+       </div>
+        <%}if(foods.length==0){%>
+        <h3>Xin lỗi!!! hiện chưa có công thức nấu ăn về <%=type[0].nametype%></h3>
+        <%}%>
+         
+    </div><script type="text/javascript">
+                  var data=[];
+                </script>
+                <% 
+                for(var i=0;i< foods.length;i++){
+                  if(foods[i].image==""){
+                  foods[i].image="https://camo.githubusercontent.com/2c4ef0e348c6e56634a1199318e7810c2f7ec096/68747470733a2f2f36382e6d656469612e74756d626c722e636f6d2f63616139356262303839306632663635313239636435366135303133306336342f74756d626c725f6f6d6430696463305764317737797066696f315f313238302e706e67";
+                }
+                %>
+                <script type="text/javascript">
+                  data.push({
+                    "id":"food?id=<%=foods[i].id%>",
+                    "name":"<%=foods[i].name%>",
+                    "mota":"<%=foods[i].mota%>",
+                    "img":"<%=foods[i].image%>",
+                    "link":"/seefood?id="+<%=foods[i].id%>
+                
+                  });
+                </script>
+                <%
+              }%>
+              <script type="text/javascript">
+                var app = angular.module('paginationApp', ['angularUtils.directives.dirPagination']);
+                app.controller('listdata', function($scope) {
+                  $scope.data=data;
+                });
+
+              </script>
+ </div><br>
+
+  
+
+
+  <!-- Modal Đăng nhập -->
+  <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="images/cooky.png" style="width: 100px; height:auto;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <!-- Đăng nhập -->
+              <div id="login">
+              <form action="/login" method="POST">
+                <div class="form-group">
+                  <label for="LoginName">Tên đăng nhập:</label>
+                  <input type="text" class="form-control" id="LoginName" aria-describedby="UserNameHelp" name="username" placeholder="Nhập....">
+                  <small id="UserNameHelp" class="form-text text-muted">Bạn có thể nhập email đã đăng ký thay cho tên đăng nhập.
+                  </small>
+                  <label for="Password">Mật khẩu:</label>
+                  <input type="password" name="password" class="form-control" id="Password" placeholder="Nhập...">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="Check">
+                    <label class="form-check-label" for="Check">Ghi nhớ tôi!</label>
+                  </div><br>
+                  
+                  <input type="submit" class="btn btn-outline-success btn-block round-button" value="Đăng nhập">
+                  <div class="border-top pt-3">
+                  <!-- <div class="text-center"><h5>Hoặc đăng nhập bằng</h5></div>
+                  <button type="button" class="btn btn-outline-primary btn-block round-button"><h5>Facebook</h5></button>
+                  <button type="button" class="btn btn-outline-danger btn-block round-button"><h5>Google</h5></button>
+                  </div> -->
+                  <div class="text-center"><h5>Bạn chưa có tài khoản ?</h5></div>
+                  <button type="button" class="btn btn-outline-success btn-block round-button" onclick="window.location.href='register.html'"><h5>Đăng ký ngay</h5></button>
+                  </div>
+                </div>
+              </form>
+              </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+
+  <footer id="footer">
+    <ul style="padding: 15px; margin-bottom: 0px;">
+      <h3 style="padding-bottom: 0px;text-decoration: none;">Ăn ngon cùng Cooky</h3>
+
+      <p style="font-size: 14px"> @2019 design by Team 5</p>
+    </ul>
+  </footer>
+</body>
+</html>

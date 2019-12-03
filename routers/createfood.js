@@ -37,6 +37,7 @@ router.post('/', function(req, res) {
     	finished_time:fod.time,
     	ration:fod.kp,
     	level:fod.level,
+    	image:fod.image,
     	user_view:0,
     	user_review:0
     }
