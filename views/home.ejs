@@ -247,77 +247,21 @@
       <input type="button" class="btn btn-primary" name="themdacsan" value="+ Thêm mới"  onclick="window.location.href='/createfood'" style="margin-top: 10px;">
       </div>
     </div>
-
+    
     <div class="row padding">
+      <%for(var i=0;i< food.length;i++){%>
       <div class="col-md-4">
         <div class="card">
-          <img class="card-img-top" src="./images/menu/laubo.jpg" >
+          <img class="card-img-top" src="<%=food[i].image%>" >
           <div class="card-body">
-            <h4 class="card-title">Lẩu riêu cua bắp bò</h4>
-            <p class="card-text">Đặc sản miền Bắc, chỉ khu vực đồng bằng sông Hồng mới có, béo ngậy cực thơm.</p>
-            <a href="content1.html" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>                   
+            <h4 class="card-title"><%=food[i].name%></h4>
+            <p class="card-text"><%=food[i].mota%></p>
+            <a href="/seefood?id=<%=food[i].id%>" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>                   
           </div>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="./images/menu/thitbam.jpg">
-          <div class="card-body">
-            <h4 class="card-title">Thịt bọc trứng cút</h4>
-            <p class="card-text">Món ăn dân dã, đậm đà vị quê hương, tốt cho sức khỏe, siêu rẻ siêu ngon.</p>
-            <a href="content2.html" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>                   
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="./images/menu/cua.jpg">
-          <div class="card-body">
-            <h4 class="card-title">Cua sốt trứng muối</h4>
-            <p class="card-text">Cua chiên giòn, sốt trứng muối beo béo mặn mặn vô cùng bổ dưỡng.</p>
-            <a href="content3.html" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>                   
-          </div>
-        </div>
-      </div>
-    </div><br>
-
-    <div class="row padding">
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="./images/menu/canhga.jpg">
-          <div class="card-body">
-            <h4 class="card-title">Cánh gà chiên mắm</h4>
-            <p class="card-text">Món ăn thường ngày trong bữa cơm các gia đình, dễ ăn mà lại rất tốt cho sức khỏe.</p>
-
-            <a href="content4.html" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>                   
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="./images/menu/bauxao.jpg">
-          <div class="card-body">
-            <h4 class="card-title">Bầu xào nấm rơm</h4>
-            <p class="card-text">Món chay dân dã, thân thuộc thích hợp với những người thích ăn chay.</p>
-            <a href="content5.html" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>                   
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="./images/menu/baroi.jpg">
-          <div class="card-body">
-            <h4 class="card-title">Thịt ba rọi nướng</h4>
-            <p class="card-text">Vừa ngon lại cực dễ làm, thịt ba rọi nướng quá quen thuộc với người dân Việt Nam.</p>
-            <a href="content6.html" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>                   
-          </div>
-        </div>
-      </div>
-    </div><br>
+      <%}%>
+      <br>
 
 <!--           <div style="text-align: -webkit-right;">
             <a href=""><img src="./images/icons/first.png" width="30" height="30" style="border-radius: 100%"></a>

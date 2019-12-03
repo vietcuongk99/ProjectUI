@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="./bootstrap-4.3.1/bootstrap.min.css">
+	<link rel="stylesheet" href="index&content.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title><%=food.name%></title>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="./bootstrap-4.3.1/bootstrap.min.js"></script>
+	<script src="./bootstrap-4.3.1/jquery-3.2.1.min.js"></script>
+	<script src="./bootstrap-4.3.1/bootstrap-4.0.0.min.js"></script>
+	<script src = "https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+	<script src="https://kit.fontawesome.com/a9ea3721b5.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("a[href*='#backtotop']:not([href='#backtotop])").click(function() {
+				let target = $(this).attr("href");
+				$('html,body').stop().animate({
+					scrollTop: $(target).offset().top
+				}, 1000);
+				event.preventDefault();
+			});
+		});
+	</script>
+</head>
+<body style="background-color: #eeeeee" id="backtotop">
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+			<div class="container">
+				<a href="/home">
+					<img src="images/cooky-black.png" style="width: 150px; height:auto;">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" style="margin: 0px 30px" id="navbarCollapse">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="recommend.html">Giới thiệu<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="support.html">Trợ giúp</a>
+						</li>
+					</ul>
+					<form id="search" class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm món ăn..." aria-label="Search">
+						<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Tìm</button>
+					</form>
+					<!-- Button trigger modal -->
+					<%if(session.username){%>
+				</ul>
+
+				<div class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" style="color:black" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=session.name%> </a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+						<a class="dropdown-item" href="/logout">Đăng xuất</a>
+					</div>
+				</div>
+
+				<%} else {%>
+			</ul><button type="button" class="btn btn-light" data-toggle="modal" data-target="#LoginModal">
+				Đăng nhập
+			</button>
+
+			<%}%>
+		</div>
+	</div>
+</nav>
+</header>
+<main role="main">
+	<div class="container marketing">
+		<br>
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-8 ">
+				<div class="card text-center">
+					<div class="card-header">
+						<h5><b><%=food.nametype%></b></h5>
+					</div>
+					<div class="card-body">
+						<div class="row padding">
+							<div class="col-md-12">
+								<div class="card">
+									<img class="card-img-top" src="<%=food.image%>" alt="Ảnh minh họa món ăn">
+									<div class="card-body">
+										<h4 class="card-title" style="color: red;"><%=food.name%></h4>
+										<p class="card-text"><%=food.mota%></p>
+										<div class="row">
+
+											<div class="col-6 col-sm-6 col-md-3">
+												<h6><b>Nguyên liệu</b></h6>
+												<h6 style="color: red;"><%=nl.length%></h6>	
+											</div>
+											<div class="col-6 col-sm-6 col-md-3">
+												<h6><b>Thực hiện</b></h6>
+												<h6 style="color: red;"><%=food.finished_time%>m</h6>	
+											</div>
+											<div class="col-6 col-sm-6 col-md-3">
+												<h6><b>Khẩu phần</b></h6>
+												<h6 style="color: red;"><%=food.ration%> người</h6>	
+											</div>
+											<div class="col-6 col-sm-6 col-md-3">
+												<h6><b>Độ khó</b></h6>
+												<h6 style="color: red;"><%=food.level%></h6>	
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer text-muted">
+						<h5 class="card-title text-center"><b>Đánh giá: </b>
+							<span>
+								<a href="#" class="fa-star fa" style="color: orange;font-size: 22px;"></a>
+								<a href="#" class="fa-star fa" style="color: orange;font-size: 22px;"></a>
+								<a href="#" class="fa-star fa" style="color: orange;font-size: 22px;"></a>
+								<a href="#" class="fa-star fa" style="color: orange;font-size: 22px;"></a>
+								<a href="#" class="fa-star-o fa" style="color: orange;font-size: 22px;"></a>
+							</span> 											
+						</h5>
+					</div>
+				</div><br>
+				<div class="card text-center">
+					<div class="card-body">
+						<div class="row padding">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-body">
+										<h4 class="card-title"><b>Nguyên liệu để làm <%=food.name%></b></h4><br>
+										<div class="row" style="margin-left: 30px;color: #333;">
+
+											<div class="col-6 col-sm-6 col-md-6" style="text-align: left; ">
+												<%for(var i=0;i< nl.length;i++){%>
+												<h6><ion-icon name="add-circle" class="icon-add"></ion-icon> <%=nl[i].name%> <small><a style="opacity: 0.6;"><%=nl[i].quantity%></a></small></h6>
+												<%}%>
+											</div>
+
+										</div>
+									</div><br>
+									<h6 class="card-title"><b>Khẩu phần ăn: <a style="color: red;"><%=food.ration%> người</a></b></h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+
+				<div class="card ">
+					<div class="card-body">
+						<div class="row padding">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-body">
+										<h4 class="card-title text-center"><b>Cách làm <%=food.name%></b></h4><br>
+										<div class="accordion" id="accordionExample">
+											<%for(var i=0;i< buoc.length;i++){%>
+											<div class="card" style="margin-bottom: 15px;">
+												<div class="card-header" id="headingOne">
+													<h2 class="mb-0">
+														<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+															Bước <%=i+1%>:
+														</button>
+													</h2>
+												</div>
+
+												<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+													<div class="card-body">
+														<div class="step-derc">
+
+															<p><%=buoc[i].content%> </p>
+
+														</div>
+														<div class="step-photo">
+															<img class="card-img-top" src="<%=buoc[i].image_link%>" alt="Ảnh minh họa món ăn">			
+														</div>
+													</div>
+												</div>
+											</div>
+											<%}%>
+										</div><br>
+										<h6 class="card-title text-center"><b>Thời gian thực hiện: <a style="color: red;"><%=food.finished_time%>m</a></b></h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-12 col-sm-12 col-md-4">
+				<div class="card text-center">
+					<div class="card-header">
+						<h6><b>MÓN CÙNG CHUYÊN MỤC</b></h6>
+					</div>
+					<div class="card-body">
+						<div class="row padding">
+							<%for(var i=0;i< foods.length;i++){%>
+							<div class="col-12 col-sm-12 col-md-12" style="margin-bottom: 10px;">
+								<div class="card">
+									<a href="/seefood?id=<%=foods[i].id%>" class="photo">
+										<img class="card-img-top" src="<%=foods[i].image%>" alt="Ảnh minh họa cho món ăn" >
+									</a>
+									<div class="card-body">
+										<h9 class="card-title">
+											<a href="/seefood?id=<%=foods[i].id%>">
+												<%=foods[i].name%>
+											</a></h9>
+											<p class="card-text"><small><%=foods[i].user_view%> lượt xem</small></p>
+											</div>
+										</div>
+									</div><br>
+									<%}%>
+									<%if(foods.length==0){%>
+									<h4>Xin lỗi Tạm thời vẫn chưa có các món ăn cùng loại!</h4>
+									<%}%>
+								</div>
+							</div><br>
+							<div class="card">
+								<div class="card-header text-center">
+									<h6><b>BÌNH LUẬN</b></h6>
+								</div>
+								<div class="card-body">
+									<%for(var i=0;i< comment.length;i++){%>
+									<div class="row padding">
+										<div class="col-3 col-sm-3 ">
+											<div class="card-img-top" style="width: 35px;">
+												<img src="./images/icon/icon1.jpg" style="float: left;border-radius: 15px;">
+												
+											</div>
+										</div>
+										<div id="user" class="col-9 col-sm-9 ">  
+											<p style="float: left;"><%=comment[i].content%></p>
+										</div><p style="float: left;"><%=comment[i].username%></p>
+									</div>
+									<%}%><%if(session.username){%>
+									<div class="row padding">
+										
+												<div class="col-2 col-sm-2 col-md-2">
+												<div class="card-img-top" style="width: 35px;">
+												<img src="./images/avt.jpg" style="float: left;border-radius: 15px;">
+												
+											</div>
+											<p style="float: left;"><%=session.username%></p>
+										</div>
+										
+										<div id="user" class="col-10 col-sm-10 col-md-10 ">  
+
+											<form class="form-inline" action="/seefood?id=<%=food.id%>" method="POST">		
+												<div class="row">
+													<div class="col-sm-8">				
+														<input id="search2" class="form-control " name="com" style="width: 100%" type="search" placeholder="Viết phản hồi..." aria-label="Search">
+													</div>
+													<div class="col-sm-4">
+														<input style="" type="submit" class="btn btn-outline-success btn-block" style="border-radius: 3px;" value="Gửi">
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+									<%}else{%>
+									<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#LoginModal">
+					Đăng nhập để bình luận
+				</button>
+									<%}%>
+								</div>
+							</div>
+						</div>
+						</div>
+						<br>
+
+						<div>
+							<a href="#backtotop"><i class="fas fa-angle-double-up" style="font-size: 35px;color: #555;margin-left: 90%; "></i></a>
+						</div>
+						<hr id = "phienhoidap" class="featurette-divider">
+					</div>
+					<!-- Modal Đăng nhập -->
+					<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<img src="images/cooky.png" style="width: 100px; height:auto;">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<!-- Đăng nhập -->
+									<div id="login">
+										<form action="/login" method="POST">
+											<div class="form-group">
+												<label for="LoginName">Tên đăng nhập:</label>
+												<input type="text" class="form-control" id="LoginName" name="username" aria-describedby="UserNameHelp" placeholder="Nhập....">
+												<small id="UserNameHelp" class="form-text text-muted">Bạn có thể nhập email đã đăng ký thay cho tên đăng nhập.
+												</small>
+												<label for="Password">Mật khẩu:</label>
+												<input type="password" class="form-control" id="Password" name="password" placeholder="Nhập...">
+												<div class="form-check">
+													<input type="checkbox" class="form-check-input" id="Check">
+													<label class="form-check-label" for="Check">Ghi nhớ tôi!</label>
+												</div><br>
+
+												<input value="Đăng nhập" type="submit" class="btn btn-outline-success btn-block round-button"><h5>Đăng nhập</h5></button><br>
+												<div class="border-top pt-3">
+                  <!-- <div class="text-center"><h5>Hoặc đăng nhập bằng</h5></div>
+                  <button type="button" class="btn btn-outline-primary btn-block round-button"><h5>Facebook</h5></button>
+                  <button type="button" class="btn btn-outline-danger btn-block round-button"><h5>Google</h5></button>
+              </div> -->
+              <div class="text-center"><h5>Bạn chưa có tài khoản ?</h5></div>
+              <button type="button" class="btn btn-outline-success btn-block round-button" onclick="window.location.href='register.html'"><h5>Đăng ký ngay</h5></button>
+          </div>
+      </div>
+  </form>
+</div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer id="footer">
+	<ul style="padding: 15px; margin-bottom: 0px;">
+		<h3 style="padding-bottom: 0px;text-decoration: none;">Ăn ngon cùng Cooky</h3>
+
+		<p style="font-size: 14px"> @2019 design by Team 5</p>
+	</ul>
+</footer>
+</body>
+</html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 03, 2019 lúc 02:04 PM
+-- Thời gian đã tạo: Th12 03, 2019 lúc 06:32 PM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -35,6 +35,15 @@ CREATE TABLE `comments` (
   `food_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `user_id`, `content`, `food_id`) VALUES
+(6, 1, 'ngon thế', 5),
+(7, 1, 'ngon thế', 5),
+(8, 1, 'bình luận dài dài tý nàyyyyyyy', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -59,10 +68,12 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`id`, `name`, `type_id`, `finished_time`, `ration`, `level`, `user_view`, `user_review`, `mota`, `image`) VALUES
-(1, 'chè', 2, 15, '2', 'dễ', 0, '0', 'chè thập cẩm', ''),
-(2, 'chè', 2, 12, '12', 'dễ', 0, '0', 'chè thập cẩm', ''),
-(3, 'chè', 2, 13, '1', 'dễ', 0, '0', 'chè thập cẩm', ''),
-(4, 'thịt', 1, 12, '2', 'dễ', 0, '0', 'thịt xiên khói', '');
+(5, 'Thịt xiên nướng', 5, 10, '1', 'dễ', 23, '0', 'Thịt được xiên nướng', 'https://i1.wp.com/congthucmonngon.com/wp-content/uploads/2018/04/mon-ngon-cuoi-tuan-thit-xien-nuong.jpg?ssl=1'),
+(6, 'chè', 1, 12, '12', 'dễ', 38, '0', 'chè thập cẩm', 'https://cdn.daynauan.info.vn/wp-content/uploads/2018/08/che-thai-sau-rieng.jpg'),
+(15, 'chè', 2, 12, '1', 'dễ', 1, '0', 'đéo phải chè', 'https://monngonmoingay.com/wp-content/uploads/2019/02/che-ba-ba-500.jpg'),
+(16, 'Sườn xào chua ngọt', 5, 30, '2', 'Trung Bình', 0, '0', 'Sườn xào chua ngọt - chua chua ngọt ngọt', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-08/1528393104-915-_mg_6780-1528392856-width650height433.jpg'),
+(19, 'Kem', 2, 20, '2', 'dễ', 4, '0', 'Cách làm kem vào mùa hè mát lạnh', 'https://image.thanhnien.vn/660/uploaded/minhnguyet/2017_04_05/lamkem_zlqy.jpg'),
+(20, 'Canh nấm chay', 4, 40, '3', 'Trung bình', 0, '0', 'Kết hợp trứng với cà chuaaaa', 'https://www.hoidaubepaau.com/wp-content/uploads/2016/03/canh-nam-ngu-sac.jpg');
 
 -- --------------------------------------------------------
 
@@ -74,7 +85,7 @@ CREATE TABLE `food_recipes` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `food_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL
+  `quantity` varchar(20) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
@@ -82,17 +93,21 @@ CREATE TABLE `food_recipes` (
 --
 
 INSERT INTO `food_recipes` (`id`, `name`, `food_id`, `quantity`) VALUES
-(1, 'nước', 1, 100),
-(2, 'bột', 1, 300),
-(3, 'đường', 1, 10),
-(4, 'chè', 2, 100),
-(5, 'bột', 2, 300),
-(6, 'đường', 2, 10),
-(7, 'nước', 3, 100),
-(8, 'bột', 3, 300),
-(9, 'đường', 3, 10),
-(10, 'nước', 4, 100),
-(11, 'thịt', 4, 300);
+(12, 'Thịt', 5, '200'),
+(13, 'da vị', 5, '0'),
+(27, 'nước', 15, '100'),
+(28, 'bột', 15, '300'),
+(29, 'đường', 15, '10'),
+(30, 'kimmm', 15, '10'),
+(31, 'Sườn', 16, '0.5kg'),
+(32, 'Dấm', 16, '100ml'),
+(33, 'Đường', 16, '50g'),
+(34, 'Ớt', 16, '1 quả'),
+(39, 'Hoa quả', 19, '0.5kg'),
+(40, 'Đường / Sữa', 19, '100ml'),
+(41, 'nước', 20, '400ml'),
+(42, 'nấm', 20, '300g'),
+(43, 'rau củ', 20, '3-4 loại');
 
 -- --------------------------------------------------------
 
@@ -113,8 +128,16 @@ CREATE TABLE `food_steps` (
 --
 
 INSERT INTO `food_steps` (`id`, `food_id`, `ordinal_number`, `content`, `image_link`) VALUES
-(1, 4, 1, 'đổ vào nhau', 'ảnh'),
-(2, 4, 2, 'đun', 'ảnh');
+(3, 5, 1, 'Ướp da vị', 'https://media.ex-cdn.com/EXP/media.phunutoday.vn/files/upload_images/2016/07/29/uop-gia-vi-ngon-1-phunutoday_vn.jpg'),
+(4, 5, 2, 'Nướng ', 'https://images.foody.vn/res/g67/662791/prof/s576x330/foody-mobile-foody-thit-xien-nuon-655-636316545213496259.jpg'),
+(12, 15, 1, 'sao k chịu hiện', 'https://media.ex-cdn.com/EXP/media.phunutoday.vn/files/upload_images/2016/07/29/uop-gia-vi-ngon-1-phunutoday_vn.jpg'),
+(13, 16, 1, 'Cắt sườn', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTExMWFhUXGBgWGBgYFxgeGBgaGBYYGhUbHRgYHSggGh8lGxcYITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGy0lICUtLS0yLS0tLS8rKy0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAL4BCQMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA/EAABAwIEAwYEBQEHAwUAAAABAAIRAyEEBRIxQVFhBhMicYGRMqGx0UJSweHwIxUWM2JygvEHFCRDkqKy0v/EABoBAAIDAQEAAAAAAAAAAAAAAAIDAAEEBQb/xAAwEQACAgEEAQQBAgMJAAAAAAAAAQIRAwQSITFBEyJRYRQygQWh8CMzQnGRscHR4f/aAAwDAQACEQMRAD8Afsdm2isyi1hc50EXifFDo4eFviM8I9LFHNKTnFoeJA1XsNM6QZPAmR6FA3ZXRqFzS4Mu8l7Ww95DXiS6SDAqOkx4rbbLXEZLRLXGnXuIOk6NJcCY1HQYBc5+wtrdC07I9B+0m7bYN+IotZSq7PvTaRqqbCJnhMx68Fc7Lh1PDNbVeS9usu1vDiAHGL8tMe6F5dklFgpPqV/G2T+GJJeHGS29iAT/AJBspq+SUdb5xDx3gbf+nECAACRxLWmObQs/opZr8V393/0aJaqTwrT8bU7uub+P6+hkpYhjhLXNIgE3FgRIJ5WW4qN/MPcef0S5RyegwVGiublr32p30PkAy27ZkRtdQVOzWEJANczwB0cb7aYuCOH2Ttkfn+RmqPyNsL0LK9KUCYhZXpXlCHoXoXl5Qh4L0LyyoQxCwtoXoUIarMLy8oQxC9Cyqrca3vDTJAduOoVN0Q3xNXQ0lVcHmTXgnaN1B2irhrRqBgnccEpOxJBIa'),
+(14, 16, 2, 'Tẩm ướt các da vị vào sườn', 'https://daynauan.info.vn/wp-content/uploads/2019/04/cach-uop-suon-com-tam.jpg'),
+(15, 16, 3, 'Chiên sườn lên', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-23/1529690146-80-img_20180614_150447-1529689904-width650height488.jpg'),
+(20, 19, 1, 'Ép hoa quả', 'http://imgs.vietnamnet.vn/Images/2017/06/16/11/20170616110608-hao-qua-1.jpg'),
+(21, 19, 2, 'Thêm đường vào nước ép', 'https://yeutre.vn/cdn/medias/uploads/182/182747-them-duong.jpg'),
+(22, 20, 1, 'Chuẩn bị thái rau củ ', 'https://mayranghat.vn/wp-content/uploads/2018/05/may-thai-rau-cu-qua-da-nang1-1024x633.jpg'),
+(23, 20, 2, 'Đun chúng lên để được thành phẩm như dưới', 'https://afamilycdn.com/Images/Uploaded/Share/2010/11/30/canhnam.jpg');
 
 -- --------------------------------------------------------
 
@@ -320,25 +343,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `food`
 --
 ALTER TABLE `food`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `food_recipes`
 --
 ALTER TABLE `food_recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT cho bảng `food_steps`
 --
 ALTER TABLE `food_steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -354,7 +377,7 @@ ALTER TABLE `users`
 -- Các ràng buộc cho bảng `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`),
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --

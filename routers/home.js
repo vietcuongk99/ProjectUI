@@ -5,11 +5,15 @@ var conn = db.getConnection();
 
 
 router.get('/', function (req, res) {
-	
-	 if(req.session.user)
-	res.render('home', {session: req.session.user});
-	else
-	res.render('home',{});
+	var query = conn.query("select * from food order by id DESC limit 6;", (err, ress) => {
+		if (err) throw err;
+		else{
+			if(req.session.user)
+				res.render('home', {session: req.session.user,food:ress});
+			else
+				res.render('home',{food:ress});	}
+
+		});
 });
 
-module.exports = router;
+	module.exports = router;

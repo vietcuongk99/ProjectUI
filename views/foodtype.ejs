@@ -81,8 +81,8 @@
 
       <%if(foods.length>0){%>
       <div ng-module="paginationApp" ng-controller="listdata" >
-              <form id="search1" style="margin-bottom:25px;" class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" ng-model="search" placeholder="Tìm công thức" style="width: 50%" aria-label="Search" required>
+              <form id="search" style="margin-bottom:25px;" class="form-inline my-2 my-lg-0">
+              <input class="form-control " type="search" ng-model="search" placeholder="Tìm công thức" style="width: 100%;" aria-label="Search" required>
               </form><br>
           <div class="row padding">
           <div class="col-md-4" dir-paginate="val in data|orderBy:sortKey:reverse|filter:search|itemsPerPage:12">
@@ -96,7 +96,7 @@
               <p class="card-text">{{val.mota}}</p>
               <div class="row">
                 <div class="col-sm-10">
-                 <a href="/{{val.link}}" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a></div>
+                 <a href="{{val.link}}" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a></div>
                  <div class="col-sm-2">
               <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" style="color:black;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
@@ -132,7 +132,7 @@
                     "name":"<%=foods[i].name%>",
                     "mota":"<%=foods[i].mota%>",
                     "img":"<%=foods[i].image%>",
-                    "link":"/seefood?id="+<%=foods[i].id%>
+                    "link":"/seefood?id="+<%=foods[i].id%>,
                 
                   });
                 </script>
