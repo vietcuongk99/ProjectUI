@@ -35,14 +35,14 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
       <div class="container">
-        <a href="index.html">
+        <a href="/home">
           <img src="images/cooky-black.png" style="width: 150px; height:auto;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" style="margin: 0px 30px" id="navbarCollapse">
+        <div class="collapse navbar-collapse" style="margin-left: 5%;" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
               <a class="nav-link" href="recommend.html">Giới thiệu<span class="sr-only">(current)</span></a>
@@ -53,7 +53,7 @@
             <li class="nav-item">
               <a class="nav-link" href="rules.html">Điều khoản</a>
             </li>
-         
+          </ul>
           <form id="search" class="form-inline my-2 my-lg-0 ">
             <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm món ăn..." aria-label="Search">
             <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit">Tìm</button>
@@ -62,224 +62,224 @@
           
           <!-- Button trigger modal -->
           <%if(session.username){%>
-        </ul>
 
           <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" style="color:black" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=session.name%> </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="/logout">Đăng xuất</a>
+            <a class="nav-link dropdown-toggle"  href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+              <img src="images/avt.jpg"  style="border-radius: 50%;width: 30px;">
+              <%=session.name%> </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="/logout">Đăng xuất</a>
+              </div>
             </div>
-          </div>
-        
-        <%} else {%>
-      </ul>
+
+            <%} else {%>
             <a class=" btn btn-light" href="/login">Đăng nhập</a>
-        <%}%>
-          
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main role="main" >
-    <div class="container marketing"><br>
-      <div class="row" >
-        <div class="col-12 col-sm-12 col-md-12" >
-          <div class="carousel" >
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner" style="border-radius: 12px;">
-                <div class=" carousel-item active" >
-                  <a href="carousel2.html" >
-                    <img src="./images/carousel/carousel2.jpg" class="d-block w-100"  style="border-radius: 10px;">
-                    <div  style="width: 100%; height: 100%; position: absolute; top: 0; background-color: #151515;opacity: 0.2;"></div>
-                    <div class="title" style="width: 100%; height: 100%;position: absolute; top: 20%; text-align: center;">
-                      <p ><h1 style="font-size: 3.0vw; color: white">Nấu ăn gặp khó? Để Cooky lo</h1>
-                        <h3 style="font-size: 1.7vw; color: white">Đừng lo lắng vì chúng tôi luôn ở cạnh bạn!</h3>
-                      </p>
+            <%}%>
+
+          </div>
+        </nav>
+      </header>
+      <main role="main" >
+        <div class="container marketing"><br>
+          <div class="row" >
+            <div class="col-12 col-sm-12 col-md-12" >
+              <div class="carousel" >
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner" style="border-radius: 12px;">
+                    <div class=" carousel-item active" >
+                      <a href="carousel2.html" >
+                        <img src="./images/carousel/carousel2.jpg" class="d-block w-100"  style="border-radius: 10px;">
+                        <div  style="width: 100%; height: 100%; position: absolute; top: 0; background-color: #151515;opacity: 0.2;"></div>
+                        <div class="title" style="width: 100%; height: 100%;position: absolute; top: 20%; text-align: center;">
+                          <p ><h1 style="font-size: 3.0vw; color: white">Nấu ăn gặp khó? Để Cooky lo</h1>
+                            <h3 style="font-size: 1.7vw; color: white">Đừng lo lắng vì chúng tôi luôn ở cạnh bạn!</h3>
+                          </p>
+                        </div>
+                        <div  style="width: 100%; position: absolute; top: 80%;text-align: left;">
+                          <input type="button" value="Chè dừa dẻo" onclick="window.location.href='carousel2.html'" style="width: 17%;background-color: #BDBDBD;color: black; border: none; border-radius: 12px;margin-left: 7%;font-size: 1.3vw;">
+                        </div>
+                      </a>
                     </div>
-                    <div  style="width: 100%; position: absolute; top: 80%;text-align: left;">
-                      <input type="button" value="Chè dừa dẻo" onclick="window.location.href='carousel2.html'" style="width: 17%;background-color: #BDBDBD;color: black; border: none; border-radius: 12px;margin-left: 7%;font-size: 1.3vw;">
+                    <div class="carousel-item">
+                      <a href="carousel1.html" >
+                        <img src="./images/carousel/carousel1.jpg" class="d-block w-100"  style="border-radius: 10px;">
+                        <div  style="width: 100%; height: 100%; position: absolute; top: 0; background-color: #151515;opacity: 0.2;"></div>
+                        <div class="title" style="width: 100%; height: 100%;position: absolute; top: 20%; text-align: center;">
+                          <p ><h1 style="font-size: 3.0vw; color: white">Nấu ăn gặp khó? Để Cooky lo</h1>
+                            <h3 style="font-size: 1.7vw; color: white">Đừng lo lắng vì chúng tôi luôn ở cạnh bạn!</h3>
+                          </p>
+                        </div>
+                        <div  style="width: 100%; position: absolute; top: 80%;text-align: left;">
+                          <input type="button" value="Xôi Phúc Kiến" onclick="window.location.href='carousel1.html'" style="width: 17%;background-color: #BDBDBD;color: black; border: none; border-radius: 10px; margin-left: 7%;font-size: 1.3vw">
+                        </div>
+                      </a>
                     </div>
+                    <div class="carousel-item">
+                      <a href="carousel3.html" >
+                        <img src="./images/carousel/carousel3.jpg" class="d-block w-100"  style="border-radius: 10px;">
+                        <div  style="width: 100%; height: 100%; position: absolute; top: 0; background-color: #151515;opacity: 0.2;"></div>
+                        <div class="title" style="width: 100%; height: 100%;position: absolute; top: 20%; text-align: center;">
+                          <p ><h1 style="font-size: 3.0vw; color: white">Nấu ăn gặp khó? Để Cooky lo</h1>
+                            <h3 style="font-size: 1.7vw; color: white">Đừng lo lắng vì chúng tôi luôn ở cạnh bạn!</h3>
+                          </p>
+                        </div>
+                        <div  style="width: 100%; position: absolute; top: 80%;text-align: left;">
+                          <input type="button" value="Sữa đậu xanh" onclick="window.location.href='carousel3.html'" style="width: 17%;background-color: #BDBDBD;color: black; border: none; border-radius: 12px;margin-left: 7%;font-size: 1.3vw">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
                   </a>
-                </div>
-                <div class="carousel-item">
-                  <a href="carousel1.html" >
-                    <img src="./images/carousel/carousel1.jpg" class="d-block w-100"  style="border-radius: 10px;">
-                    <div  style="width: 100%; height: 100%; position: absolute; top: 0; background-color: #151515;opacity: 0.2;"></div>
-                    <div class="title" style="width: 100%; height: 100%;position: absolute; top: 20%; text-align: center;">
-                      <p ><h1 style="font-size: 3.0vw; color: white">Nấu ăn gặp khó? Để Cooky lo</h1>
-                        <h3 style="font-size: 1.7vw; color: white">Đừng lo lắng vì chúng tôi luôn ở cạnh bạn!</h3>
-                      </p>
-                    </div>
-                    <div  style="width: 100%; position: absolute; top: 80%;text-align: left;">
-                      <input type="button" value="Xôi Phúc Kiến" onclick="window.location.href='carousel1.html'" style="width: 17%;background-color: #BDBDBD;color: black; border: none; border-radius: 10px; margin-left: 7%;font-size: 1.3vw">
-                    </div>
-                  </a>
-                </div>
-                <div class="carousel-item">
-                  <a href="carousel3.html" >
-                    <img src="./images/carousel/carousel3.jpg" class="d-block w-100"  style="border-radius: 10px;">
-                    <div  style="width: 100%; height: 100%; position: absolute; top: 0; background-color: #151515;opacity: 0.2;"></div>
-                    <div class="title" style="width: 100%; height: 100%;position: absolute; top: 20%; text-align: center;">
-                      <p ><h1 style="font-size: 3.0vw; color: white">Nấu ăn gặp khó? Để Cooky lo</h1>
-                        <h3 style="font-size: 1.7vw; color: white">Đừng lo lắng vì chúng tôi luôn ở cạnh bạn!</h3>
-                      </p>
-                    </div>
-                    <div  style="width: 100%; position: absolute; top: 80%;text-align: left;">
-                      <input type="button" value="Sữa đậu xanh" onclick="window.location.href='carousel3.html'" style="width: 17%;background-color: #BDBDBD;color: black; border: none; border-radius: 12px;margin-left: 7%;font-size: 1.3vw">
-                    </div>
+                  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
                   </a>
                 </div>
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10 col-sm-10 col-md-10">
+            </div>
+            <div class="col-2 col-sm-2 col-md-2" >
+              <input type="button" class="btn btn-secondary" name="suaslide" value="Thay slide" data-toggle="modal" href="#slide" style="margin-top: 10px;">
+            </div>
+          </div><br>
+
+          <!-- Modal slide-->
+          <div class="modal fade" id="slide" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 50px;">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Slide</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                 <div class="form-group">
+                  <label for="dinhkembaiviet">Đính kèm: </label>
+                  <input type="file" class="control" id="dinhkembaiviet"><br>
+                  <label for="tenslide">Tên món:</label>
+                  <input type="text" class="form-control" id="tenslide" placeholder="Nhập...."><br>
+                  <button type="button" class="btn btn-outline-success btn-block" style="border-radius: 8px;"><h5>Xác nhận</h5></button><br>
+                </div>           
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="recommend-cuisine-box card-deck">
+          <div class="card " style="height: auto">
+            <div class="card-body text-center">
+              <a href="/foodtype?id=1">
+                <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/breakfast.png">
+                <span>Ăn sáng</span>
               </a>
-              <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+            </div>
+          </div>
+          <div class="card ">
+            <div class="card-body text-center">
+              <a href="/foodtype?id=2">
+                <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/popcorn.png">
+                <span>Ăn vặt</span>
+              </a>
+            </div>
+          </div>
+          <div class="card ">
+            <div class="card-body text-center">
+              <a href="/foodtype?id=3">
+                <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/dessert.png">
+                <span>Khai vị</span>
+              </a>
+            </div>
+          </div>
+          <div class="card ">
+            <div class="card-body text-center">
+              <a href="/foodtype?id=4">
+                <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/vegetable.png">
+                <span>Món chay</span>
+              </a>
+            </div>
+          </div>
+          <div class="card ">
+            <div class="card-body text-center">
+              <a href="/foodtype?id=5">
+                <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/maincourse.png">
+                <span>Món chính</span>
+              </a>
+            </div>
+          </div>
+          <div class="card ">
+            <div class="card-body text-center">
+              <a href="/foodtype?id=6">
+                <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/drinks.png">
+                <span>Đồ uống</span>
+              </a>
+            </div>
+          </div>
+          <div class="card ">
+            <div class="card-body text-center">
+              <a href="/foodtype?id=7">
+                <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/hotspot.png">
+                <span>Lẩu</span>
               </a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-10 col-sm-10 col-md-10">
-        </div>
-        <div class="col-2 col-sm-2 col-md-2" >
-          <input type="button" class="btn btn-secondary" name="suaslide" value="Thay slide" data-toggle="modal" href="#slide" style="margin-top: 10px;">
-        </div>
-      </div><br>
 
-      <!-- Modal slide-->
-      <div class="modal fade" id="slide" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 50px;">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Slide</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-             <div class="form-group">
-              <label for="dinhkembaiviet">Đính kèm: </label>
-              <input type="file" class="control" id="dinhkembaiviet"><br>
-              <label for="tenslide">Tên món:</label>
-              <input type="text" class="form-control" id="tenslide" placeholder="Nhập...."><br>
-              <button type="button" class="btn btn-outline-success btn-block" style="border-radius: 8px;"><h5>Xác nhận</h5></button><br>
-            </div>           
+        <hr class="featurette-divider">
+        <div class="row">
+          <div class="col-10 col-sm-10 col-md-10">
+            <p><h4><u>ĐẶC SẢN TỪ COOKY</u></h4></p>
+          </div>
+          <div class="col-2 col-sm-2 col-md-2" >
+            <!--   <input type="button" class="btn btn-primary" name="themdacsan" value="+ Thêm mới" data-toggle="modal" href="#dacsan" style="margin-top: 10px;"> -->
+            <input type="button" class="btn btn-primary" name="themdacsan" value="+ Thêm mới"  onclick="window.location.href='/createfood'" style="margin-top: 10px;">
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="recommend-cuisine-box card-deck">
-      <div class="card " style="height: auto">
-        <div class="card-body text-center">
-          <a href="/foodtype?id=1">
-            <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/breakfast.png">
-            <span>Ăn sáng</span>
-          </a>
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body text-center">
-          <a href="/foodtype?id=2">
-            <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/popcorn.png">
-            <span>Ăn vặt</span>
-          </a>
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body text-center">
-          <a href="/foodtype?id=3">
-            <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/dessert.png">
-            <span>Khai vị</span>
-          </a>
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body text-center">
-          <a href="/foodtype?id=4">
-            <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/vegetable.png">
-            <span>Món chay</span>
-          </a>
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body text-center">
-          <a href="/foodtype?id=5">
-            <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/maincourse.png">
-            <span>Món chính</span>
-          </a>
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body text-center">
-          <a href="/foodtype?id=6">
-            <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/drinks.png">
-            <span>Đồ uống</span>
-          </a>
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body text-center">
-          <a href="/foodtype?id=7">
-            <img style="margin: auto;width: 36px; height: 36px; display: block"src="images/menu/hotspot.png">
-            <span>Lẩu</span>
-          </a>
-        </div>
-      </div>
-    </div>
+        <div class="row padding">
+          <%for(var i=0;i< food.length;i++){
+          if(food[i].image==""){
+          food[i].image="https://camo.githubusercontent.com/2c4ef0e348c6e56634a1199318e7810c2f7ec096/68747470733a2f2f36382e6d656469612e74756d626c722e636f6d2f63616139356262303839306632663635313239636435366135303133306336342f74756d626c725f6f6d6430696463305764317737797066696f315f313238302e706e67";
+        }
+        %>
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="<%=food[i].image%>" >
+            <div class="card-body">
+              <h4 class="card-title"><%=food[i].name%></h4>
+              <p class="card-text"><%=food[i].mota%></p>
 
-    <hr class="featurette-divider">
-    <div class="row">
-      <div class="col-10 col-sm-10 col-md-10">
-        <p><h4><u>ĐẶC SẢN TỪ COOKY</u></h4></p>
-      </div>
-      <div class="col-2 col-sm-2 col-md-2" >
-      <!--   <input type="button" class="btn btn-primary" name="themdacsan" value="+ Thêm mới" data-toggle="modal" href="#dacsan" style="margin-top: 10px;"> -->
-      <input type="button" class="btn btn-primary" name="themdacsan" value="+ Thêm mới"  onclick="window.location.href='/createfood'" style="margin-top: 10px;">
-      </div>
-    </div>
-    
-    <div class="row padding">
-      <%for(var i=0;i< food.length;i++){
-  if(food[i].image==""){
-  food[i].image="https://camo.githubusercontent.com/2c4ef0e348c6e56634a1199318e7810c2f7ec096/68747470733a2f2f36382e6d656469612e74756d626c722e636f6d2f63616139356262303839306632663635313239636435366135303133306336342f74756d626c725f6f6d6430696463305764317737797066696f315f313238302e706e67";
-}
-      %>
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="<%=food[i].image%>" >
-          <div class="card-body">
-            <h4 class="card-title"><%=food[i].name%></h4>
-            <p class="card-text"><%=food[i].mota%></p>
-          
 
-             <div class="row">
+              <div class="row">
                 <div class="col-sm-10">
                  <a href="/seefood?id=<%=food[i].id%>" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a></div>
                  <div class="col-sm-2">
                   <%if(session.username){%>
-              <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" style="color:black;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown03">
-              <a class="dropdown-item" href="/updatefood?id=<%=food[i].id%>">Sửa</a>
-              <a class="dropdown-item" href="/deletefood?id=<%=food[i].id%>">Xóa</a>
-            </div>
-          </div><%}%>  </div>  </div> 
+                  <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="color:black;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown03">
+                      <a class="dropdown-item" href="/updatefood?id=<%=food[i].id%>">Sửa</a>
+                      <a class="dropdown-item" href="/deletefood?id=<%=food[i].id%>">Xóa</a>
+                    </div>
+                  </div><%}%>  </div>  </div> 
 
+                </div>
+              </div>
+            </div>
+            <%}%>
+            <br>
           </div>
-        </div>
-      </div>
-      <%}%>
-      <br>
 
 <!--           <div style="text-align: -webkit-right;">
             <a href=""><img src="./images/icons/first.png" width="30" height="30" style="border-radius: 100%"></a>
@@ -330,48 +330,8 @@
             </div>
           </div>
         </div>
-        <!-- Modal Đăng nhập -->
-<!--           <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <img src="images/cooky.png" style="width: 100px; height:auto;">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body"> -->
-                  <!-- Đăng nhập -->
-<!--                   <div id="login">
-                    <form>
-                      <div class="form-group">
-                        <label for="LoginName">Tên đăng nhập:</label>
-                        <input type="text" class="form-control" id="LoginName" aria-describedby="UserNameHelp" placeholder="Nhập....">
-                        <small id="UserNameHelp" class="form-text text-muted">Bạn có thể nhập email đã đăng ký thay cho tên đăng nhập.
-                        </small>
-                        <label for="Password">Mật khẩu:</label>
-                        <input type="password" class="form-control" id="Password" placeholder="Nhập...">
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="Check">
-                          <label class="form-check-label" for="Check">Ghi nhớ tôi!</label>
-                        </div><br>
 
-                        <button type="button" class="btn btn-outline-success btn-block" style="border-radius: 8px;"><h5>Đăng nhập</h5></button><br>
-                        <div class="border-top pt-3">
-
-                <div class="text-center"><h5>Bạn chưa có tài khoản ?</h5></div>
-                <button type="button" class="btn btn-outline-success btn-block" style="border-radius: 8px;" onclick="window.location.href='register.html'"><h5>Đăng ký ngay</h5></button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div> -->
-
+<br><br>
 <hr class="featurette-divider">
 <div class="row">
   <div class="col-10 col-sm-10 col-md-10">
@@ -541,7 +501,7 @@
 </div>
 
 <!-- Modal nhahang-->
-<div class="modal fade" id="nhahang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="">
+<!-- <div class="modal fade" id="nhahang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -567,7 +527,7 @@
     </div>
   </div>
 </div>
-</div>
+</div> -->
 
 <hr class="featurette-divider">
 <div class="row">

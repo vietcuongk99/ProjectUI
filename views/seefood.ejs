@@ -32,50 +32,53 @@
 	</script>
 </head>
 <body style="background-color: #eeeeee" id="backtotop">
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
-			<div class="container">
-				<a href="/home">
-					<img src="images/cooky-black.png" style="width: 150px; height:auto;">
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+      <div class="container">
+        <a href="/home">
+          <img src="images/cooky-black.png" style="width: 150px; height:auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-				<div class="collapse navbar-collapse" style="margin: 0px 30px" id="navbarCollapse">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="recommend.html">Giới thiệu<span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="support.html">Trợ giúp</a>
-						</li>
-					</ul>
-					<form id="search" class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm món ăn..." aria-label="Search">
-						<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Tìm</button>
-					</form>
-					<!-- Button trigger modal -->
-					<%if(session.username){%>
-				</ul>
+        <div class="collapse navbar-collapse" style="margin-left: 5%;" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="recommend.html">Giới thiệu<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="support.html">Trợ giúp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="rules.html">Điều khoản</a>
+            </li>
+         </ul>
+          <form id="search" class="form-inline my-2 my-lg-0 ">
+            <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm món ăn..." aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit">Tìm</button>
+          </form>
+          <!-- <button type="button" class="btn btn-light" onclick="window.location.href='signin.html'">Đăng nhập</button> -->
+          
+          <!-- Button trigger modal -->
+          <%if(session.username){%>
 
-				<div class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" style="color:black" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=session.name%> </a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-						<a class="dropdown-item" href="/logout">Đăng xuất</a>
-					</div>
-				</div>
-
-				<%} else {%>
-			</ul><button type="button" class="btn btn-light" data-toggle="modal" data-target="#LoginModal">
-				Đăng nhập
-			</button>
-
-			<%}%>
-		</div>
-	</div>
-</nav>
-</header>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+              <img src="images/avt.jpg"  style="border-radius: 50%;width: 30px;">
+              <%=session.name%> </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/logout">Đăng xuất</a>
+            </div>
+          </div>
+        
+        <%} else {%>
+            <a class=" btn btn-light" href="/login">Đăng nhập</a>
+        <%}%>
+          
+      </div>
+    </nav>
+  </header>
 <main role="main">
 	<div class="container marketing">
 		<br>
