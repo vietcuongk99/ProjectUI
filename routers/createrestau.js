@@ -33,10 +33,10 @@ router.post('/', function(req, res) {
     	name:nh.name,
     	mota:nh.mota,
       image :nh.image,
-    	location:nh.diachi,
+    	location:nh.diachi
     }
       var defer = q.defer();
-      var que = conn.query("INSERT INTO restaurants SET ?",nh, function(err, result) {
+      var que = conn.query("INSERT INTO restaurants SET ?",nhang, function(err, result) {
         if (err) throw err;
         else {
           defer.resolve(result.insertId);
