@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 03, 2019 lúc 06:32 PM
+-- Thời gian đã tạo: Th12 04, 2019 lúc 03:47 PM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -72,8 +72,8 @@ INSERT INTO `food` (`id`, `name`, `type_id`, `finished_time`, `ration`, `level`,
 (6, 'chè', 1, 12, '12', 'dễ', 38, '0', 'chè thập cẩm', 'https://cdn.daynauan.info.vn/wp-content/uploads/2018/08/che-thai-sau-rieng.jpg'),
 (15, 'chè', 2, 12, '1', 'dễ', 1, '0', 'đéo phải chè', 'https://monngonmoingay.com/wp-content/uploads/2019/02/che-ba-ba-500.jpg'),
 (16, 'Sườn xào chua ngọt', 5, 30, '2', 'Trung Bình', 0, '0', 'Sườn xào chua ngọt - chua chua ngọt ngọt', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-08/1528393104-915-_mg_6780-1528392856-width650height433.jpg'),
-(19, 'Kem', 2, 20, '2', 'dễ', 4, '0', 'Cách làm kem vào mùa hè mát lạnh', 'https://image.thanhnien.vn/660/uploaded/minhnguyet/2017_04_05/lamkem_zlqy.jpg'),
-(20, 'Canh nấm chay', 4, 40, '3', 'Trung bình', 0, '0', 'Kết hợp trứng với cà chuaaaa', 'https://www.hoidaubepaau.com/wp-content/uploads/2016/03/canh-nam-ngu-sac.jpg');
+(20, 'Canh nấm chay', 4, 40, '3', 'Trung bình', 0, '0', 'Kết hợp trứng với cà chuaaaa', 'https://www.hoidaubepaau.com/wp-content/uploads/2016/03/canh-nam-ngu-sac.jpg'),
+(21, 'Nước chanh', 6, 2, '1', 'dễ', 0, '0', 'Đồ uống thanh mát cho mùa hè', 'https://sohanews.sohacdn.com/thumb_w/660/2018/2/1/photo1517478868721-1517478868721748641205.jpg');
 
 -- --------------------------------------------------------
 
@@ -103,11 +103,12 @@ INSERT INTO `food_recipes` (`id`, `name`, `food_id`, `quantity`) VALUES
 (32, 'Dấm', 16, '100ml'),
 (33, 'Đường', 16, '50g'),
 (34, 'Ớt', 16, '1 quả'),
-(39, 'Hoa quả', 19, '0.5kg'),
-(40, 'Đường / Sữa', 19, '100ml'),
 (41, 'nước', 20, '400ml'),
 (42, 'nấm', 20, '300g'),
-(43, 'rau củ', 20, '3-4 loại');
+(43, 'rau củ', 20, '3-4 loại'),
+(44, 'nước', 21, '100ml'),
+(45, 'chanh', 21, '1 quả'),
+(46, 'đường', 21, '50g');
 
 -- --------------------------------------------------------
 
@@ -134,10 +135,9 @@ INSERT INTO `food_steps` (`id`, `food_id`, `ordinal_number`, `content`, `image_l
 (13, 16, 1, 'Cắt sườn', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTExMWFhUXGBgWGBgYFxgeGBgaGBYYGhUbHRgYHSggGh8lGxcYITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGy0lICUtLS0yLS0tLS8rKy0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAL4BCQMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA/EAABAwIEAwYEBQEHAwUAAAABAAIRAyEEBRIxQVFhBhMicYGRMqGx0UJSweHwIxUWM2JygvEHFCRDkqKy0v/EABoBAAIDAQEAAAAAAAAAAAAAAAIDAAEEBQb/xAAwEQACAgEEAQQBAgMJAAAAAAAAAQIRAwQSITFBEyJRYRQygQWh8CMzQnGRscHR4f/aAAwDAQACEQMRAD8Afsdm2isyi1hc50EXifFDo4eFviM8I9LFHNKTnFoeJA1XsNM6QZPAmR6FA3ZXRqFzS4Mu8l7Ww95DXiS6SDAqOkx4rbbLXEZLRLXGnXuIOk6NJcCY1HQYBc5+wtrdC07I9B+0m7bYN+IotZSq7PvTaRqqbCJnhMx68Fc7Lh1PDNbVeS9usu1vDiAHGL8tMe6F5dklFgpPqV/G2T+GJJeHGS29iAT/AJBspq+SUdb5xDx3gbf+nECAACRxLWmObQs/opZr8V393/0aJaqTwrT8bU7uub+P6+hkpYhjhLXNIgE3FgRIJ5WW4qN/MPcef0S5RyegwVGiublr32p30PkAy27ZkRtdQVOzWEJANczwB0cb7aYuCOH2Ttkfn+RmqPyNsL0LK9KUCYhZXpXlCHoXoXl5Qh4L0LyyoQxCwtoXoUIarMLy8oQxC9Cyqrca3vDTJAduOoVN0Q3xNXQ0lVcHmTXgnaN1B2irhrRqBgnccEpOxJBIa'),
 (14, 16, 2, 'Tẩm ướt các da vị vào sườn', 'https://daynauan.info.vn/wp-content/uploads/2019/04/cach-uop-suon-com-tam.jpg'),
 (15, 16, 3, 'Chiên sườn lên', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-23/1529690146-80-img_20180614_150447-1529689904-width650height488.jpg'),
-(20, 19, 1, 'Ép hoa quả', 'http://imgs.vietnamnet.vn/Images/2017/06/16/11/20170616110608-hao-qua-1.jpg'),
-(21, 19, 2, 'Thêm đường vào nước ép', 'https://yeutre.vn/cdn/medias/uploads/182/182747-them-duong.jpg'),
 (22, 20, 1, 'Chuẩn bị thái rau củ ', 'https://mayranghat.vn/wp-content/uploads/2018/05/may-thai-rau-cu-qua-da-nang1-1024x633.jpg'),
-(23, 20, 2, 'Đun chúng lên để được thành phẩm như dưới', 'https://afamilycdn.com/Images/Uploaded/Share/2010/11/30/canhnam.jpg');
+(23, 20, 2, 'Đun chúng lên để được thành phẩm như dưới', 'https://afamilycdn.com/Images/Uploaded/Share/2010/11/30/canhnam.jpg'),
+(24, 21, 1, 'Cắt chanh rồi vắt vào nước . Sau đó pha thêm đường khấy đều', 'http://kenh14cdn.com/2017/lime-3-1492054242387.jpg');
 
 -- --------------------------------------------------------
 
@@ -184,7 +184,8 @@ CREATE TABLE `header_slide` (
 CREATE TABLE `menus` (
   `restaurant_id` int(11) NOT NULL,
   `food_id` int(11) NOT NULL,
-  `price` int(100) NOT NULL
+  `price` int(100) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 -- --------------------------------------------------------
@@ -223,7 +224,8 @@ CREATE TABLE `restaurants` (
   `id` int(11) NOT NULL,
   `name` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `location` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `rating` int(11) NOT NULL
+  `mota` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `image` text COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 -- --------------------------------------------------------
@@ -349,19 +351,31 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT cho bảng `food`
 --
 ALTER TABLE `food`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `food_recipes`
 --
 ALTER TABLE `food_recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT cho bảng `food_steps`
 --
 ALTER TABLE `food_steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT cho bảng `menus`
+--
+ALTER TABLE `menus`
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `restaurants`
+--
+ALTER TABLE `restaurants`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -397,12 +411,6 @@ ALTER TABLE `food_recipes`
 --
 ALTER TABLE `food_steps`
   ADD CONSTRAINT `food_steps_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Các ràng buộc cho bảng `menus`
---
-ALTER TABLE `menus`
-  ADD CONSTRAINT `menus_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
 
 --
 -- Các ràng buộc cho bảng `post`

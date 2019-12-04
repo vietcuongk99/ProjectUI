@@ -12,5 +12,8 @@ router.use('/seefood', require(__dirname + '/seefood.js'));
 router.use('/updatefood', require(__dirname + '/updatefood.js'));
 router.use('/deletefood', require(__dirname + '/deletefood.js'));
 router.use('/foodtype', require(__dirname + '/foodtype.js'));
+
+router.use('/taonhahang', require(__dirname + '/createrestau.js'));
+
 router.use('/logout', require(__dirname + '/logout.js'));
 module.exports = router;
