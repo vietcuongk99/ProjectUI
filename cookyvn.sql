@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 04, 2019 lúc 04:16 PM
+-- Thời gian đã tạo: Th12 04, 2019 lúc 05:57 PM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -196,23 +196,40 @@ CREATE TABLE `menus` (
 
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL,
   `title` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `content` varchar(5000) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `author` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `image_link` varchar(1000) COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `image_link` varchar(1000) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `mota` text COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `author`, `image_link`, `mota`) VALUES
+(0, 'Các món luộc', 'o0ovano0o', 'http://www.chumrestaurant.com/wp-content/uploads/2017/07/rau-cu-qua-luoc.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `post_types`
+-- Cấu trúc bảng cho bảng `post_ct`
 --
 
-CREATE TABLE `post_types` (
+CREATE TABLE `post_ct` (
   `id` int(11) NOT NULL,
-  `name` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `title` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `image` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `content` text COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `post_ct`
+--
+
+INSERT INTO `post_ct` (`id`, `title`, `post_id`, `image`, `content`) VALUES
+(1, 'Rau cải luộc', 0, 'https://media.ex-cdn.com/EXP/media.giadinhvietnam.com/files/content/2019/05/21/1-1015.jpg', 'Món rau cải chíp đẹp đến ngỡ ngàng với cách bài trí thông minh '),
+(2, 'Đậu luộc', 0, 'https://znews-photo.zadn.vn/w1024/Uploaded/qhj_pwqvdvicbu/2019_05_16/2_1.jpg', ' Đậu que luộc trông cũng ngon mắt đấy chứ nhỉ?! ');
 
 -- --------------------------------------------------------
 
@@ -314,14 +331,14 @@ ALTER TABLE `menus`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`,`type_id`),
-  ADD KEY `type_id` (`type_id`);
+  ADD KEY `id` (`id`);
 
 --
--- Chỉ mục cho bảng `post_types`
+-- Chỉ mục cho bảng `post_ct`
 --
-ALTER TABLE `post_types`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `post_ct`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `post_id` (`post_id`);
 
 --
 -- Chỉ mục cho bảng `restaurants`
@@ -372,6 +389,12 @@ ALTER TABLE `menus`
   MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT cho bảng `post_ct`
+--
+ALTER TABLE `post_ct`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT cho bảng `restaurants`
 --
 ALTER TABLE `restaurants`
@@ -413,10 +436,10 @@ ALTER TABLE `food_steps`
   ADD CONSTRAINT `food_steps_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `post`
+-- Các ràng buộc cho bảng `post_ct`
 --
-ALTER TABLE `post`
-  ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `post_types` (`id`);
+ALTER TABLE `post_ct`
+  ADD CONSTRAINT `post_ct_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

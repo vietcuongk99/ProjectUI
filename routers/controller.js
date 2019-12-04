@@ -15,5 +15,8 @@ router.use('/foodtype', require(__dirname + '/foodtype.js'));
 
 router.use('/taonhahang', require(__dirname + '/createrestau.js'));
 
+
+router.use('/taobaiviet', require(__dirname + '/createpost.js'));
+
 router.use('/logout', require(__dirname + '/logout.js'));
 module.exports = router;
