@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 04, 2019 lúc 05:57 PM
+-- Thời gian đã tạo: Th12 07, 2019 lúc 11:01 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `cookyvn`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `cmt_nh`
+--
+
+CREATE TABLE `cmt_nh` (
+  `comment_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `content` varchar(5000) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `restaurant_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `cmt_nh`
+--
+
+INSERT INTO `cmt_nh` (`comment_id`, `user_id`, `content`, `restaurant_id`) VALUES
+(6, 1, 'ngon thế', 5),
+(7, 1, 'ngon thế', 5),
+(8, 1, 'bình luận dài dài tý nàyyyyyyy', 5),
+(9, 1, 'ngon thế', 1),
+(10, 1, 'bình luận dài dài tý nàyyyyyyy', 1);
 
 -- --------------------------------------------------------
 
@@ -71,9 +95,9 @@ INSERT INTO `food` (`id`, `name`, `type_id`, `finished_time`, `ration`, `level`,
 (5, 'Thịt xiên nướng', 5, 10, '1', 'dễ', 23, '0', 'Thịt được xiên nướng', 'https://i1.wp.com/congthucmonngon.com/wp-content/uploads/2018/04/mon-ngon-cuoi-tuan-thit-xien-nuong.jpg?ssl=1'),
 (6, 'chè', 1, 12, '12', 'dễ', 38, '0', 'chè thập cẩm', 'https://cdn.daynauan.info.vn/wp-content/uploads/2018/08/che-thai-sau-rieng.jpg'),
 (15, 'chè', 2, 12, '1', 'dễ', 1, '0', 'đéo phải chè', 'https://monngonmoingay.com/wp-content/uploads/2019/02/che-ba-ba-500.jpg'),
-(16, 'Sườn xào chua ngọt', 5, 30, '2', 'Trung Bình', 0, '0', 'Sườn xào chua ngọt - chua chua ngọt ngọt', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-08/1528393104-915-_mg_6780-1528392856-width650height433.jpg'),
+(16, 'Sườn xào chua ngọt', 5, 30, '2', 'Trung Bình', 1, '0', 'Sườn xào chua ngọt - chua chua ngọt ngọt', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-08/1528393104-915-_mg_6780-1528392856-width650height433.jpg'),
 (20, 'Canh nấm chay', 4, 40, '3', 'Trung bình', 0, '0', 'Kết hợp trứng với cà chuaaaa', 'https://www.hoidaubepaau.com/wp-content/uploads/2016/03/canh-nam-ngu-sac.jpg'),
-(21, 'Nước chanh', 6, 2, '1', 'dễ', 0, '0', 'Đồ uống thanh mát cho mùa hè', 'https://sohanews.sohacdn.com/thumb_w/660/2018/2/1/photo1517478868721-1517478868721748641205.jpg');
+(21, 'Nước chanh', 6, 2, '1', 'dễ', 1, '0', 'Đồ uống thanh mát cho mùa hè', 'https://sohanews.sohacdn.com/thumb_w/660/2018/2/1/photo1517478868721-1517478868721748641205.jpg');
 
 -- --------------------------------------------------------
 
@@ -188,6 +212,20 @@ CREATE TABLE `menus` (
   `name` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `menus`
+--
+
+INSERT INTO `menus` (`restaurant_id`, `food_id`, `price`, `name`) VALUES
+(1, 1, 5000, 'Nước lọc'),
+(1, 2, 100000, 'Rượu vang'),
+(2, 3, 40000, 'Bún'),
+(2, 4, 60000, 'Phở'),
+(4, 5, 1000, 'nước'),
+(5, 6, 5000, 'Nước lọc'),
+(5, 7, 100000, 'Rượu vang'),
+(7, 8, 0, '');
+
 -- --------------------------------------------------------
 
 --
@@ -242,8 +280,19 @@ CREATE TABLE `restaurants` (
   `name` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `location` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `mota` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `image` text COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `image` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `user_view` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `restaurants`
+--
+
+INSERT INTO `restaurants` (`id`, `name`, `location`, `mota`, `image`, `user_view`) VALUES
+(1, 'Nhà hàng ABC', 'Thế giới', 'Nhà hàng sang trọng nhất thế giới', 'https://vnn-imgs-f.vgcloud.vn/2018/11/11/06/kham-pha-10-nha-hang-sang-trong-nhat-the-gioi-8.jpg', 104),
+(2, 'Quán vìa hè Hà Nội', 'Hà Nội', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 0),
+(4, 'Quán vìa hè Hà Nội 1', 'Hà Nội', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 1),
+(6, 'Nhà hàng ABC đã chỉnh sửa', 'Thế giới', 'Nhà hàng sang trọng nhất thế giới', 'https://vnn-imgs-f.vgcloud.vn/2018/11/11/06/kham-pha-10-nha-hang-sang-trong-nhat-the-gioi-8.jpg', 7);
 
 -- --------------------------------------------------------
 
@@ -271,6 +320,15 @@ INSERT INTO `users` (`id`, `username`, `password`, `mail`, `role`, `name`, `date
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `cmt_nh`
+--
+ALTER TABLE `cmt_nh`
+  ADD PRIMARY KEY (`comment_id`),
+  ADD KEY `comment_id` (`comment_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `food_id` (`restaurant_id`);
 
 --
 -- Chỉ mục cho bảng `comments`
@@ -359,6 +417,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `cmt_nh`
+--
+ALTER TABLE `cmt_nh`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
@@ -386,7 +450,7 @@ ALTER TABLE `food_steps`
 -- AUTO_INCREMENT cho bảng `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `post_ct`
@@ -398,7 +462,7 @@ ALTER TABLE `post_ct`
 -- AUTO_INCREMENT cho bảng `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
