@@ -101,17 +101,17 @@
           <div class="card-body">
            <div class="form-group">
             <label for="mon">Tên món:</label>
-            <input type="text"  name="name" class="form-control" id="mon"/>  
+            <input type="text"  name="name" class="form-control" id="mon" required/>  
              <label for="img">Ảnh món:</label>
-            <input type="text" name="image" class="form-control" id="img"/>  
+            <input type="text" name="image" class="form-control" id="img" required/>  
              <label for="mota">Mô tả:</label>
-            <input type="text" name="mota" class="form-control" id="mota"/>  
+            <input type="text" name="mota" class="form-control" id="mota" required/>  
             <div class="row">
               <div class="col-sm-3">  
                 <div class="row">
                   <div class="col-sm-8" >
                   <label for="time">Thời gian:</label>
-                  <input type="number" name="time" class="form-control" id="time"/>
+                  <input type="number" name="time" class="form-control" id="time" required/>
                   </div>
                   <div class="col-sm-4" style="margin-left:0;"><br/><br/>m</div>
                   </div>
@@ -120,7 +120,7 @@
                 <div class="row">
                   <div class="col-sm-8" > 
                   <label for="kp">Khẩu phần:</label>
-                  <input type="number" name="kp" class="form-control" id="kp"/>
+                  <input type="number" name="kp" class="form-control" id="kp" required/>
                   </div>
                   <div class="col-sm-4"><br/><br/>người</div>
             
@@ -130,7 +130,7 @@
 
                <div class="col-sm-2">  
                 <label for="level">Độ khó:</label>
-            <input type="text" name="level" class="form-control" id="level"/> 
+            <input type="text" name="level" class="form-control" id="level" required/> 
               </div>
               <div class="col-sm-3">  
                 <label for="kp">Loại món:</label>
@@ -152,18 +152,18 @@
              <input  type="number" class='form-control' name="sonl"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số nguyên liệu" onblur="checknumber(this);songuyenlieu(this.value);" value="1" min="1" max="20" >
             <div class="row">
                 <div class="col-sm-6">
-                <input type="text" class="form-control" name="nl1_1" placeholder="Tên nguyên liệu" id="level"/> 
+                <input type="text" class="form-control" name="nl1_1" placeholder="Tên nguyên liệu" id="level" required/> 
                 </div>
                 <div class="col-sm-6">
-                <input type="text"  placeholder="Số lượng" name="nl2_1" class="form-control" id="level"/>
+                <input type="text"  placeholder="Số lượng" name="nl2_1" class="form-control" id="level" required/>
                 </div>
              </div>
               <div id="nlieu"></div>
               <label for="nguyenlieu">Số bước thực hiện:</label>
              <input  type="number" class='form-control' name="sobuoc"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số bước" onblur="checknumber(this);sobuocc(this.value);" value="1" min="1" max="20" >
             <label for="mota">Bước 1:</label>
-           <textarea type="text" rows="3" name="buoc1_1"  class="form-control" id="step" placeholder="Nội dung"></textarea>  
-            <input type="text" style="margin-top: 10px;" name="buoc2_1" placeholder="Link ảnh minh họa" class="form-control" id="level"/>
+           <textarea type="text" rows="3" name="buoc1_1"  class="form-control" id="step" placeholder="Nội dung" required></textarea>  
+            <input type="text" style="margin-top: 10px;" name="buoc2_1" placeholder="Link ảnh minh họa" class="form-control" id="level" required/>
           
             <div id="buocg"></div> 
 
@@ -202,8 +202,8 @@
     var num=sonl;
     var code="";
     var nl1='<div class="row" style="margin-top:15px;"><div class="col-sm-6"><input type="text" class="form-control" name="nl1_';
-    var nl2='" placeholder="Tên nguyên liệu" id="level"/> </div><div class="col-sm-6"><input type="text"  placeholder="Số lượng" name="nl2_'
-    var nl3='" class="form-control" id="level"/></div></div>';
+    var nl2='" placeholder="Tên nguyên liệu" id="level" required/> </div><div class="col-sm-6"><input type="text"  placeholder="Số lượng" name="nl2_'
+    var nl3='" class="form-control" id="level" required/></div></div>';
     for(i=1;i<num;i++){
       code+= nl1+(i+1)+nl2+(i+1)+nl3;
     }
@@ -213,8 +213,8 @@
     var i;
     var p1= '<label for="mota">Bước ';
     var p2=':</label><textarea type="text" rows="3" name="buoc1_';
-    var p3='" class="form-control" id="step" placeholder="Nội dung"></textarea>  <input type="text" style="margin-top: 10px;" name="buoc2_';
-    var p4='" placeholder="Link ảnh minh họa" class="form-control" id="level"/>';
+    var p3='" class="form-control" id="step" placeholder="Nội dung" required></textarea>  <input type="text" style="margin-top: 10px;" name="buoc2_';
+    var p4='" placeholder="Link ảnh minh họa" class="form-control" id="level" required/>';
     var code="";
     for(i=1;i<numb;i++){
       var t=i+1;

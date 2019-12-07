@@ -253,14 +253,14 @@
           food[i].image="https://camo.githubusercontent.com/2c4ef0e348c6e56634a1199318e7810c2f7ec096/68747470733a2f2f36382e6d656469612e74756d626c722e636f6d2f63616139356262303839306632663635313239636435366135303133306336342f74756d626c725f6f6d6430696463305764317737797066696f315f313238302e706e67";
         }
         %>
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin-bottom: 15px;">
           <div class="card">
-            <img class="card-img-top" src="<%=food[i].image%>" style = "height: 220px;">
+            <img class="card-img-top" src="<%=food[i].image%>" style = "height: 220px;background-repeat:   no-repeat; background-size:     cover;">
             <div class="card-body">
-                      <div class="scroll" style=" display:block;  padding:5px; height: 20px; overflow:scroll;">
+                      
               <h4 class="card-title"><%=food[i].name%></h4>
               <p class="card-text"><%=food[i].mota%></p>
-                </div><br>
+              <br>
 
               <div class="row">
                 <div class="col-sm-10">
@@ -378,10 +378,10 @@
       <div class="card">
         <div class="card-body text-center">
           <a data-toggle="collapse" href="#nh2" id="h2" class="photo">
-            <img class="card-img-top" src="./images/nhahang/nh2.png" >
+            <img class="card-img-top" src="<%=restau[1].image%>" >
           </a><br><br>
           <a data-toggle="collapse" href="#nh2" id="h2" style="color: black;">
-            Nhà Hàng Lưu Trang
+           <%=restau[1].name%>
           </a>
         </div>
       </div>
@@ -391,10 +391,10 @@
       <div class="card">
         <div class="card-body text-center">
           <a data-toggle="collapse" href="#nh3" id="h3" class="photo">
-            <img class="card-img-top" src="./images/nhahang/nh3.jpg" >
+            <img class="card-img-top" src="<%=restau[2].image%>" >
           </a><br><br>
           <a data-toggle="collapse" href="#nh3" id="h3" style="color: black;">
-            Quán Bò Ok Ok
+            <%=restau[2].name%>
           </a>
         </div>
       </div>
@@ -404,10 +404,10 @@
       <div class="card">
         <div class="card-body text-center">
           <a data-toggle="collapse" href="#nh4" class="photo">
-            <img class="card-img-top" src="./images/nhahang/nh4.jpg" >
+            <img class="card-img-top" src="<%=restau[3].image%>" >
           </a><br><br>
           <a data-toggle="collapse" href="#nh4" style="color: black;">
-            Nhà Hàng Gia Viên 
+           <%=restau[3].name%> 
           </a>
         </div>
       </div>
@@ -415,9 +415,9 @@
   </div></p>
   <div class="collapse" id="nh2" aria-labelledby="h2" data-parent="#accordionE">
     <div class="card card-body">
-      <h4>Nhà hàng Lưu Gia Trang <a style="color: red;">NGON</a> cực phẩm.</h4>
-      <p style="padding-left: 10px;opacity: 0.6;">Ngõ 53, Đường Ngọc Thụy - Quận Long Biên - Hà Nội</p>
-      <p>Nằm ngay trung tâm thủ Đô Hà Nội, cạnh cây cầu cổ Long Biên, nhà hàng Lưu Gia Trang được bao phủ bởi một lớp cây cối xanh tươi bên bờ sông Hồng lộng gió mang đến cho thực khách những trải nghiệm chẳng thể nào quên. Không chỉ có món ăn ngon, thái độ phục vụ chuyên nghiệp mà nhà hàng Lưu Gia Trang còn hứa hẹn đem lại cho bạn những thú vị, bất ngờ.</p>
+      <h4><%=restau[1].name%></h4>
+      <p style="padding-left: 10px;opacity: 0.6;"><%=restau[1].location%></p>
+      <p><%=restau[1].mota%></p>
       <p>
         <h6>THỰC ĐƠN</h6>
         <div class="row">
@@ -439,9 +439,9 @@
   </div>
   <div class="collapse" id="nh3" aria-labelledby="h3" data-parent="#accordionE">
     <div class="card card-body">
-      <h4>Quán bò Ok</h4>
-      <p style="padding-left: 10px;opacity: 0.6;">103-C9 Tô Hiệu, Cầu Giấy - Quận Cầu Giấy - Hà Nội</p>
-      <p>Tọa lạc trên con phố Tô Hiệu sầm uất, quán Bò Ok gây ấn tượng đầu tiên có lẽ chính là gam màu cam nổi bật, dễ nhận biết khi bạn bắt đầu vào con phố Tô Hiệu. Món ăn của quán cũng khá độc đáo và hấp dẫn với sự kết hợp giữa món Tây và món Việt.</p>
+      <h4> <%=restau[2].name%></h4>
+      <p style="padding-left: 10px;opacity: 0.6;"> <%=restau[2].location%></p>
+      <p> <%=restau[2].mota%></p>
       <p>
         <h6>THỰC ĐƠN</h6>
         <div class="row">
@@ -463,9 +463,9 @@
   </div>
   <div class="collapse" id="nh4" aria-labelledby="h4" data-parent="#accordionE">
     <div class="card card-body">
-      <h4>Nhà hàng Gia Viên - Địa chỉ ẩm thực độc đáo đất Hà Thành</h4>
-      <p style="padding-left: 10px;opacity: 0.6;">228 Bà Triệu - Quận Hoàn Kiếm - Hà Nội</p>
-      <p>Tọa lạc trên con phố sầm uất nhất thủ đô Hà Nội, nhà hàng Gia Viên 228 Bà Triệu, với không gian sang trọng hiên đại và ấm cúng cùng hệ thống thực đơn đa dạng gồm hơn 300 món ăn kết hợp hài hoà giữa ẩm thực truyền thống Việt Nam và các món ngon của ẩm thực Châu Á hiện đại. Tới đây thực khách sẽ được đón tiếp bởi đội ngũ nhân viên chuyên nghiệp, lịch sự và thân thiện nhất.</p>
+      <h4><%=restau[3].name%> </h4>
+      <p style="padding-left: 10px;opacity: 0.6;"><%=restau[3].location%> </p>
+      <p><%=restau[3].mota%></p>
       <p>
         <h6>THỰC ĐƠN</h6>
         <div class="row">
@@ -500,11 +500,12 @@
 </div>
 
 </div>
-
-  <button class="btn btn-outline-secondary btn-block" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
+<p>  
+  <a class="btn btn-outline-success btn-block" href="/nhahang" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
   >
-    <i class="far fa-hand-point-right"> Xem thêm</i>
-  </button>     
+  <i class="far fa-hand-point-right"></i> Xem thêm
+  </a>     
+</p>
   
 
 <!-- Modal nhahang-->

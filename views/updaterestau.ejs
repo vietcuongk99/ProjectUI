@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="index&content.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <title>Tạo bài viết</title>
+  <title>Sửa giới thiệu nhà hàng</title>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -47,7 +47,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" style="margin: 0px 30px" id="navbarCollapse">
+        <div class="collapse navbar-collapse" style="margin-left: 5%;" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
               <a class="nav-link" href="recommend.html">Giới thiệu<span class="sr-only">(current)</span></a>
@@ -58,7 +58,7 @@
             <li class="nav-item">
               <a class="nav-link" href="rules.html">Điều khoản</a>
             </li>
-          </ul>
+         </ul>
           <form id="search" class="form-inline my-2 my-lg-0 ">
             <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm món ăn..." aria-label="Search">
             <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit">Tìm</button>
@@ -66,21 +66,21 @@
           <!-- <button type="button" class="btn btn-light" onclick="window.location.href='signin.html'">Đăng nhập</button> -->
           
           <!-- Button trigger modal -->
-         <%if(session.username){%>
-        </ul>
+          <%if(session.username){%>
 
           <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" style="color:black" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=session.name%> </a>
+            <a class="nav-link dropdown-toggle"  href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+              <img src="images/avt.jpg"  style="border-radius: 50%;width: 30px;">
+              <%=session.name%> </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="/logout">Đăng xuất</a>
             </div>
           </div>
         
         <%} else {%>
-      </ul>
             <a class=" btn btn-light" href="/login">Đăng nhập</a>
         <%}%>
-        </div>
+          
       </div>
     </nav>
   </header>
@@ -90,39 +90,35 @@
       <div class="col-1 col-sm-2 col-md-2"></div>
       <div class="col-10 col-sm-8 col-md-8">
         <div class="card" style="background-color: #eeeeee;">
-          <div class="card-header" style="background-color: #dddddd;"><h4 style="text-align: center;">Tạo Bài Viết Mới</h4></div>
-          <%if(success){%>
-            <div id="success-alert" class="alert alert-success alert-dismissible">
-             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-             <%=success%>
-           </div>
-           <%}%>
-           <form action="/taobaiviet" method="POST">
+          <div class="card-header" style="background-color: #dddddd;"><h4 style="text-align: center;">Sửa Nhà Hàng Mới</h4></div>
+          
+           <form action="/suanhahang?id=<%=restau.id%>" method="POST">
           <div class="card-body">
            <div class="form-group">
             <label for="mon">Tiêu đề:</label>
-            <input type="text"  name="title" class="form-control" id="mon" required />  
-             <label for="img">Ảnh chính :</label>
-            <input type="text" name="image" class="form-control" id="img"/>  
-             
+            <input type="text"  name="name" value="<%=restau.name%>" class="form-control" id="mon"  Required/>  
+             <label for="img">Ảnh nhà hàng:</label>
+            <input type="text" name="image" value="<%=restau.image%>" class="form-control" id="img"/>  
+             <label for="diachi">Địa chỉ:</label>
+            <input type="text" name="diachi" value="<%=restau.location%>" class="form-control" id="diachi"  Required/>  
             <label for="mota">Mô tả ngắn:</label>
-             <textarea type="text" rows="3" name="mota"  class="form-control" id="step" placeholder="Nội dung" required></textarea>  
+             <textarea type="text" rows="3" name="mota" value=""  class="form-control" id="step" placeholder="Nội dung"  Required><%=restau.mota%></textarea>  
            
 
            
               
-            <label for="nguyenlieu">Số mục trong bài viết:</label>
-             <input  type="number" class='form-control' name="somuc"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số nguyên liệu" onblur="checknumber(this);songuyenlieu(this.value);" value="1" min="1" max="20" required>
+            <label for="nguyenlieu">Số món trong thực đơn:</label>
+             <input  type="number" class='form-control' name="somon" value="<%=menu.length%>"  style="border-radius: 5px; margin-bottom: 10px; width: 48%;" placeholder="Số nguyên liệu" onblur="checknumber(this);songuyenlieu(this.value);" value="1" min="1" max="20" >
            
-                
-        
-                
-                <input type="text" style="margin-bottom:15px;" class="form-control" name="title1" placeholder="Tên mục" id="level" required/> 
-                
-              
-                <input type="text" style="margin-bottom:15px;"  placeholder="Link ảnh minh họa(Nếu không có xin hãy để trống)" name="anh1" class="form-control" id="level"/>
-                <textarea type="text" style="margin-bottom:15px;" rows="3" name="muc1"  class="form-control" id="step" placeholder="Nội dung mục" required></textarea>  
-             
+                 <%for(var i=0;i< menu.length;i++){%>
+              <div class="row" style="margin-top:15px;">
+                <div class="col-sm-6">
+                <input type="text" class="form-control" name="name<%=i+1%>" placeholder="Tên món" value="<%=menu[i].name%>" id="level"/> 
+                </div>
+                <div class="col-sm-6">
+                <input type="number" value="<%=menu[i].price%>"  placeholder="Giá tiền" name="gia<%=i+1%>" class="form-control" id="level"/>
+                </div>
+              </div><%}%>
               <div id="nlieu"></div>
              
             <input  type="submit" class="btn btn-outline-success btn-block" style="border-radius: 8px;margin-top: 25px;" value="Xác nhận"><br>
@@ -159,12 +155,11 @@
     var i;
     var num=sonl;
     var code="";
-    var nl1='<input style="margin-bottom:15px;" type="text" class="form-control" name="title';
-    var nl2='" placeholder="Tên mục" id="level" required/> <input type="text"  placeholder="Link ảnh minh họa(Nếu không có xin hãy để trống)" name="anh';
-    var nl3='" class="form-control" style="margin-bottom:15px;" id="level"/><textarea type="text" rows="3" name="muc';
-    var nl4='"  class="form-control" id="step" style="margin-bottom:15px;" placeholder="Nội dung mục" required></textarea>  ';
-    for(i=1;i<num;i++){
-      code+= nl1+(i+1)+nl2+(i+1)+nl3+(i+1)+nl4;
+    var nl1='<div class="row" style="margin-top:15px;"><div class="col-sm-6"><input type="text" class="form-control" name="name';
+    var nl2='" placeholder="Tên món" id="level" Required/> </div><div class="col-sm-6"><input type="number"  placeholder="Giá tiền" name="gia'
+    var nl3='" class="form-control" id="level"  Required/></div></div>';
+    for(i=<%=menu.length%>;i<num;i++){
+      code+= nl1+(i+1)+nl2+(i+1)+nl3;
     }
     document.getElementById("nlieu").innerHTML=code;
   }

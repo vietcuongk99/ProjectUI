@@ -13,9 +13,12 @@ router.use('/updatefood', require(__dirname + '/updatefood.js'));
 router.use('/deletefood', require(__dirname + '/deletefood.js'));
 router.use('/foodtype', require(__dirname + '/foodtype.js'));
 
+router.use('/nhahang', require(__dirname + '/restau.js'));
 router.use('/taonhahang', require(__dirname + '/createrestau.js'));
+router.use('/xoanhahang', require(__dirname + '/deleterestau.js'));
+router.use('/suanhahang', require(__dirname + '/updaterestau.js'));
+router.use('/xemchitiet', require(__dirname + '/xemchitiet.js'));
 
-// router.use('/restau', require(__dirname + '/restau.js'));
 router.use('/taobaiviet', require(__dirname + '/createpost.js'));
 
 router.use('/logout', require(__dirname + '/logout.js'));
