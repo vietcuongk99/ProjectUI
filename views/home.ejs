@@ -347,12 +347,12 @@
   <div class="col-12 col-sm-12 col-md-9">
     <div class="row">
       <div class="col-12 col-sm-12 col-md-5">
-       <img class="img-responsive" alt="" src="http://gl.amthuc365.vn/thumbnails/365/360//uploads/i/Tin_Tuc/2017/T8/oc-co-thu12.jpg?v=4.1">
+       <img class="img-responsive" alt="" src="<%=restau[0].image%>">
      </div>
      <div class="col-12 col-sm-12 col-md-7">
-      <h4 style="padding-top: 10px;">Quán ốc cô Thu <a style="color: red;">NGON</a> nức tiếng xứ thành Nam.</h4>
-      <p style="padding-left: 10px;opacity: 0.6;">22-24 Trần Thánh Tông - Thành phố Nam Định - Nam Định</p>
-      <p>Sẽ chẳng còn gì tuyệt vời hơn khi vào mùa Đông, giữa những cơn gió buốt lạnh được cùng bạn bè đi nhẩn nha giữa phố, xà vào những quán ăn vặt trên vỉa hè. Và cũng chẳng món quà vặt nào...</p>
+      <h4 style="padding-top: 10px;"><%=restau[0].name%></h4>
+      <p style="padding-left: 10px;opacity: 0.6;"><%=restau[0].location%></p>
+      <p><%=restau[0].mota%></p>
       <p>
         <h6>THỰC ĐƠN</h6>
       </p>
@@ -484,6 +484,12 @@
       </p>
     </div>
   </div>
+  <p>  
+  <a class="btn btn-outline-success btn-block" href="/nhahang" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
+  >
+  <i class="far fa-hand-point-right"></i> Xem thêm
+  </a>     
+</p>
 </div>
 </div>
 <div class="col-12 col-sm-12 col-md-3">
@@ -500,12 +506,7 @@
 </div>
 
 </div>
-<p>  
-  <a class="btn btn-outline-success btn-block" href="/nhahang" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
-  >
-  <i class="far fa-hand-point-right"></i> Xem thêm
-  </a>     
-</p>
+
   
 
 <!-- Modal nhahang-->
