@@ -257,9 +257,10 @@
           <div class="card">
             <img class="card-img-top" src="<%=food[i].image%>" style = "height: 220px;background-repeat:   no-repeat; background-size:     cover;">
             <div class="card-body">
-                      
-              <h4 class="card-title"><%=food[i].name%></h4>
-              <p class="card-text"><%=food[i].mota%></p>
+              <div class="scroll" style=" display:block;  height:100px; overflow:auto;">
+                <h4 class="card-title"><%=food[i].name%></h4>
+                <p class="card-text"><%=food[i].mota%></p>
+              </div>
               <br>
 
               <div class="row">
@@ -294,7 +295,7 @@
           </div> -->
 
           <!-- Modal dacsan-->
-          <div class="modal fade" id="dacsan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 50px;">
+<!--           <div class="modal fade" id="dacsan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 50px;">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -330,167 +331,167 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-<br><br>
-<hr class="featurette-divider">
-<div class="row">
-  <div class="col-10 col-sm-10 col-md-10">
-    <p><h4><u>NHÀ HÀNG NỔI TIẾNG</u></h4></p>
-  </div>
-  <div class="col-2 col-sm-2 col-md-2" >
-    <input type="button" class="btn btn-primary" name="themnhahang" value="+ Thêm mới"  onclick="window.location.href='/taonhahang'" style="margin-top: 10px;">
-  </div>
-</div>
-
-<div class="row padding">
-  <div class="col-12 col-sm-12 col-md-9">
-    <div class="row">
-      <div class="col-12 col-sm-12 col-md-5">
-       <img class="img-responsive" alt="" src="<%=restau[0].image%>">
-     </div>
-     <div class="col-12 col-sm-12 col-md-7">
-      <h4 style="padding-top: 10px;"><%=restau[0].name%></h4>
-      <p style="padding-left: 10px;opacity: 0.6;"><%=restau[0].location%></p>
-      <p><%=restau[0].mota%></p>
-      <p>
-        <h6>THỰC ĐƠN</h6>
-      </p>
-      <p>
+        <br>
+        <hr class="featurette-divider">
         <div class="row">
-          <div class="col-6 col-sm-6 col-md-6">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Táo<br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Lẩu ốc<br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Trà đá<br>
+          <div class="col-10 col-sm-10 col-md-10">
+            <p><h4><u>NHÀ HÀNG NỔI TIẾNG</u></h4></p>
           </div>
-          <div class="col-6 col-sm-6 col-md-6">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Dưa chuột<br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Lẩu bề bề<br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Rau xanh<br>
+          <div class="col-2 col-sm-2 col-md-2" >
+            <input type="button" class="btn btn-primary" name="themnhahang" value="+ Thêm mới"  onclick="window.location.href='/taonhahang'" style="margin-top: 10px;">
           </div>
         </div>
-      </p>
-    </div> 
-  </div><br>
-  <div class="accordion" id="accordionE">
-    <p><div class="row padding">
-     <div class="col-4 col-sm-4 col-md-4">
-      <div class="card">
-        <div class="card-body text-center">
-          <a data-toggle="collapse" href="#nh2" id="h2" class="photo">
-            <img class="card-img-top" src="<%=restau[1].image%>" >
-          </a><br><br>
-          <a data-toggle="collapse" href="#nh2" id="h2" style="color: black;">
-           <%=restau[1].name%>
-          </a>
+
+        <div class="row padding">
+          <div class="col-12 col-sm-12 col-md-9">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-5">
+               <img class="img-responsive" alt="" src="<%=restau[0].image%>">
+             </div>
+             <div class="col-12 col-sm-12 col-md-7">
+              <h4 style="padding-top: 10px;"><%=restau[0].name%></h4>
+              <p style="padding-left: 10px;opacity: 0.6;"><%=restau[0].location%></p>
+              <p><%=restau[0].mota%></p>
+              <p>
+                <h6>THỰC ĐƠN</h6>
+              </p>
+              <p>
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-6">
+                    <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Táo<br>
+                    <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Lẩu ốc<br>
+                    <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Trà đá<br>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-6">
+                    <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Dưa chuột<br>
+                    <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Lẩu bề bề<br>
+                    <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Rau xanh<br>
+                  </div>
+                </div>
+              </p>
+            </div> 
+          </div><br>
+          <div class="accordion" id="accordionE">
+            <p><div class="row padding">
+             <div class="col-4 col-sm-4 col-md-4">
+              <div class="card">
+                <div class="card-body text-center">
+                  <a data-toggle="collapse" href="#nh2" id="h2" class="photo">
+                    <img class="card-img-top" src="<%=restau[1].image%>" >
+                  </a><br><br>
+                  <a data-toggle="collapse" href="#nh2" id="h2" style="color: black;">
+                   <%=restau[1].name%>
+                 </a>
+               </div>
+             </div>
+           </div>   
+
+           <div class="col-4 col-sm-4 col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <a data-toggle="collapse" href="#nh3" id="h3" class="photo">
+                  <img class="card-img-top" src="<%=restau[2].image%>" >
+                </a><br><br>
+                <a data-toggle="collapse" href="#nh3" id="h3" style="color: black;">
+                  <%=restau[2].name%>
+                </a>
+              </div>
+            </div>
+          </div>   
+
+          <div class="col-4 col-sm-4 col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <a data-toggle="collapse" href="#nh4" class="photo">
+                  <img class="card-img-top" src="<%=restau[3].image%>" >
+                </a><br><br>
+                <a data-toggle="collapse" href="#nh4" style="color: black;">
+                 <%=restau[3].name%> 
+               </a>
+             </div>
+           </div>
+         </div>   
+       </div></p>
+       <div class="collapse" id="nh2" aria-labelledby="h2" data-parent="#accordionE">
+        <div class="card card-body">
+          <h4><%=restau[1].name%></h4>
+          <p style="padding-left: 10px;opacity: 0.6;"><%=restau[1].location%></p>
+          <p><%=restau[1].mota%></p>
+          <p>
+            <h6>THỰC ĐƠN</h6>
+            <div class="row">
+              <div class="col-6 col-sm-6 col-md-6">
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Gà sao <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Gà sao hấp muối  <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Baba rang muối   <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Hải sản tươi sống<br>
+              </div>
+              <div class="col-6 col-sm-6 col-md-6">
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Lẩu vang đặc biệt <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Lẩu chua cay <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Chim <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Xôi chim <br>
+              </div>
+            </div>
+          </p>
         </div>
       </div>
-    </div>   
-
-    <div class="col-4 col-sm-4 col-md-4">
-      <div class="card">
-        <div class="card-body text-center">
-          <a data-toggle="collapse" href="#nh3" id="h3" class="photo">
-            <img class="card-img-top" src="<%=restau[2].image%>" >
-          </a><br><br>
-          <a data-toggle="collapse" href="#nh3" id="h3" style="color: black;">
-            <%=restau[2].name%>
-          </a>
+      <div class="collapse" id="nh3" aria-labelledby="h3" data-parent="#accordionE">
+        <div class="card card-body">
+          <h4> <%=restau[2].name%></h4>
+          <p style="padding-left: 10px;opacity: 0.6;"> <%=restau[2].location%></p>
+          <p> <%=restau[2].mota%></p>
+          <p>
+            <h6>THỰC ĐƠN</h6>
+            <div class="row">
+              <div class="col-6 col-sm-6 col-md-6">
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Bít Tết OK <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Bít Tết Âu  <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Bò Sốt Vang   <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Cari Bò<br>
+              </div>
+              <div class="col-6 col-sm-6 col-md-6">
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Mỳ Ý <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Phở Xào Bắp Bò <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Bò Nhúng Dấm <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Lẩu Đuôi Bò <br>
+              </div>
+            </div>
+          </p>
         </div>
       </div>
-    </div>   
-
-    <div class="col-4 col-sm-4 col-md-4">
-      <div class="card">
-        <div class="card-body text-center">
-          <a data-toggle="collapse" href="#nh4" class="photo">
-            <img class="card-img-top" src="<%=restau[3].image%>" >
-          </a><br><br>
-          <a data-toggle="collapse" href="#nh4" style="color: black;">
-           <%=restau[3].name%> 
-          </a>
+      <div class="collapse" id="nh4" aria-labelledby="h4" data-parent="#accordionE">
+        <div class="card card-body">
+          <h4><%=restau[3].name%> </h4>
+          <p style="padding-left: 10px;opacity: 0.6;"><%=restau[3].location%> </p>
+          <p><%=restau[3].mota%></p>
+          <p>
+            <h6>THỰC ĐƠN</h6>
+            <div class="row">
+              <div class="col-6 col-sm-6 col-md-6">
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Mực tươi xào gừng hành <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Gỏi cuốn tôm thịt  <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Ốc móng tay nướng mỡ hành   <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Cá chép om xả<br>
+              </div>
+              <div class="col-6 col-sm-6 col-md-6">
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Cua Alaska nướng muối ớt <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Bò Kobe <br>
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Cá hồi tươi sống <br>
+              </div>
+            </div>
+          </p>
         </div>
       </div>
-    </div>   
-  </div></p>
-  <div class="collapse" id="nh2" aria-labelledby="h2" data-parent="#accordionE">
-    <div class="card card-body">
-      <h4><%=restau[1].name%></h4>
-      <p style="padding-left: 10px;opacity: 0.6;"><%=restau[1].location%></p>
-      <p><%=restau[1].mota%></p>
-      <p>
-        <h6>THỰC ĐƠN</h6>
-        <div class="row">
-          <div class="col-6 col-sm-6 col-md-6">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Gà sao <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Gà sao hấp muối  <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Baba rang muối   <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Hải sản tươi sống<br>
-          </div>
-          <div class="col-6 col-sm-6 col-md-6">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Lẩu vang đặc biệt <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Lẩu chua cay <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Chim <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Xôi chim <br>
-          </div>
-        </div>
-      </p>
-    </div>
+      <p>  
+        <a class="btn btn-outline-success btn-block" href="/nhahang" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
+        >
+        <i class="far fa-hand-point-right"></i> Xem thêm
+      </a>     
+    </p>
   </div>
-  <div class="collapse" id="nh3" aria-labelledby="h3" data-parent="#accordionE">
-    <div class="card card-body">
-      <h4> <%=restau[2].name%></h4>
-      <p style="padding-left: 10px;opacity: 0.6;"> <%=restau[2].location%></p>
-      <p> <%=restau[2].mota%></p>
-      <p>
-        <h6>THỰC ĐƠN</h6>
-        <div class="row">
-          <div class="col-6 col-sm-6 col-md-6">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Bít Tết OK <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Bít Tết Âu  <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Bò Sốt Vang   <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Cari Bò<br>
-          </div>
-          <div class="col-6 col-sm-6 col-md-6">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Mỳ Ý <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Phở Xào Bắp Bò <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Bò Nhúng Dấm <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Lẩu Đuôi Bò <br>
-          </div>
-        </div>
-      </p>
-    </div>
-  </div>
-  <div class="collapse" id="nh4" aria-labelledby="h4" data-parent="#accordionE">
-    <div class="card card-body">
-      <h4><%=restau[3].name%> </h4>
-      <p style="padding-left: 10px;opacity: 0.6;"><%=restau[3].location%> </p>
-      <p><%=restau[3].mota%></p>
-      <p>
-        <h6>THỰC ĐƠN</h6>
-        <div class="row">
-          <div class="col-6 col-sm-6 col-md-6">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Mực tươi xào gừng hành <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Gỏi cuốn tôm thịt  <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Ốc móng tay nướng mỡ hành   <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Cá chép om xả<br>
-          </div>
-          <div class="col-6 col-sm-6 col-md-6">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px;color: red;"></i> Cua Alaska nướng muối ớt <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Bò Kobe <br>
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: red;"></i> Cá hồi tươi sống <br>
-          </div>
-        </div>
-      </p>
-    </div>
-  </div>
-  <p>  
-  <a class="btn btn-outline-success btn-block" href="/nhahang" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
-  >
-  <i class="far fa-hand-point-right"></i> Xem thêm
-  </a>     
-</p>
-</div>
 </div>
 <div class="col-12 col-sm-12 col-md-3">
   <div class="box-ads_home text-center" style="padding-top: 12px;"> 
@@ -507,7 +508,7 @@
 
 </div>
 
-  
+
 
 <!-- Modal nhahang-->
 <!-- <div class="modal fade" id="nhahang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="">
@@ -557,10 +558,12 @@
         <img class="card-img-top" src="./images/baiviet/bai1.jpg" >
       </a>
       <div class="card-body">
-        <h5 class="card-title">
-          <a href="post1.html" style="color: #444;">
-            Top 05 loại bánh trung thu chay dễ làm tại nhà cho các bà mẹ
-          </a></h5>
+        <div class="scroll" style=" display:block;  height:100px; overflow:auto;">
+          <h5 class="card-title">
+            <a href="post1.html" style="color: #444;">
+              Top 05 loại bánh trung thu chay dễ làm tại nhà cho các bà mẹ ăn được ngủ được là tiên không ăn không ngủ liên thiên
+            </a></h5>
+          </div>
           <div class="row">
             <div class="col-10 col-sm-10 col-md-10">4200 lượt xem</div>
             <div style="float: left;margin-bottom: -15px;" class=" col-1 col-sm-1 col-md-1">
@@ -621,42 +624,45 @@
             </div>
           </div>
         </div>
-        <br>
-        <!-- Modal baiviet-->
-        <div class="modal fade" id="baiviet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 50px;">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Bài viết</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-               <div class="form-group">
-                <label for="dinhkembaiviet">Đính kèm: </label>
-                <input type="file" class="control" id="dinhkembaiviet"><br>
-                <label for="tenbaiviet">Tên bài viết:</label>
-                <input type="text" class="form-control" id="tenbaiviet" placeholder="Nhập...."><br>
-                <button type="button" class="btn btn-outline-success btn-block" style="border-radius: 8px;"><h5>Xác nhận</h5></button><br>
-              </div>           
+        <a class="btn btn-outline-success btn-block" href="" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
+        >
+        <i class="far fa-hand-point-right"></i> Xem thêm
+      </a>  <br><br>
+      <!-- Modal baiviet-->
+      <div class="modal fade" id="baiviet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 50px;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Bài viết</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <div class="modal-body">
+             <div class="form-group">
+              <label for="dinhkembaiviet">Đính kèm: </label>
+              <input type="file" class="control" id="dinhkembaiviet"><br>
+              <label for="tenbaiviet">Tên bài viết:</label>
+              <input type="text" class="form-control" id="tenbaiviet" placeholder="Nhập...."><br>
+              <button type="button" class="btn btn-outline-success btn-block" style="border-radius: 8px;"><h5>Xác nhận</h5></button><br>
+            </div>           
           </div>
         </div>
       </div>
-      <div>
-        <a href="#backtotop"><i class="fas fa-angle-double-up" style="font-size: 35px;color: #555;margin-left: 90%; "></i></a>
-      </div>
-      <hr id = "phienhoidap" class="featurette-divider">
     </div>
-  </main>
+    <div>
+      <a href="#backtotop"><i class="fas fa-angle-double-up" style="font-size: 35px;color: #555;margin-left: 90%; "></i></a>
+    </div>
+    <hr  class="featurette-divider">
+  </div>
+</main>
 
-  <footer id="footer">
-    <ul style="padding: 15px; margin-bottom: 0px;">
-      <h3 style="padding-bottom: 0px;text-decoration: none;">Ăn ngon cùng Cooky</h3>
+<footer id="footer">
+  <ul style="padding: 15px; margin-bottom: 0px;">
+    <h3 style="padding-bottom: 0px;text-decoration: none;">Ăn ngon cùng Cooky</h3>
 
-      <p style="font-size: 14px"> @2019 design by Team 5</p>
-    </ul>
-  </footer>
+    <p style="font-size: 14px"> @2019 design by Team 5</p>
+  </ul>
+</footer>
 </body>
 </html>
