@@ -1,5 +1,5 @@
 # ProjectUI
-project nhỏ về UI design
+Project website Cookyvn - chia sẻ công thức nấu ăn
 
 >Thành viên:
   * Việt Cường
@@ -7,5 +7,5 @@ project nhỏ về UI design
   * Nguyễn Phong
   * Nguyễn Thắng
   * Đỗ Nhị
-
->Auto A+ :)
+>Hỗ trợ:
+  * Vân Anh
