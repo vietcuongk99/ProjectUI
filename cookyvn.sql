@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 07, 2019 lúc 11:01 AM
--- Phiên bản máy phục vụ: 10.4.8-MariaDB
--- Phiên bản PHP: 7.1.33
+-- Host: 127.0.0.1
+-- Generation Time: Dec 09, 2019 at 02:10 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `cookyvn`
+-- Database: `cookyvn`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cmt_nh`
+-- Table structure for table `cmt_nh`
 --
 
 CREATE TABLE `cmt_nh` (
@@ -36,7 +36,7 @@ CREATE TABLE `cmt_nh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `cmt_nh`
+-- Dumping data for table `cmt_nh`
 --
 
 INSERT INTO `cmt_nh` (`comment_id`, `user_id`, `content`, `restaurant_id`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `cmt_nh` (`comment_id`, `user_id`, `content`, `restaurant_id`) VALUE
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -60,7 +60,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `comments`
+-- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`comment_id`, `user_id`, `content`, `food_id`) VALUES
@@ -71,7 +71,7 @@ INSERT INTO `comments` (`comment_id`, `user_id`, `content`, `food_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `food`
+-- Table structure for table `food`
 --
 
 CREATE TABLE `food` (
@@ -88,7 +88,7 @@ CREATE TABLE `food` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `food`
+-- Dumping data for table `food`
 --
 
 INSERT INTO `food` (`id`, `name`, `type_id`, `finished_time`, `ration`, `level`, `user_view`, `user_review`, `mota`, `image`) VALUES
@@ -97,12 +97,13 @@ INSERT INTO `food` (`id`, `name`, `type_id`, `finished_time`, `ration`, `level`,
 (15, 'chè', 2, 12, '1', 'dễ', 1, '0', 'đéo phải chè', 'https://monngonmoingay.com/wp-content/uploads/2019/02/che-ba-ba-500.jpg'),
 (16, 'Sườn xào chua ngọt', 5, 30, '2', 'Trung Bình', 1, '0', 'Sườn xào chua ngọt - chua chua ngọt ngọt', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-08/1528393104-915-_mg_6780-1528392856-width650height433.jpg'),
 (20, 'Canh nấm chay', 4, 40, '3', 'Trung bình', 0, '0', 'Kết hợp trứng với cà chuaaaa', 'https://www.hoidaubepaau.com/wp-content/uploads/2016/03/canh-nam-ngu-sac.jpg'),
-(21, 'Nước chanh', 6, 2, '1', 'dễ', 1, '0', 'Đồ uống thanh mát cho mùa hè', 'https://sohanews.sohacdn.com/thumb_w/660/2018/2/1/photo1517478868721-1517478868721748641205.jpg');
+(21, 'Nước chanh', 6, 2, '1', 'dễ', 1, '0', 'Đồ uống thanh mát cho mùa hè', 'https://sohanews.sohacdn.com/thumb_w/660/2018/2/1/photo1517478868721-1517478868721748641205.jpg'),
+(23, 'Nem cuốn', 5, 30, '4', 'Vừa', 1, '0', 'Cách làm nem ngon nhất Vịnh Bắc Bộ', 'https://media.cooky.vn/recipe/g2/14542/s640/recipe14542-635621834873923230.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `food_recipes`
+-- Table structure for table `food_recipes`
 --
 
 CREATE TABLE `food_recipes` (
@@ -113,7 +114,7 @@ CREATE TABLE `food_recipes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `food_recipes`
+-- Dumping data for table `food_recipes`
 --
 
 INSERT INTO `food_recipes` (`id`, `name`, `food_id`, `quantity`) VALUES
@@ -132,12 +133,17 @@ INSERT INTO `food_recipes` (`id`, `name`, `food_id`, `quantity`) VALUES
 (43, 'rau củ', 20, '3-4 loại'),
 (44, 'nước', 21, '100ml'),
 (45, 'chanh', 21, '1 quả'),
-(46, 'đường', 21, '50g');
+(46, 'đường', 21, '50g'),
+(48, 'Bánh tráng', 23, '20'),
+(49, 'Xà lách', 23, '20'),
+(50, 'Húng', 23, '20'),
+(51, 'Miến', 23, '20'),
+(52, 'Tôm', 23, '20');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `food_steps`
+-- Table structure for table `food_steps`
 --
 
 CREATE TABLE `food_steps` (
@@ -149,7 +155,7 @@ CREATE TABLE `food_steps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `food_steps`
+-- Dumping data for table `food_steps`
 --
 
 INSERT INTO `food_steps` (`id`, `food_id`, `ordinal_number`, `content`, `image_link`) VALUES
@@ -161,12 +167,13 @@ INSERT INTO `food_steps` (`id`, `food_id`, `ordinal_number`, `content`, `image_l
 (15, 16, 3, 'Chiên sườn lên', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-23/1529690146-80-img_20180614_150447-1529689904-width650height488.jpg'),
 (22, 20, 1, 'Chuẩn bị thái rau củ ', 'https://mayranghat.vn/wp-content/uploads/2018/05/may-thai-rau-cu-qua-da-nang1-1024x633.jpg'),
 (23, 20, 2, 'Đun chúng lên để được thành phẩm như dưới', 'https://afamilycdn.com/Images/Uploaded/Share/2010/11/30/canhnam.jpg'),
-(24, 21, 1, 'Cắt chanh rồi vắt vào nước . Sau đó pha thêm đường khấy đều', 'http://kenh14cdn.com/2017/lime-3-1492054242387.jpg');
+(24, 21, 1, 'Cắt chanh rồi vắt vào nước . Sau đó pha thêm đường khấy đều', 'http://kenh14cdn.com/2017/lime-3-1492054242387.jpg'),
+(26, 23, 1, 'Cho đồ vào cuốn với bánh tráng là xong, ez vl', 'https://webloikhuyen.com/wp-content/uploads/2018/05/cach-lam-nuoc-cham-nem-nuong-nha-trang-629x420.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `food_types`
+-- Table structure for table `food_types`
 --
 
 CREATE TABLE `food_types` (
@@ -175,7 +182,7 @@ CREATE TABLE `food_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `food_types`
+-- Dumping data for table `food_types`
 --
 
 INSERT INTO `food_types` (`id`, `nametype`) VALUES
@@ -190,19 +197,7 @@ INSERT INTO `food_types` (`id`, `nametype`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `header_slide`
---
-
-CREATE TABLE `header_slide` (
-  `id` int(11) NOT NULL,
-  `food_id` int(11) NOT NULL,
-  `image_link` varchar(1000) COLLATE utf8mb4_vietnamese_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `menus`
+-- Table structure for table `menus`
 --
 
 CREATE TABLE `menus` (
@@ -213,7 +208,7 @@ CREATE TABLE `menus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `menus`
+-- Dumping data for table `menus`
 --
 
 INSERT INTO `menus` (`restaurant_id`, `food_id`, `price`, `name`) VALUES
@@ -229,7 +224,7 @@ INSERT INTO `menus` (`restaurant_id`, `food_id`, `price`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `post`
+-- Table structure for table `post`
 --
 
 CREATE TABLE `post` (
@@ -241,7 +236,7 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `post`
+-- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`id`, `title`, `author`, `image_link`, `mota`) VALUES
@@ -250,7 +245,7 @@ INSERT INTO `post` (`id`, `title`, `author`, `image_link`, `mota`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `post_ct`
+-- Table structure for table `post_ct`
 --
 
 CREATE TABLE `post_ct` (
@@ -262,7 +257,7 @@ CREATE TABLE `post_ct` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `post_ct`
+-- Dumping data for table `post_ct`
 --
 
 INSERT INTO `post_ct` (`id`, `title`, `post_id`, `image`, `content`) VALUES
@@ -272,7 +267,7 @@ INSERT INTO `post_ct` (`id`, `title`, `post_id`, `image`, `content`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `restaurants`
+-- Table structure for table `restaurants`
 --
 
 CREATE TABLE `restaurants` (
@@ -285,7 +280,7 @@ CREATE TABLE `restaurants` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `restaurants`
+-- Dumping data for table `restaurants`
 --
 
 INSERT INTO `restaurants` (`id`, `name`, `location`, `mota`, `image`, `user_view`) VALUES
@@ -297,7 +292,7 @@ INSERT INTO `restaurants` (`id`, `name`, `location`, `mota`, `image`, `user_view
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -311,18 +306,19 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `mail`, `role`, `name`, `date`) VALUES
-(1, 'o0ovano0o', '12345', 'van005618@gmail.com', '1', 'Nguyen Van Anh', '2000-11-11');
+(1, 'o0ovano0o', '12345', 'van005618@gmail.com', '1', 'Nguyen Van Anh', '2000-11-11'),
+(2, 'vietcuong', '12345', 'vietcuong@gmail.com', '1', 'Cuong', '1999-12-03');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `cmt_nh`
+-- Indexes for table `cmt_nh`
 --
 ALTER TABLE `cmt_nh`
   ADD PRIMARY KEY (`comment_id`),
@@ -331,7 +327,7 @@ ALTER TABLE `cmt_nh`
   ADD KEY `food_id` (`restaurant_id`);
 
 --
--- Chỉ mục cho bảng `comments`
+-- Indexes for table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`comment_id`),
@@ -340,7 +336,7 @@ ALTER TABLE `comments`
   ADD KEY `food_id` (`food_id`);
 
 --
--- Chỉ mục cho bảng `food`
+-- Indexes for table `food`
 --
 ALTER TABLE `food`
   ADD PRIMARY KEY (`id`),
@@ -348,7 +344,7 @@ ALTER TABLE `food`
   ADD KEY `type_id` (`type_id`) USING BTREE;
 
 --
--- Chỉ mục cho bảng `food_recipes`
+-- Indexes for table `food_recipes`
 --
 ALTER TABLE `food_recipes`
   ADD PRIMARY KEY (`id`),
@@ -356,7 +352,7 @@ ALTER TABLE `food_recipes`
   ADD KEY `food_id` (`food_id`);
 
 --
--- Chỉ mục cho bảng `food_steps`
+-- Indexes for table `food_steps`
 --
 ALTER TABLE `food_steps`
   ADD PRIMARY KEY (`id`),
@@ -364,143 +360,136 @@ ALTER TABLE `food_steps`
   ADD KEY `food_id` (`food_id`);
 
 --
--- Chỉ mục cho bảng `food_types`
+-- Indexes for table `food_types`
 --
 ALTER TABLE `food_types`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
 --
--- Chỉ mục cho bảng `header_slide`
---
-ALTER TABLE `header_slide`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `food_id` (`food_id`);
-
---
--- Chỉ mục cho bảng `menus`
+-- Indexes for table `menus`
 --
 ALTER TABLE `menus`
   ADD KEY `restaurant_id` (`restaurant_id`,`food_id`),
   ADD KEY `food_id` (`food_id`);
 
 --
--- Chỉ mục cho bảng `post`
+-- Indexes for table `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
 --
--- Chỉ mục cho bảng `post_ct`
+-- Indexes for table `post_ct`
 --
 ALTER TABLE `post_ct`
   ADD PRIMARY KEY (`id`),
   ADD KEY `post_id` (`post_id`);
 
 --
--- Chỉ mục cho bảng `restaurants`
+-- Indexes for table `restaurants`
 --
 ALTER TABLE `restaurants`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `cmt_nh`
+-- AUTO_INCREMENT for table `cmt_nh`
 --
 ALTER TABLE `cmt_nh`
   MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `comments`
+-- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `food`
+-- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT cho bảng `food_recipes`
+-- AUTO_INCREMENT for table `food_recipes`
 --
 ALTER TABLE `food_recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT cho bảng `food_steps`
+-- AUTO_INCREMENT for table `food_steps`
 --
 ALTER TABLE `food_steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT cho bảng `menus`
+-- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `post_ct`
+-- AUTO_INCREMENT for table `post_ct`
 --
 ALTER TABLE `post_ct`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `restaurants`
+-- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `comments`
+-- Constraints for table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Các ràng buộc cho bảng `food`
+-- Constraints for table `food`
 --
 ALTER TABLE `food`
   ADD CONSTRAINT `food_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `food_types` (`id`);
 
 --
--- Các ràng buộc cho bảng `food_recipes`
+-- Constraints for table `food_recipes`
 --
 ALTER TABLE `food_recipes`
   ADD CONSTRAINT `food_recipes_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `food_steps`
+-- Constraints for table `food_steps`
 --
 ALTER TABLE `food_steps`
   ADD CONSTRAINT `food_steps_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `post_ct`
+-- Constraints for table `post_ct`
 --
 ALTER TABLE `post_ct`
   ADD CONSTRAINT `post_ct_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`);
