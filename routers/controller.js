@@ -20,6 +20,10 @@ router.use('/suanhahang', require(__dirname + '/updaterestau.js'));
 router.use('/xemchitiet', require(__dirname + '/xemchitiet.js'));
 
 router.use('/taobaiviet', require(__dirname + '/createpost.js'));
+router.use('/support', require(__dirname + '/support.js'));
+router.use('/recommend', require(__dirname + '/recommend.js'));
+router.use('/rules', require(__dirname + '/rules.js'));
+
 
 router.use('/logout', require(__dirname + '/logout.js'));
 module.exports = router;
