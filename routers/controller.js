@@ -24,6 +24,11 @@ router.use('/support', require(__dirname + '/support.js'));
 router.use('/recommend', require(__dirname + '/recommend.js'));
 router.use('/rules', require(__dirname + '/rules.js'));
 
+router.use('/carousel1', require(__dirname + '/carousel1.js'));
+router.use('/carousel2', require(__dirname + '/carousel2.js'));
+router.use('/carousel3', require(__dirname + '/carousel3.js'));
+
+
 
 router.use('/logout', require(__dirname + '/logout.js'));
 module.exports = router;
