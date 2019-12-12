@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="index&content.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <title>Nhà hàng</title>
+  <title>Bài viết</title>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -78,14 +78,14 @@
           <%if(restau.length>0){%>
           <div ng-module="paginationApp" ng-controller="listdata" >
             <form id="search" style="margin-bottom:25px;" class="form-inline my-2 my-lg-0">
-              <input class="form-control " type="search" ng-model="search" placeholder="Tìm nhà hàng..." style="width: 100%;" aria-label="Search" required>
+              <input class="form-control " type="search" ng-model="search" placeholder="Tìm bài viết..." style="width: 100%;" aria-label="Search" required>
             </form><br>
             <div class="row padding">
               <div class="col-md-4" dir-paginate="val in data|orderBy:sortKey:reverse|filter:search|itemsPerPage:12">
 
                 <div class="card" style="margin-top: 15px;">
 
-                  <img class="card-img-top" style="height: 220px;background-repeat:   no-repeat; background-size:     cover;" src="{{val.img}}" alt="Ảnh minh họa nhà hàng">
+                  <img class="card-img-top" style="height: 220px;background-repeat:   no-repeat; background-size:     cover;" src="{{val.img}}" alt="Ảnh minh họa bài viết">
 
                   <div class="card-body">
                     <h4 class="card-title">{{val.name}}</h4>
@@ -103,9 +103,7 @@
                             <a class="dropdown-item" href="/suanhahang?id={{val.id}}">Sửa</a>
                             <a class="dropdown-item" href="/xoanhahang?id={{val.id}}">Xóa</a>
                           </div>
-                        </div> 
-                         </div>  
-                       </div>               
+                        </div>  </div>  </div>               
                       </div>
                     </div></div><dir-pagination-controls
                     max-size="1"
@@ -115,7 +113,7 @@
                 </div>
               </div>
               <%}if(restau.length==0){%>
-              <h4 style="text-align: center;">Xin lỗi, hiện chưa có nhà hàng nào. Chúng tôi sẽ cập nhật thêm sau!</h4>
+              <h4 style="text-align: center;">Xin lỗi, hiện chưa có bài viết nào. Chúng tôi sẽ cập nhật thêm sau!</h4>
               <%}%>
 
             </div><script type="text/javascript">
@@ -149,43 +147,6 @@
         </script>
       </div><br>
 
-      <!-- Modal Đăng nhập -->
-<!--       <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <img src="images/cooky.png" style="width: 100px; height:auto;">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body"> -->
-              <!-- Đăng nhập -->
-<!--               <div id="login">
-                <form action="/login" method="POST">
-                  <div class="form-group">
-                    <label for="LoginName">Tên đăng nhập:</label>
-                    <input type="text" class="form-control" id="LoginName" name="username" aria-describedby="UserNameHelp" placeholder="Nhập....">
-                    <small id="UserNameHelp" class="form-text text-muted">Bạn có thể nhập email đã đăng ký thay cho tên đăng nhập.
-                    </small>
-                    <label for="Password">Mật khẩu:</label>
-                    <input type="password" class="form-control" id="Password" name="password" placeholder="Nhập...">
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="Check">
-                      <label class="form-check-label" for="Check">Ghi nhớ tôi!</label>
-                    </div><br>
-
-                    <input value="Đăng nhập" type="submit" class="btn btn-outline-success btn-block round-button"><br>
-
-                    <div class="text-center" style="margin-bottom: 7px;">Bạn chưa có tài khoản ?</div>
-                    <input value="Đăng ký ngay" type="submit" class="btn btn-outline-success btn-block round-button"><br>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </main>
 
     <footer id="footer">

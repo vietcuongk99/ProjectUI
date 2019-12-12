@@ -138,7 +138,7 @@
 										<div class="col-md-12">
 											<div class="card">
 												<div class="card-body">
-													<h4 class="card-title"><b>Nguyên liệu để làm <%=food.name%></b></h4><br>
+													<h5 class="card-title"><b>Nguyên liệu để làm <%=food.name%></b></h5><br>
 													<div class="row" style="margin-left: 30px;color: #333;">
 
 														<div class="col-6 col-sm-6 col-md-6" style="text-align: left; ">
@@ -163,7 +163,7 @@
 										<div class="col-md-12">
 											<div class="card">
 												<div class="card-body">
-													<h4 class="card-title text-center"><b>Cách làm <%=food.name%></b></h4><br>
+													<h5 class="card-title text-center"><b>Cách làm <%=food.name%></b></h5><br>
 													<div class="accordion" id="accordionExample">
 														<%for(var i=0;i< buoc.length;i++){%>
 														<div class="card" style="margin-bottom: 15px;">
@@ -203,7 +203,7 @@
 						<div class="col-12 col-sm-12 col-md-4">
 							<div class="card text-center">
 								<div class="card-header">
-									<h6><b>MÓN CÙNG CHUYÊN MỤC</b></h6>
+									<h5><b>Món cùng chuyên mục</b></h5>
 								</div>
 								<div class="card-body">
 									<div class="row padding">
@@ -231,7 +231,7 @@
 								</div><br>
 								<div class="card">
 									<div class="card-header text-center">
-										<h6><b>BÌNH LUẬN</b></h6>
+										<h5><b>Bình luận</b></h5>
 									</div>
 									<div class="card-body">
 										<%for(var i=0;i< comment.length;i++){%>
@@ -308,14 +308,9 @@
 														<label class="form-check-label" for="Check">Ghi nhớ tôi!</label>
 													</div><br>
 
-													<input value="Đăng nhập" type="submit" class="btn btn-outline-success btn-block round-button"><h5>Đăng nhập</h5><br>
-													<div class="border-top pt-3">
-														<div class="text-center"><h5>Hoặc đăng nhập bằng</h5></div>
-														<button type="button" class="btn btn-outline-primary btn-block round-button"><h5>Facebook</h5></button>
-														<button type="button" class="btn btn-outline-danger btn-block round-button"><h5>Google</h5></button>
-													</div>
+													<input value="Đăng nhập" type="submit" class="btn btn-outline-success btn-block round-button"><br>
 													<div class="text-center"><h5>Bạn chưa có tài khoản ?</h5></div>
-													<button type="button" class="btn btn-outline-success btn-block round-button" onclick="window.location.href='register.html'"><h5>Đăng ký ngay</h5></button>
+													<input value="Đăng ký ngay" type="submit" class="btn btn-outline-success btn-block round-button">
 												</div>
 											</form>
 										</div>

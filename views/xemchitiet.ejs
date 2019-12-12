@@ -111,12 +111,12 @@
 										<div class="col-md-12">
 											<div class="card">
 												<div class="card-body">
-													<h4 class="card-title"><b>Thực đơn</b></h4><br>
+													<h5 class="card-title"><b>Thực đơn</b></h5><br>
 													<div class="row" style="margin-left: 30px;color: #333;">
 
 														<div class="col-6 col-sm-6 col-md-6" style="text-align: left; ">
 															<%for(var i=0;i< menu.length;i++){%>
-															<h5><ion-icon name="add-circle" class="icon-add"></ion-icon> <%=menu[i].name%>:  <a style="opacity: 0.6;"><%=menu[i].price%></a></h5>
+															<h6><ion-icon name="add-circle" class="icon-add"></ion-icon> <%=menu[i].name%>:  <a style="opacity: 0.6;"><%=menu[i].price%></a></h6>
 															<%}%>
 														</div>
 
@@ -131,32 +131,48 @@
 							<br>
 							<div class="card">
 								<div class="card-header text-center">
-									<h6><b>BÌNH LUẬN</b></h6>
+									<h5><b>Bình luận</b></h5>
 								</div>
 								<div class="card-body">
 									<%for(var i=0;i< comment.length;i++){%>
-									<div class="row">
-										<div class="col-2 col-sm-2">
+									<div class="row" style="margin-bottom: 10px;">
+										<div class="col-1 col-sm-1 col-md-1">
 											<div class="card-img-top" >
-												<img src="./images/icon/icon1.jpg" style="float: left;border-radius: 20px;height: 40px;">
-												<p style="float: left;"><%=comment[i].username%></p>
+												<img src="./images/avt.jpg" style="float: left;border-radius: 50%;">
+												
 											</div>
 										</div>
-										<div  class="col-10 col-sm-10 ">  
-											<p style="float: left;"><%=comment[i].content%></p>
+										<div  class="col-10 col-sm-10 col-md-10 " style="padding-left: 5px;">
+											<form class="form-inline">
+												<span style="float: left;"><b><%=comment[i].username%></b></span>
+												<span style="padding-left: 7px;"><%=comment[i].content%></span><br>
+											</form>  
+											
+										</div>
+										<div class="col1 col-sm-1 col-md-1">
+											<div class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" style="color:black;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+												<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown">
+													<a class="dropdown-item" href="#">Sửa</a>
+													<a class="dropdown-item" href="#">Xóa</a>
+												</div>
+											</div>										
 										</div>
 									</div>
 									<%}%><%if(session.username){%>
 									<div class="row">
 										
-										<div class="col-2 col-sm-2 col-md-2">
+										<div class="col-1 col-sm-1 col-md-1">
 
-											<img src="./images/avt.jpg" style=" border-radius: 20px;height: 40px;justify-content: center;">
-											<p style="float: left;justify-content: center;"><%=session.username%></p>
+											<div class="card-img-top" >
+												<img src="./images/avt.jpg" style="float: left;border-radius: 50%;">
+												
+											</div>
+											<!-- <p style="float: left;justify-content: center;"><%=session.username%></p> -->
 
 										</div>
 										
-										<div  class="col-9 col-sm-9 col-md-9">  
+										<div  class="col-11 col-sm-11 col-md-11" style="padding-left: 5px;">  
 
 											<form class="form-inline" action="/xemchitiet?id=<%=restau.id%>" method="POST">		
 
@@ -183,7 +199,7 @@
 						<div class="col-12 col-sm-12 col-md-4">
 							<div class="card text-center">
 								<div class="card-header">
-									<h6><b>Một số nhà hàng khác</b></h6>
+									<h5><b>Một số nhà hàng khác</b></h5>
 								</div>
 								<div class="card-body">
 									<div class="row padding">
@@ -244,7 +260,7 @@
 													<input value="Đăng nhập" type="submit" class="btn btn-outline-success btn-block round-button"><br>
 
 													<div class="text-center" style="margin-bottom: 7px;">Bạn chưa có tài khoản ?</div>
-													<input value="Đăng ký ngay" type="submit" class="btn btn-outline-success btn-block round-button"><br>
+													<input value="Đăng ký ngay" type="submit" class="btn btn-outline-success btn-block round-button">
 												</div>
 											</form>
 										</div>

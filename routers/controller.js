@@ -23,6 +23,7 @@ router.use('/taobaiviet', require(__dirname + '/createpost.js'));
 router.use('/support', require(__dirname + '/support.js'));
 router.use('/recommend', require(__dirname + '/recommend.js'));
 router.use('/rules', require(__dirname + '/rules.js'));
+router.use('/post', require(__dirname + '/post.js'));
 
 router.use('/carousel1', require(__dirname + '/carousel1.js'));
 router.use('/carousel2', require(__dirname + '/carousel2.js'));
