@@ -253,24 +253,27 @@
               <br>
 
               <div class="row">
-                <div class="col-sm-10">
-                 <a href="/seefood?id=<%=food[i].id%>" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a></div>
-                 <div class="col-sm-2">
-                  <%if(session.username){%>
-                  <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" style="color:black;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown03">
-                      <a class="dropdown-item" href="/updatefood?id=<%=food[i].id%>">Sửa</a>
-                      <a class="dropdown-item" href="/deletefood?id=<%=food[i].id%>">Xóa</a>
-                    </div>
-                  </div><%}%>  </div>  </div>
-
-                </div>
-              </div>
+                <div class="col-sm-10 col-md-10">
+                 <a href="/seefood?id=<%=food[i].id%>" class="btn btn-outline-secondary">Hướng dẫn thực hiện</a>
+               </div>
+               <div class="col-sm-2 col-md-2">
+                <%if(session.username){%>
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" style="color:black;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown03">
+                    <a class="dropdown-item" href="/updatefood?id=<%=food[i].id%>">Sửa</a>
+                    <a class="dropdown-item" href="/deletefood?id=<%=food[i].id%>">Xóa</a>
+                  </div>
+                </div><%}%>  
+              </div> 
             </div>
-            <%}%>
-            <br>
-          </div> 
+
+          </div>
+        </div>
+      </div>
+      <%}%>
+      <br>
+    </div> 
 
 <!--           <div style="text-align: -webkit-right;">
             <a href=""><img src="./images/icons/first.png" width="30" height="30" style="border-radius: 100%"></a>
@@ -535,26 +538,40 @@
         <img class="card-img-top" src="<%=post[i].image_link%>" style="height: 220px;background-repeat:   no-repeat; background-size:cover;" >
       </a>
       <div class="card-body">
-        <div >
-          <h5 class="card-title">
-            <p style=" width: 200px;
+        <div class="row">
+          <div class="col-10 col-sm-10 col-md-10">
+            <h5 class="card-title"
+            style=" width: 200px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis"  title="<%=post[i].title%>">
             <a href="/xembaiviet?id=<%=post[i].id%>" style="color: #444;">
               <%=post[i].title%>
-            </a></p></h5>
+            </a></h5>
+          </div>
+          <div class="col-2 col-sm-2 col-md-2">
+           
+            <%if(session.username){%>
+            <div class="nav-item dropdown" style="float: right;margin-right: -25px;margin-top: -5px;">
+              <a class="nav-link dropdown-toggle" style="color:black;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="/updatepost?id=<%=post[i].id%>">Sửa</a>
+                <a class="dropdown-item" href="/deletepost?id=<%=post[i].id%>">Xóa</a>
+              </div>
+            </div><%}%>             
           </div>
         </div>
+
       </div>
     </div>
-    <%}%>
-
-
   </div>
-  <a class="btn btn-outline-success btn-block" href="/posts" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
-  >
-  <i class="far fa-hand-point-right"></i> Xem thêm
+  <%}%>
+
+
+</div>
+<a class="btn btn-outline-success btn-block" href="/posts" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
+>
+<i class="far fa-hand-point-right"></i> Xem thêm
 </a>  <br><br>
 <!-- Modal baiviet-->
 <div class="modal fade" id="baiviet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 50px;">
