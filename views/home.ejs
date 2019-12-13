@@ -32,7 +32,7 @@
   </script>
 </head>
 <body style="background-color: #eeeeee" id = "backtotop">
-  <header>
+ <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
       <div class="container">
         <a href="/home">
@@ -287,7 +287,7 @@
             </div>
             <%}%>
             <br>
-          </div>
+          </div> 
 
 <!--           <div style="text-align: -webkit-right;">
             <a href=""><img src="./images/icons/first.png" width="30" height="30" style="border-radius: 100%"></a>
@@ -558,77 +558,29 @@
 
 
 <div class="row padding">
+  <%for(var i=0;i< post.length;i++){%>
   <div class="col-6 col-md-3">
     <div class="card">
-      <a href="post1.html" class="photo">
-        <img class="card-img-top" src="./images/baiviet/bai1.jpg" >
+      <a href="/xembaiviet?id=<%=post[i].id%>" class="photo">
+        <img class="card-img-top" src="<%=post[i].image_link%>" style="height: 220px;background-repeat:   no-repeat; background-size:cover;" >
       </a>
       <div class="card-body">
-        <div class="scroll" style=" display:block;  height:100px; overflow:auto;">
+        <div >
           <h5 class="card-title">
-            <a href="post1.html" style="color: #444;">
-              Top 05 loại bánh trung thu chay dễ làm tại nhà cho các bà mẹ ăn được ngủ được là tiên không ăn không ngủ liên thiên
-            </a></h5>
+            <p style=" width: 200px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis"  title="<%=post[i].title%>">
+            <a href="/xembaiviet?id=<%=post[i].id%>" style="color: #444;">
+              <%=post[i].title%>
+            </a></p></h5>
           </div>
-          <div class="row">
-            <div class="col-10 col-sm-10 col-md-10">4200 lượt xem</div>
-            <div style="float: left;margin-bottom: -15px;" class=" col-1 col-sm-1 col-md-1">
-              <a class="nav-link dropdown-toggle" style="color: black" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" >Chỉnh sửa</a>
-                <a class="dropdown-item" >Xóa</a>
-              </div>
-            </div>
-          </div>
-          
-
         </div>
       </div>
     </div>
-    <div class="col-6 col-md-3">
-      <div class="card">
-        <a href="post2.html" class="photo">
-          <img class="card-img-top" src="./images/baiviet/bai3.jpg" >
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">
-            <a href="post2.html" style="color: #444;">
-              Bí quyết có nồi nước lèo Huế thơm đậm đà chuẩn vị Huế
-            </a></h5>
-            <p class="card-text">
-              2000 lượt xem              
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="card">
-          <a href="post3.html" class="photo">
-            <img class="card-img-top" src="./images/baiviet/bai2.jpg" >
-          </a>
-          <div class="card-body">
-            <h5 class="card-title">
-              <a href="post3.html" style="color: #444;">
-                07 bí quyết để có một đĩa miến ngon, mềm dai nguyên sợi
-              </a></h5>
-              <p class="card-text">1324 lượt xem</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card">
-            <a href="post4.html" class="photo">
-              <img class="card-img-top" src="./images/baiviet/bai4.jpg" >
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="post4.html" style="color: #444;">
-                  Gợi ý 10 món ngon đặc biệt thích hợp bữa tiệc gia đình
-                </a></h5>
-                <p class="card-text">5400 lượt xem</p>
-              </div>
-            </div>
-          </div>
+    <%}%>
+ 
+   
         </div>
         <a class="btn btn-outline-success btn-block" href="/posts" style="border-radius: 8px;margin-top: 25px;width: 60%;margin-left: 20%;"
         >

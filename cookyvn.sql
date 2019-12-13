@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 13, 2019 lúc 05:57 PM
+-- Thời gian đã tạo: Th12 13, 2019 lúc 07:00 PM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -99,7 +99,7 @@ CREATE TABLE `food` (
 
 INSERT INTO `food` (`id`, `name`, `type_id`, `finished_time`, `ration`, `level`, `user_view`, `user_review`, `mota`, `image`) VALUES
 (5, 'Thịt xiên nướng', 5, 10, '1', 'dễ', 25, '0', 'Thịt được xiên nướng', 'https://i1.wp.com/congthucmonngon.com/wp-content/uploads/2018/04/mon-ngon-cuoi-tuan-thit-xien-nuong.jpg?ssl=1'),
-(6, 'chè', 1, 12, '12', 'dễ', 39, '0', 'chè thập cẩm', 'https://cdn.daynauan.info.vn/wp-content/uploads/2018/08/che-thai-sau-rieng.jpg'),
+(6, 'chè', 1, 12, '12', 'dễ', 40, '0', 'chè thập cẩm', 'https://cdn.daynauan.info.vn/wp-content/uploads/2018/08/che-thai-sau-rieng.jpg'),
 (15, 'chè', 2, 12, '1', 'dễ', 4, '0', 'đéo phải chè', 'https://monngonmoingay.com/wp-content/uploads/2019/02/che-ba-ba-500.jpg'),
 (16, 'Sườn xào chua ngọt', 5, 30, '2', 'Trung Bình', 1, '0', 'Sườn xào chua ngọt - chua chua ngọt ngọt', 'https://cdn.24h.com.vn/upload/2-2018/images/2018-06-08/1528393104-915-_mg_6780-1528392856-width650height433.jpg'),
 (20, 'Canh nấm chay', 4, 40, '3', 'Trung bình', 0, '0', 'Kết hợp trứng với cà chuaaaa', 'https://www.hoidaubepaau.com/wp-content/uploads/2016/03/canh-nam-ngu-sac.jpg'),
@@ -248,7 +248,9 @@ CREATE TABLE `post` (
 INSERT INTO `post` (`id`, `title`, `author`, `image_link`, `mota`) VALUES
 (2, 'Tại sao trứng muối thơm ngon được ưu dùng', 'o0ovano0o', 'http://www.savourydays.com/wp-content/uploads/2012/04/TrungMuoi.jpg', 'Trứng muối được làm từ trứng ướp với muối.'),
 (4, 'Các món luộc', 'o0ovano0o', 'https://media.ex-cdn.com/EXP/media.phunutoday.vn/files/upload_images/2015/03/26/luoc-rau-2.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa'),
-(6, 'Các món luộc', 'o0ovano0o', 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa');
+(6, 'Các món luộc', 'o0ovano0o', 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa'),
+(7, 'Các món luộc 123', 'o0ovano0o', 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa'),
+(8, '1212Tại sao trứng muối thơm ngon được ưu dùng', 'o0ovano0o', 'http://www.savourydays.com/wp-content/uploads/2012/04/TrungMuoi.jpg', 'Trứng muối được làm từ trứng ướp với muối.');
 
 -- --------------------------------------------------------
 
@@ -457,7 +459,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `post_ct`

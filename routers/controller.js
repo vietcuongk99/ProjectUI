@@ -32,6 +32,7 @@ router.use('/carousel3', require(__dirname + '/carousel3.js'));
 router.use('/posts', require(__dirname + '/posts.js'));
 router.use('/xoabaiviet', require(__dirname + '/deletepost.js'));
 router.use('/suabaiviet', require(__dirname + '/updatepost.js'));
+router.use('/xembaiviet', require(__dirname + '/xembaiviet.js'));
 
 router.use('/logout', require(__dirname + '/logout.js'));
 module.exports = router;
