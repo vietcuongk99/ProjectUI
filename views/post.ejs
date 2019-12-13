@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="index&content.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <title>Bài viết</title>
+  <title>Các bài viết</title>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -75,7 +75,7 @@
         <div class="container marketing">
           <br>
 
-          <%if(restau.length>0){%>
+          <%if(post.length>0){%>
           <div ng-module="paginationApp" ng-controller="listdata" >
             <form id="search" style="margin-bottom:25px;" class="form-inline my-2 my-lg-0">
               <input class="form-control " type="search" ng-model="search" placeholder="Tìm bài viết..." style="width: 100%;" aria-label="Search" required>
@@ -85,14 +85,17 @@
 
                 <div class="card" style="margin-top: 15px;">
 
-                  <img class="card-img-top" style="height: 220px;background-repeat:   no-repeat; background-size:     cover;" src="{{val.img}}" alt="Ảnh minh họa bài viết">
+                  <img class="card-img-top" title="{{val.name}}" style="height: 220px;background-repeat:   no-repeat; background-size:cover;" src="{{val.img}}">
 
                   <div class="card-body">
-                    <h4 class="card-title">{{val.name}}</h4>
+                   <h5 class="card-title" style=" width: 320px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis" title="{{val.name}}">{{val.name}}</h5>
                     <p class="card-text" style=" width: 100px;
                     white-space: nowrap;
                     overflow: hidden;
-                    text-overflow: ellipsis">{{val.diachi}}</p>
+                    text-overflow: ellipsis">{{val.author}}</p>
                     <div class="row">
                       <div class="col-sm-10">
                        <a href="{{val.link}}" class="btn btn-outline-secondary">Xem chi tiết</a></div>
@@ -100,8 +103,8 @@
                         <div class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" style="color:black;" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="/suanhahang?id={{val.id}}">Sửa</a>
-                            <a class="dropdown-item" href="/xoanhahang?id={{val.id}}">Xóa</a>
+                            <a class="dropdown-item" href="/suabaiviet?id={{val.id}}">Sửa</a>
+                            <a class="dropdown-item" href="/xoabaiviet?id={{val.id}}">Xóa</a>
                           </div>
                         </div>  </div>  </div>               
                       </div>
@@ -112,7 +115,7 @@
                   </dir-pagination-controls>
                 </div>
               </div>
-              <%}if(restau.length==0){%>
+              <%}if(post.length==0){%>
               <h4 style="text-align: center;">Xin lỗi, hiện chưa có bài viết nào. Chúng tôi sẽ cập nhật thêm sau!</h4>
               <%}%>
 
@@ -120,19 +123,19 @@
               var data=[];
             </script>
             <% 
-            for(var i=0;i< restau.length;i++){
-            if(restau[i].image==""){
-            restau[i].image="https://camo.githubusercontent.com/2c4ef0e348c6e56634a1199318e7810c2f7ec096/68747470733a2f2f36382e6d656469612e74756d626c722e636f6d2f63616139356262303839306632663635313239636435366135303133306336342f74756d626c725f6f6d6430696463305764317737797066696f315f313238302e706e67";
+            for(var i=0;i< post.length;i++){
+            if(post[i].image_link==""){
+            post[i].image_link="https://camo.githubusercontent.com/2c4ef0e348c6e56634a1199318e7810c2f7ec096/68747470733a2f2f36382e6d656469612e74756d626c722e636f6d2f63616139356262303839306632663635313239636435366135303133306336342f74756d626c725f6f6d6430696463305764317737797066696f315f313238302e706e67";
           }
           %>
           <script type="text/javascript">
             data.push({
-              "id":"<%=restau[i].id%>",
-              "name":"<%=restau[i].name%>",
-              "mota":"<%=restau[i].mota%>",
-              "img":"<%=restau[i].image%>",
-              "diachi":"<%=restau[i].location%>",
-              "link":"/xemchitiet?id=<%=restau[i].id%>"
+              "id":"<%=post[i].id%>",
+              "name":"<%=post[i].title%>",
+              "mota":"<%=post[i].mota%>",
+              "img":"<%=post[i].image_link%>",
+              "author":"<%=post[i].author%>",
+              "link":"/xembaiviet?id=<%=post[i].id%>"
 
             });
           </script>

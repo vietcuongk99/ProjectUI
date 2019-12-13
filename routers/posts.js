@@ -5,17 +5,17 @@ var conn = db.getConnection();
 
 
 router.get('/', function (req, res) {
-	var id=req.query.id;
-	var que = conn.query("select * from post ;",  function(err, result) {
+
+	var que = conn.query("select * from post;", function(err, result) {
         if (err) throw err;
         else {
-         
-			if (req.session.user) {res.render('post', {session: req.session.user,post:result});}
-			else
+          if(req.session.user){
+			res.render('post', {session: req.session.user,post:result});
+			}else
 			res.render('post',{post:result});
-			}
+        }
       });
-	
+
 	 
 });
 

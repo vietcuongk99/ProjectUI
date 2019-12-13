@@ -6,7 +6,7 @@ var conn = db.getConnection();
 
 router.get('/', function (req, res) {
 	var id=req.query.id;
-	var que = conn.query("select * from food where type_id= ?;select * from food_types where id = ?", [id,id], function(err, result) {
+	var que = conn.query("select * from food where type_id= ?;select * from food_types where tid = ?", [id,id], function(err, result) {
         if (err) throw err;
         else {
           if(req.session.user){

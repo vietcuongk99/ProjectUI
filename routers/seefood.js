@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
         else {
         }
       });
-	var que = conn.query("select * from food join food_types on type_id=food_types.id where food.id = ?;select * from food_recipes where food_id= ?;select * from food_steps where food_id = ?;SELECT * FROM `food` WHERE food.`type_id`=(SELECT type_id FROM food where id=?) and id <> ? limit 4;select * from comments join users on user_id=users.id where food_id =? order by comment_id;", [id,id,id,id,id,id], function(err, result) {
+	var que = conn.query("select * from food join food_types on type_id=food_types.tid where food.id = ?;select * from food_recipes where food_id= ?;select * from food_steps where food_id = ?;SELECT * FROM `food` WHERE food.`type_id`=(SELECT type_id FROM food where id=?) and id <> ? limit 4;select * from comments join users on user_id=users.id where food_id =? order by comment_id;", [id,id,id,id,id,id], function(err, result) {
         if (err) throw err;
         else {
           if(req.session.user){
@@ -35,7 +35,7 @@ router.post('/', function(req, res) {
     		}
     		var query = conn.query("INSERT INTO comments SET ?", comment, (err, ress) => {
             if (err) throw err;
-            else{	res.redirect('/seefood?id='+req.query.id);}
+            else{	res.redirect('/seefood?id='+ id);}
           });
   		
     
