@@ -34,5 +34,9 @@ router.use('/xoabaiviet', require(__dirname + '/deletepost.js'));
 router.use('/suabaiviet', require(__dirname + '/updatepost.js'));
 router.use('/xembaiviet', require(__dirname + '/xembaiviet.js'));
 
+
+router.use('/deletecmtnh', require(__dirname + '/deletecmtnh.js'));
+
+
 router.use('/logout', require(__dirname + '/logout.js'));
 module.exports = router;
