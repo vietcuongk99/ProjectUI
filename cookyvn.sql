@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 15, 2019 lúc 06:48 AM
+-- Thời gian đã tạo: Th12 15, 2019 lúc 09:44 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -40,9 +40,9 @@ CREATE TABLE `cmt_nh` (
 --
 
 INSERT INTO `cmt_nh` (`comment_id`, `user_id`, `content`, `restaurant_id`) VALUES
-(6, 1, 'ngon thế', 5),
-(7, 1, 'ngon thế', 5),
-(8, 1, 'bình luận dài dài tý nàyyyyyyy', 5),
+(6, 1, 'ngon thế', 6),
+(7, 1, 'ngon thế', 6),
+(8, 1, 'bình luận dài dài tý nàyyyyyyy', 6),
 (9, 1, 'ngon thế', 1),
 (10, 1, 'bình luận dài dài tý nàyyyyyyy', 1);
 
@@ -220,12 +220,14 @@ CREATE TABLE `menus` (
 INSERT INTO `menus` (`restaurant_id`, `food_id`, `price`, `name`) VALUES
 (1, 1, 5000, 'Nước lọc'),
 (1, 2, 100000, 'Rượu vang'),
-(2, 3, 40000, 'Bún'),
-(2, 4, 60000, 'Phở'),
+(1, 3, 40000, 'Bún'),
+(1, 4, 60000, 'Phở'),
 (4, 5, 1000, 'nước'),
-(5, 6, 5000, 'Nước lọc'),
-(5, 7, 100000, 'Rượu vang'),
-(7, 8, 0, '');
+(6, 6, 5000, 'Nước lọc'),
+(6, 7, 100000, 'Rượu vang'),
+(8, 8, 0, ''),
+(9, 9, 121212121, 'Nguyen Van Anh'),
+(9, 10, 2147483647, 'Ngo Thi Thu Ha');
 
 -- --------------------------------------------------------
 
@@ -304,7 +306,8 @@ INSERT INTO `restaurants` (`id`, `name`, `location`, `mota`, `image`, `user_view
 (1, 'Nhà hàng ABC', 'Thế giới', 'Nhà hàng sang trọng nhất thế giới', 'https://vnn-imgs-f.vgcloud.vn/2018/11/11/06/kham-pha-10-nha-hang-sang-trong-nhat-the-gioi-8.jpg', 116),
 (4, 'Quán vìa hè Hà Nội 1', 'Hà Nội', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 2),
 (6, 'Nhà hàng ABC đã chỉnh sửa', 'Thế giới', 'Nhà hàng sang trọng nhất thế giới', 'https://vnn-imgs-f.vgcloud.vn/2018/11/11/06/kham-pha-10-nha-hang-sang-trong-nhat-the-gioi-8.jpg', 7),
-(8, 'Quán vìa hè Hà Nội', 'Sửa được mà', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 1);
+(8, 'Quán vìa hè Hà Nội', 'Sửa được mà', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 1),
+(9, 'Nhà hàng ven đường', 'Thon 2 Yen So Hoai Duc Ha Noi', 'okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', 'https://image.thanhnien.vn/660/uploaded/minhnguyet/2017_04_05/lamkem_zlqy.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -457,7 +460,7 @@ ALTER TABLE `food_steps`
 -- AUTO_INCREMENT cho bảng `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `post`
@@ -475,7 +478,7 @@ ALTER TABLE `post_ct`
 -- AUTO_INCREMENT cho bảng `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -486,6 +489,12 @@ ALTER TABLE `users`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `cmt_nh`
+--
+ALTER TABLE `cmt_nh`
+  ADD CONSTRAINT `cmt_nh_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
 
 --
 -- Các ràng buộc cho bảng `comments`
@@ -511,6 +520,12 @@ ALTER TABLE `food_recipes`
 --
 ALTER TABLE `food_steps`
   ADD CONSTRAINT `food_steps_ibfk_1` FOREIGN KEY (`food_id`) REFERENCES `food` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `menus`
+--
+ALTER TABLE `menus`
+  ADD CONSTRAINT `menus_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
