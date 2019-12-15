@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 15, 2019 lúc 09:44 AM
+-- Thời gian đã tạo: Th12 15, 2019 lúc 10:06 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -225,9 +225,10 @@ INSERT INTO `menus` (`restaurant_id`, `food_id`, `price`, `name`) VALUES
 (4, 5, 1000, 'nước'),
 (6, 6, 5000, 'Nước lọc'),
 (6, 7, 100000, 'Rượu vang'),
-(8, 8, 0, ''),
 (9, 9, 121212121, 'Nguyen Van Anh'),
-(9, 10, 2147483647, 'Ngo Thi Thu Ha');
+(9, 10, 2147483647, 'Ngo Thi Thu Ha'),
+(14, 11, 10000, 'THịt chiên'),
+(14, 12, 20000, 'Thịt luộc');
 
 -- --------------------------------------------------------
 
@@ -252,7 +253,8 @@ INSERT INTO `post` (`id`, `title`, `author`, `image_link`, `mota`) VALUES
 (6, 'Các món luộc', 'o0ovano0o', 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa'),
 (8, '1212Tại sao trứng muối thơm ngon được ưu dùng', 'o0ovano0o', 'http://www.savourydays.com/wp-content/uploads/2012/04/TrungMuoi.jpg', 'Trứng muối được làm từ trứng ướp với muối.'),
 (9, 'Tại sao trứng muối thơm ngon được ưu dùng', 'admin', 'http://www.savourydays.com/wp-content/uploads/2012/04/TrungMuoi.jpg', 'Trứng muối được làm từ trứng ướp với muối.'),
-(10, 'Các món luộc 123', 'admin', 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa');
+(11, 'Các món luộc', 'admin', 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa sửa'),
+(12, 'Các món luộc  sửa 1', 'admin', 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'Đẹp dáng đẹp da vô cùng hài hòa sửa');
 
 -- --------------------------------------------------------
 
@@ -273,15 +275,16 @@ CREATE TABLE `post_ct` (
 --
 
 INSERT INTO `post_ct` (`id`, `title`, `post_id`, `image`, `content`) VALUES
-(1, 'Rau cải luộc', 0, 'https://media.ex-cdn.com/EXP/media.giadinhvietnam.com/files/content/2019/05/21/1-1015.jpg', 'Món rau cải chíp đẹp đến ngỡ ngàng với cách bài trí thông minh '),
-(2, 'Đậu luộc', 0, 'https://znews-photo.zadn.vn/w1024/Uploaded/qhj_pwqvdvicbu/2019_05_16/2_1.jpg', ' Đậu que luộc trông cũng ngon mắt đấy chứ nhỉ?! '),
-(3, 'Bổ dưỡng , dễ ăn , dễ bảo quản', 2, 'https://i-ngoisao.vnecdn.net/2015/08/10/trung-muoi-8711-1439190743.jpg', 'trứng muối là Có rất nhiều món ăn ngon từ trứng muối: thịt đúc trứng muối (thêm trứng bắc thảo), bánh trung thu nhân trứng muối, bánh bông lan mặn trứng muối, cháo trắng trứng muối ăn kèm ca la thầu (củ cải muối)…\r\n\r\nCách làm trứng muối thì đơn giản vô cùng, tuy vậy để có những mẻ trứng muối thơm ngon, tròn trịa, đẹp màu và muối quả nào thu hoạch quả đó (không hỏng) thì các bạn lưu ý một số điểm sau:'),
+(1, 'Rau cải luộc', 8, 'https://media.ex-cdn.com/EXP/media.giadinhvietnam.com/files/content/2019/05/21/1-1015.jpg', 'Món rau cải chíp đẹp đến ngỡ ngàng với cách bài trí thông minh '),
+(2, 'Đậu luộc', 8, 'https://znews-photo.zadn.vn/w1024/Uploaded/qhj_pwqvdvicbu/2019_05_16/2_1.jpg', ' Đậu que luộc trông cũng ngon mắt đấy chứ nhỉ?! '),
+(3, 'Bổ dưỡng , dễ ăn , dễ bảo quản', 4, 'https://i-ngoisao.vnecdn.net/2015/08/10/trung-muoi-8711-1439190743.jpg', 'trứng muối là Có rất nhiều món ăn ngon từ trứng muối: thịt đúc trứng muối (thêm trứng bắc thảo), bánh trung thu nhân trứng muối, bánh bông lan mặn trứng muối, cháo trắng trứng muối ăn kèm ca la thầu (củ cải muối)…\r\n\r\nCách làm trứng muối thì đơn giản vô cùng, tuy vậy để có những mẻ trứng muối thơm ngon, tròn trịa, đẹp màu và muối quả nào thu hoạch quả đó (không hỏng) thì các bạn lưu ý một số điểm sau:'),
 (4, 'Rau muống luộc', 4, 'https://toinayangi.vn/wp-content/uploads/2015/01/meo-nau-an-de-mon-luoc-ngon-hon-1.jpg', 'trểttwegegefregrreg'),
-(5, 'Rau cải luộc', 5, 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'rauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'),
+(5, 'Rau cải luộc', 4, 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'rauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'),
 (6, 'Rau cải luộc', 6, 'http://sieuthiyte.com.vn/blog/wp-content/uploads/2016/04/cac-mon-rau-cu-e1460444838530.jpg', 'rauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'),
 (7, 'Bổ dưỡng , dễ ăn , dễ bảo quản', 9, 'https://i-ngoisao.vnecdn.net/2015/08/10/trung-muoi-8711-1439190743.jpg', 'trứng muối là Có rất nhiều món ăn ngon từ trứng muối: thịt đúc trứng muối (thêm trứng bắc thảo), bánh trung thu nhân trứng muối, bánh bông lan mặn trứng muối, cháo trắng trứng muối ăn kèm ca la thầu (củ cải muối)…\r\n\r\nCách làm trứng muối thì đơn giản vô cùng, tuy vậy để có những mẻ trứng muối thơm ngon, tròn trịa, đẹp màu và muối quả nào thu hoạch quả đó (không hỏng) thì các bạn lưu ý một số điểm sau:'),
 (8, 'Rau cải luộc', 9, 'https://media.ex-cdn.com/EXP/media.giadinhvietnam.com/files/content/2019/05/21/1-1015.jpg', 'trứng muối là Có rất nhiều món ăn ngon từ trứng muối: thịt đúc trứng muối (thêm trứng bắc thảo), bánh trung thu nhân'),
-(9, 'Rau muống luộc', 10, 'https://toinayangi.vn/wp-content/uploads/2015/01/meo-nau-an-de-mon-luoc-ngon-hon-1.jpg', 'wefewf');
+(10, 'Rau muống luộc', 12, 'https://toinayangi.vn/wp-content/uploads/2015/01/meo-nau-an-de-mon-luoc-ngon-hon-1.jpg', 'wefewf'),
+(11, 'Đậu luộc', 12, 'https://media.ex-cdn.com/EXP/media.giadinhvietnam.com/files/content/2019/05/21/1-1015.jpg', 'sdfdfadf');
 
 -- --------------------------------------------------------
 
@@ -306,8 +309,9 @@ INSERT INTO `restaurants` (`id`, `name`, `location`, `mota`, `image`, `user_view
 (1, 'Nhà hàng ABC', 'Thế giới', 'Nhà hàng sang trọng nhất thế giới', 'https://vnn-imgs-f.vgcloud.vn/2018/11/11/06/kham-pha-10-nha-hang-sang-trong-nhat-the-gioi-8.jpg', 116),
 (4, 'Quán vìa hè Hà Nội 1', 'Hà Nội', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 2),
 (6, 'Nhà hàng ABC đã chỉnh sửa', 'Thế giới', 'Nhà hàng sang trọng nhất thế giới', 'https://vnn-imgs-f.vgcloud.vn/2018/11/11/06/kham-pha-10-nha-hang-sang-trong-nhat-the-gioi-8.jpg', 7),
-(8, 'Quán vìa hè Hà Nội', 'Sửa được mà', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 1),
-(9, 'Nhà hàng ven đường', 'Thon 2 Yen So Hoai Duc Ha Noi', 'okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', 'https://image.thanhnien.vn/660/uploaded/minhnguyet/2017_04_05/lamkem_zlqy.jpg', 1);
+(9, 'Nhà hàng ven đường', 'Thon 2 Yen So Hoai Duc Ha Noi', 'okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', 'https://image.thanhnien.vn/660/uploaded/minhnguyet/2017_04_05/lamkem_zlqy.jpg', 1),
+(10, 'Quán vìa hè Hà Nội', 'Sửa được mà', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 0),
+(14, 'Quán vìa hè Hà Nội', 'Bực mình', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -460,25 +464,25 @@ ALTER TABLE `food_steps`
 -- AUTO_INCREMENT cho bảng `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `post_ct`
 --
 ALTER TABLE `post_ct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -525,7 +529,13 @@ ALTER TABLE `food_steps`
 -- Các ràng buộc cho bảng `menus`
 --
 ALTER TABLE `menus`
-  ADD CONSTRAINT `menus_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
+  ADD CONSTRAINT `menus_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `post_ct`
+--
+ALTER TABLE `post_ct`
+  ADD CONSTRAINT `post_ct_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -25,10 +25,10 @@ router.get('/', function (req, res) {
 router.post('/', function(req, res) {
     var fod=req.body;
     var id=req.query.id;
+    var nnl=req.body.somon;
     nhang={
       name:fod.name,
       mota:fod.mota,
-    
       image:fod.image,
      location:fod.diachi
     }
