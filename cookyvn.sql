@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 15, 2019 lúc 10:06 AM
+-- Thời gian đã tạo: Th12 15, 2019 lúc 10:14 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.1.33
 
@@ -228,7 +228,9 @@ INSERT INTO `menus` (`restaurant_id`, `food_id`, `price`, `name`) VALUES
 (9, 9, 121212121, 'Nguyen Van Anh'),
 (9, 10, 2147483647, 'Ngo Thi Thu Ha'),
 (14, 11, 10000, 'THịt chiên'),
-(14, 12, 20000, 'Thịt luộc');
+(14, 12, 20000, 'Thịt luộc'),
+(15, 13, 12, 'Món thịt chiên '),
+(16, 14, 2222, 'Bún ốc');
 
 -- --------------------------------------------------------
 
@@ -310,8 +312,9 @@ INSERT INTO `restaurants` (`id`, `name`, `location`, `mota`, `image`, `user_view
 (4, 'Quán vìa hè Hà Nội 1', 'Hà Nội', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 2),
 (6, 'Nhà hàng ABC đã chỉnh sửa', 'Thế giới', 'Nhà hàng sang trọng nhất thế giới', 'https://vnn-imgs-f.vgcloud.vn/2018/11/11/06/kham-pha-10-nha-hang-sang-trong-nhat-the-gioi-8.jpg', 7),
 (9, 'Nhà hàng ven đường', 'Thon 2 Yen So Hoai Duc Ha Noi', 'okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', 'https://image.thanhnien.vn/660/uploaded/minhnguyet/2017_04_05/lamkem_zlqy.jpg', 1),
-(10, 'Quán vìa hè Hà Nội', 'Sửa được mà', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 0),
-(14, 'Quán vìa hè Hà Nội', 'Bực mình', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 1);
+(14, 'Quán vìa hè Hà Nội', 'Bực mình', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 1),
+(15, 'Nhà hàng không tên', 'nhà 22 ngõ 72 đường điếm ba xa đông', 'mô tả ', 'https://image.thanhnien.vn/660/uploaded/minhnguyet/2017_04_05/lamkem_zlqy.jpg', 0),
+(16, 'Quán vìa hè Hà Nội', 'đâyyyy này', 'Quán vỉa hè được nhiều người nổi tiếng ưa chuộng', 'https://image-us.eva.vn/upload/1-2018/images/2018-01-31/nhung-quan-an-via-he-ha-noi---cu-chiu-kho-den-the-nao-cung-gap-dan-soai-ca-u23-pho-1517322388575461994815-1517390093-864-width600height450.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -464,7 +467,7 @@ ALTER TABLE `food_steps`
 -- AUTO_INCREMENT cho bảng `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `post`
@@ -482,7 +485,7 @@ ALTER TABLE `post_ct`
 -- AUTO_INCREMENT cho bảng `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
